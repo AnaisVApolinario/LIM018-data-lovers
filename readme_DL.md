@@ -1,2 +1,2 @@
 ## 1. Preámbulo
-Hola como estan ...
+Hola como estan

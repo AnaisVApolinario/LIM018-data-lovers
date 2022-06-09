@@ -1,0 +1,14 @@
+img[alt="libros"]{
+    width: 30%;
+}
+section{
+    display:flex;
+    /*flex-direction: column-reverse;*/
+    flex-wrap: wrap;
+}
+article {
+    padding: 10px;
+    margin: 10px;
+    background: skyblue;
+    flex: 200px;
+}
