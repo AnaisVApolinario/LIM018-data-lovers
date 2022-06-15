@@ -14,7 +14,8 @@ export default {
       "patronus": null,
       "house": "Gryffindor",
       "associated_groups": ["Hogwarts School of Witchcraft and Wizardry", "Gryffindor"],
-      "books_featured_in": [5]
+      "books_featured_in": [5],
+      "img":  "./img/personajes/abercrombie.jpg"
     },
     {
       "id": 2,
@@ -2055,7 +2056,8 @@ export default {
         "Hogwarts School of Witchcraft and Wizardry",
         "S.P.E.W."
       ],
-      "books_featured_in": [2, 3, 4, 5, 6, 7]
+      "books_featured_in": [2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/dobby.png"
     },
     {
       "id": 124,
@@ -12013,7 +12015,8 @@ export default {
         "International Confederation of Wizards",
         "Dumbledore family"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Albus.png"
     }
   ],
   funFacts: [
@@ -16226,3 +16229,4 @@ export default {
     }
   ]
 }
+
