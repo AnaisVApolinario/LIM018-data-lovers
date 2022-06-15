@@ -7,10 +7,24 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
-    <div id="root">
+    <section id="container-libros">
+    </section>
+    <template id='template-libros'>
+      <article>
+        <img>
+        <h3 id="titulo"></h3>
+        <p id="parrafo"></p> <!--${item.title}-->
+        <p id="parrafo1"></p>
+        <p id="parrafo2"></p>
+      </article>
+    </template>
+    <ul id="ul"></ul>
+    <template id="template-pociones">
+        <a href="#"> <li id="li">
+        </li> </a>
+    </template>
 
-    </div>
+
     <script src="main.js" type="module"></script>
   </body>
 </html>

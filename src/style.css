@@ -2,3 +2,23 @@ body{
     background-image: url("/src/img/fondo.jpg");
    
 }
+img{
+    width: 20%;/*80%*/
+    /*padding-left:10%*/
+  }
+  #container-libro{
+      display:flex;
+      /*flex-direction:row;*/
+      flex-wrap: wrap;
+  }
+  article {
+     /* display:none;*/
+      padding: 10px;
+      margin: 10px;
+      background: skyblue;
+      flex: 200px;
+  }
+  #ul{
+    /*display:block;*/
+    background-color:skyblue;
+  }
