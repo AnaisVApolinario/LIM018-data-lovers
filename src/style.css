@@ -44,27 +44,26 @@ body{
   flex: 200px;
 }
 /*POCIONES*/
-.container-pociones{
-  display:inline-block;
-  /*display:flex;
-  flex-wrap: wrap;
-  flex-direction:row;*/
- 
-}
 .arti-pociones{
   display:flex;
-  flex-direction:column;
   background:green;
-  /*padding: 20px;
-  margin: 10px;
-  flex: 200px;*/
- /* display:flex;*/
+  padding:5px;
+  flex-wrap:wrap;
+  flex-direction:column-reverse;
+  width:21%;;
+  height:auto;
+  margin:10px;
+  /*flex: 200px;*/
 }
-.pocion-name-descrip{
-  color:white;
-  border-color:red;
-  border-width:10px;
+#div-pociones{
+  background-color: antiquewhite;
+  margin:15px;
+  width:20%;
+  height:auto;
+  text-align:center;
 }
+/*.pocion-name-descrip{
+}*/
 
 .ventanaM{
   background: black;
