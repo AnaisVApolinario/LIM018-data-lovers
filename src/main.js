@@ -1,42 +1,10 @@
-//import { example } from './data.js';//./es busca a partir de la carpeta data.js
+import { example } from './data.js';//./es busca a partir de la carpeta data.js
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js'; //data es una variable de tipo objeto 
 
-<<<<<<< HEAD
-//console.log(example);//example,data
-
-let inicio = document.getElementById('inicio')
-let characters = document.getElementById('characters')
-let btnpersonajes = document.getElementById('personajes')
-let content = document.getElementById('content')
-let logo = document.getElementById('logo')
-let book = document.getElementById('libros')
-let containerBook = document.querySelector('template-libros')
-window.addEventListener('load', init)
-function init() {
-    inicio.style.visibility = 'visible'
-    characters.style.visibility = 'hidden'
-    btnpersonajes.addEventListener('click', function () {
-        characters.style.visibility = 'visible'
-        content.style.visibility = 'hidden'
-    }),
-        logo.addEventListener('click', function () {
-            content.style.visibility = 'visible'
-            characters.style.visibility = 'hidden'
-        }),
-        book.addEventListener('click', function () {
-            containerBook.style.visibility = 'visible'
-            characters.style.visibility = 'hidden'
-            content.style.visibility = 'hidden'
-        })
-}
-
-const seccion=document.getElementById('container-libros');
-=======
 console.log(example);//example,data
 //LIBROS
 const seccion=document.querySelector('.container-libros');
->>>>>>> 75ee4e1f5a52c8fd07269d9569988b55b48a63a5
 const tempArticle=document.getElementById('template-libros').content;//accede a los elementos osea a su contenido
 const fragment=document.createDocumentFragment();//guarda codigo en una memoria volatil y no lo pinta en el HTML hasta que se lo digamos
 const arrayLibros=data.books;
@@ -103,7 +71,7 @@ btn_libro.addEventListener('click',function(){
   characters.style.display='none' ;    
   contenido.style.display='none';
   lista_pociones.style.display='none';
-})};
+})}
 po.addEventListener('click',function(){
   lista_pociones.style.display='block';
   lib.style.display='none';
