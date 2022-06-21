@@ -12,10 +12,10 @@ const arrayLibros=data.books;
 arrayLibros.forEach(item =>{
   tempArticle.querySelector('img').setAttribute('src',item.img);
   tempArticle.querySelector('img').setAttribute('alt',item.title); 
-  tempArticle.querySelector('#titulo').textContent=item.title;
-  tempArticle.querySelector('#parrafo').textContent='Lanzamiento: '+item.releaseDay;
-  tempArticle.querySelector('#parrafo1').textContent='Autor: '+ item.author;
-  tempArticle.querySelector('#parrafo2').textContent='Desripcion: '+ item.description ;
+  tempArticle.querySelector('#titulo-libro').textContent=item.title;
+  tempArticle.querySelector('#parrafo').innerHTML=`<b>LANZAMIENTO:</b> ${item.releaseDay}`;
+  tempArticle.querySelector('#parrafo1').innerHTML=`<b>AUTOR:</b> ${item.author} `;
+  tempArticle.querySelector('#parrafo2').innerHTML=`<b>DESCRIPCION:</b> ${item.description}`;
     
   const clone=tempArticle.cloneNode(true);
   fragment.appendChild(clone);
@@ -41,23 +41,45 @@ ul.appendChild(fragme);
 
 
 let inicio=document.getElementById('inicio')
-let characters=document.getElementById('characters')
-let  btnpersonajes=document.getElementById('personajes')
-let content=document.getElementById('content')
-let logo=document.getElementById('logo')
+let characters=document.getElementById('characters');
+let  btnpersonajes=document.getElementById('personajes');
+let contenido=document.getElementById('content');
+let logo=document.getElementById('logo');
+let lib=document.getElementById('container-libros');
+let btn_libro=document.getElementById('libros');
+let lista_pociones =document.getElementById('ul');
+let po=document.getElementById('pociones');
+
 window.addEventListener('load', init) 
 function init(){
-inicio.style.visibility='visible'
-characters.style.visibility='hidden'
+  inicio.style.display='block';
+  characters.style.display='none';
+  lib.style.display='none';
+  lista_pociones.style.display='none';
 btnpersonajes.addEventListener('click',function(){
-    characters.style.visibility='visible'
-    content.style.visibility='hidden'
+  characters.style.display='block';
+  contenido.style.display='none';
+  lib.style.display='none';
+  lista_pociones.style.display='none';
 }),
 logo.addEventListener('click',function(){
-    content.style.visibility='visible'
-    characters.style.visibility='hidden'
+  contenido.style.display='block';            
+  characters.style.display='none';
+  lib.style.display='none';
+  lista_pociones.style.display='none';
+}),
+btn_libro.addEventListener('click',function(){
+  lib.style.display='block';
+  characters.style.display='none' ;    
+  content.style.display='none';
+  lista_pociones.style.display='none';
+})};
+po.addEventListener('click',function(){
+  lista_pociones.style.display='block';
+  lib.style.display='none';
+  characters.style.display='none';     
+  content.style.display='none';
 })
-}
 
 let personajes=data.characters
 
