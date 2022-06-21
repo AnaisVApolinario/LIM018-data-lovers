@@ -69,14 +69,14 @@ logo.addEventListener('click',function(){
 btn_libro.addEventListener('click',function(){
   lib.style.display='block';
   characters.style.display='none' ;    
-  content.style.display='none';
+  contenido.style.display='none';
   lista_pociones.style.display='none';
 })};
 po.addEventListener('click',function(){
   lista_pociones.style.display='block';
   lib.style.display='none';
   characters.style.display='none';     
-  content.style.display='none';
+  contenido.style.display='none';
 })
 
 let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)

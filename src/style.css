@@ -1,6 +1,6 @@
 body{
   background-image: url("/img/fondo.jpg");
-  background-size:cover;
+  background-size:cover;/*100vw 100vh;*/
   background-attachment: fixed; /*fijo*/
 }
 
@@ -20,6 +20,7 @@ body{
   flex-direction:column;
   justify-content:center;
 }
+
 .container-libro{
   display:flex;
   flex-wrap: wrap;
@@ -28,30 +29,32 @@ body{
 .arti-libro {
   display:flex;
   flex-direction:row;
-  /*justify-content: space-between;*/
- /* display:none;*/
   padding: 10px;
   margin: 10px;
   background-color:rgba(250, 252, 253, 0.767);
   flex: 200px;
 }
 /*POCIONES*/
-.container-pociones{
-  display:inline-block;
-
- 
-}
 .arti-pociones{
   display:flex;
-  flex-direction:column;
   background:green;
-
+  padding:5px;
+  flex-wrap:wrap;
+  flex-direction:column-reverse;
+  width:21%;;
+  height:auto;
+  margin:10px;
+  /*flex: 200px;*/
 }
-.pocion-name-descrip{
-  color:white;
-  border-color:red;
-  border-width:10px;
+#div-pociones{
+  background-color: antiquewhite;
+  margin:15px;
+  width:20%;
+  height:auto;
+  text-align:center;
 }
+/*.pocion-name-descrip{
+}*/
 
 .ventanaM{
   background: black;
@@ -103,8 +106,8 @@ button {
 }
 
 button:hover {
-  background-color: rgba(217, 217, 217, 0.61);
-  cursor: pointer;
+    background-color: rgba(217, 217, 217, 0.61);
+    cursor: pointer;
 }
 
 #content{
@@ -124,7 +127,6 @@ button:hover {
   margin-top: -50px;
   color: white;
   display: flex;
-  display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
@@ -158,8 +160,8 @@ ul{
   height: 200px;
   border-radius: 30px;
   padding-top: 10px;
-      margin-left: 155px;
-          margin-top: -205px;
+  margin-left: 155px;
+  margin-top: -205px;
 }
 ul li{
   margin-left: -13px;
