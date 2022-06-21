@@ -71,7 +71,7 @@ btn_libro.addEventListener('click',function(){
   characters.style.display='none' ;    
   contenido.style.display='none';
   lista_pociones.style.display='none';
-})};
+})}
 po.addEventListener('click',function(){
   lista_pociones.style.display='block';
   lib.style.display='none';
