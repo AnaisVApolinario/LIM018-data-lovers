@@ -27,13 +27,13 @@ body{
   justify-content:center;
 }
 
-#container-libro{
+.container-libro{
   display:flex;
   flex-wrap: wrap;
   /*display:inline-block;*/
   /*justify-content: center;*/
 }
-#arti-libro {
+.arti-libro {
   display:flex;
   flex-direction:row;
   /*justify-content: space-between;*/
@@ -43,13 +43,29 @@ body{
   background-color:rgba(250, 252, 253, 0.767);
   flex: 200px;
 }
-a[href="javascript:abrir()"]{
+/*POCIONES*/
+.container-pociones{
+  display:inline-block;
+  /*display:flex;
+  flex-wrap: wrap;
+  flex-direction:row;*/
+ 
+}
+.arti-pociones{
+  display:flex;
+  flex-direction:column;
+  background:green;
+  /*padding: 20px;
+  margin: 10px;
+  flex: 200px;*/
+ /* display:flex;*/
+}
+.pocion-name-descrip{
   color:white;
-  text-decoration:none;
+  border-color:red;
+  border-width:10px;
 }
-#li:hover{
-  color:orangered;
-}
+
 .ventanaM{
   background: black;
   width:30%;
@@ -66,7 +82,7 @@ a[href="javascript:abrir()"]{
   /*display:none;*/
 }
 
-/*Com*/
+/*COMP*/
 #logo{
   width: 375px;
   height: 180px;
@@ -74,14 +90,10 @@ a[href="javascript:abrir()"]{
 
 #nav{
   display:flex;
-  padding:0;
-  margin:0;
- 
   /*justify-content:center*/
 }
 
 #list {
-  display: flex;
   list-style-type: none;
   margin-top: 40px;
   margin-left:30px;
@@ -104,12 +116,11 @@ button {
 }
 
 button:hover {
-  background-color: rgba(217, 217, 217, 0.61);
-  cursor: pointer;
+    background-color: rgba(217, 217, 217, 0.61);
+    cursor: pointer;
 }
 
 #content{
-  display:flex;
   margin: auto;
   text-align: center;
   background-color: rgba(24, 23, 23, 0.54);
@@ -123,12 +134,46 @@ button:hover {
 
 #characters {
   margin-left: 50px;
-    /*margin-top: -150px;*/
+  margin-top: -50px;
   color: white;
+  display: flex;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 #characters img{
+  position: relative;
   width: 150px;
   height: 200px;
-  padding: 10px;
+  border-radius: 30px;
+}
+
+#characters div{
+  
+  height: 100%;
+  vertical-align: middle;
+}
+
+#characters div p {
+  margin-top: -40px;
+  position: absolute;
+  border-radius: 5px;
+  background: rgba(217, 217, 217, 1);
+  color: black;
+  width: 150px;
+}
+
+
+ul{
+  background: rgba(192, 164, 63, 0.98);
+  width: 380px;
+  height: 200px;
+  border-radius: 30px;
+  padding-top: 10px;
+      margin-left: 155px;
+          margin-top: -205px;
+}
+ul li{
+  margin-left: -13px;
 }
