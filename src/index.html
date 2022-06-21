@@ -7,27 +7,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="container-libros">
-    </section>
-    <template id='template-libros'>
-      <article>
-        <img>
-        <h3 id="titulo"></h3>
-        <p id="parrafo"></p> <!--${item.title}-->
-        <p id="parrafo1"></p>
-        <p id="parrafo2"></p>
-      </article>
-    </template>
-    <ul id="ul"></ul>
-    <template id="template-pociones">
-        <a href="#"> <li id="li">
-        </li> </a>
-    </template>
-
 
     <div id="inicio">
     <div  id="nav">
-      <img src="/src/img/logo.png" alt="" id="logo">
+      <img src="/img/logo.png" alt="" id="logo">
       <div id="list">
         <button id="personajes">PERSONAJES</button>
         <button id="hechizos">HECHIZOS</button>
@@ -63,6 +46,48 @@
     <div id="root">
 
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="container-libros">
+      <template id='template-libros'>
+        <article id="arti-libro">
+          <img>
+          <div class="container-text">
+            <h3 id="titulo-libro"></h3>
+            <p id="parrafo"></p> 
+            <p id="parrafo1"></p>
+            <p id="parrafo2"></p>
+            </div>
+        </article>
+      </template>
+    </section>
+   
+    <ul id="ul">
+      <template id="template-pociones">
+        <a  id="navA" href="#"> <li id="li">
+        </li> </a>
+      </template>
+    </ul>
     <script src="main.js" type="module"></script>
   </body>
 </html>
