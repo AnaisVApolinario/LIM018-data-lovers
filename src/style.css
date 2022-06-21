@@ -1,26 +1,30 @@
 body{
-    background-image: url("/src/img/fondo.jpg");
+    background-image: url("./img/fondo.jpg");
     background-size:100vw 100vh;
 }
-   
-img{
-    width: 20%;/*80%*/
-    /*padding-left:10%*/
-  }
+
+
+
+#books1{
+    display: none;
+}
+
+/*img{
+    width: 20%;80%
+    padding-left:10%
+  }*/
   #container-libro{
       display:flex;
       /*flex-direction:row;*/
-      flex-wrap: wrap;
+      /*flex-wrap: wrap;*/
   }
   article {
-     /* display:none;*/
       padding: 10px;
       margin: 10px;
       background: skyblue;
       flex: 200px;
   }
   #ul{
-    /*display:block;*/
     background-color:skyblue;
   }
     
@@ -77,10 +81,44 @@ button:hover {
     margin-left: 50px;
     margin-top: -150px;
     color: white;
+    display: flex;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
 
 #characters img{
+    position: relative;
     width: 150px;
     height: 200px;
-    padding: 10px;
+    border-radius: 30px;
+}
+
+#characters div{
+    
+    height: 100%;
+    vertical-align: middle;
+}
+
+#characters div p {
+    margin-top: -40px;
+    position: absolute;
+    border-radius: 5px;
+    background: rgba(217, 217, 217, 1);
+    color: black;
+    width: 150px;
+}
+
+
+ul{
+    background: rgba(192, 164, 63, 0.98);
+    width: 380px;
+    height: 200px;
+    border-radius: 30px;
+    padding-top: 10px;
+        margin-left: 155px;
+            margin-top: -205px;
+}
+ul li{
+    margin-left: -13px;
 }

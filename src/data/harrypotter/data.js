@@ -31,7 +31,8 @@ export default {
       "patronus": null,
       "house": "Ravenclaw",
       "associated_groups": [],
-      "books_featured_in": [4]
+      "books_featured_in": [4],
+      "img": "./img/personajes/stewart.jpg"
     },
     {
       "id": 3,
@@ -2505,7 +2506,8 @@ export default {
       "patronus": null,
       "house": null,
       "associated_groups": ["Hogwarts School of Witchcraft and Wizardry", "Inquisitorial Squad (formerly)", "Mrs Norris"],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img": "./img/personajes/Argus.png"
     },
     {
       "id": 151,
@@ -4477,7 +4479,8 @@ export default {
       "patronus": "None",
       "house": "Malfoy family",
       "associated_groups": [],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Draco.png"
     },
     {
       "id": 268,
@@ -5490,7 +5493,8 @@ export default {
         "Department of Magical Law Enforcement",
         "S.P.E.W."
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Harry.png"
     },
     {
       "id": 327,
@@ -6454,7 +6458,8 @@ export default {
         "Lord Voldemort (formerly)",
         "Death Eaters (defected)"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Severus.png"
     },
     {
       "id": 383,
@@ -7409,7 +7414,8 @@ export default {
         "Weasleys' Wizard Wheezes",
         "Chudley Cannons"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Ron.png"
     },
     {
       "id": 477,
@@ -8512,7 +8518,8 @@ export default {
       "patronus": null,
       "house": null,
       "associated_groups": ["Crouch family"],
-      "books_featured_in": [4]
+      "books_featured_in": [4],
+      "img":"./img/personajes/Bartemius.png"
     },
     {
       "id": 543,
@@ -9210,7 +9217,8 @@ export default {
         "Department for the Regulation and Control of Magical Creatures",
         "Department of Magical Law Enforcement"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Hermione.png"
     },
     {
       "id": 588,
@@ -9775,7 +9783,8 @@ export default {
       "patronus": "None",
       "house": "House of Black",
       "associated_groups": [],
-      "books_featured_in": [4, 5, 6, 7]
+      "books_featured_in": [4, 5, 6, 7],
+      "img":"./img/personajes/Bellatrix.png"
     },
     {
       "id": 623,
@@ -16176,64 +16185,56 @@ export default {
       "title": "Harry Potter and the Sorcerer's Stone",
       "releaseDay": "June 26, 1997",
       "author": "J. K. Rowling",
-      "description": "On his birthday, Harry Potter discovers that he is the son of two well-known wizards, from whom he has inherited magical powers. He must attend a famous school of magic and sorcery, where he establishes a friendship with two young men who will become his companions on his adventure. During his first year at Hogwarts, he discovers that a malevolent and powerful wizard named Voldemort is in search of a philosopher's stone that prolongs the life of its owner.",
-      "img": "libros/libro1.jpg"
+      "description": "On his birthday, Harry Potter discovers that he is the son of two well-known wizards, from whom he has inherited magical powers. He must attend a famous school of magic and sorcery, where he establishes a friendship with two young men who will become his companions on his adventure. During his first year at Hogwarts, he discovers that a malevolent and powerful wizard named Voldemort is in search of a philosopher's stone that prolongs the life of its owner."
     },
     {
       "id": 2,
       "title": "Harry Potter and the chamber of secrets",
       "releaseDay": "July 2, 1998",
       "author": "J. K. Rowling",
-      "description": "Harry Potter and the sophomores investigate a malevolent threat to their Hogwarts classmates, a menacing beast that hides within the castle.",
-      "img": "libros/libro2.jpg"
+      "description": "Harry Potter and the sophomores investigate a malevolent threat to their Hogwarts classmates, a menacing beast that hides within the castle."
     },
     {
       "id": 3,
       "title": "Harry Potter and the Prisoner of Azkaban",
-      "releaseDay": "July 8, 1999",
+      "releseDay": "July 8, 1999",
       "author": "J. K. Rowling",
-      "description": "Harry's third year of studies at Hogwarts is threatened by Sirius Black's escape from Azkaban prison. Apparently, it is a dangerous wizard who was an accomplice of Lord Voldemort and who will try to take revenge on Harry Potter.",
-      "img": "libros/libro3.jpg"
+      "description": "Harry's third year of studies at Hogwarts is threatened by Sirius Black's escape from Azkaban prison. Apparently, it is a dangerous wizard who was an accomplice of Lord Voldemort and who will try to take revenge on Harry Potter."
     },
     {
       "id": 4,
       "title": "Harry Potter and the Goblet of Fire",
       "releaseDay": "July 8, 2000",
       "author": "J. K. Rowling",
-      "description": "Hogwarts prepares for the Triwizard Tournament, in which three schools of wizardry will compete. To everyone's surprise, Harry Potter is chosen to participate in the competition, in which he must fight dragons, enter the water and face his greatest fears.",
-      "img": "libros/libro4.jpg"
+      "description": "Hogwarts prepares for the Triwizard Tournament, in which three schools of wizardry will compete. To everyone's surprise, Harry Potter is chosen to participate in the competition, in which he must fight dragons, enter the water and face his greatest fears."
     },
     {
       "id": 5,
       "title": "Harry Potter and the Order of the Phoenix",
       "releaseDay": "June 21, 2003",
       "author": "J. K. Rowling",
-      "description": "In his fifth year at Hogwarts, Harry discovers that many members of the wizarding community do not know the truth about his encounter with Lord Voldemort. Cornelius Fudge, Minister of Magic, appoints Dolores Umbridge as Defense Against the Dark Arts teacher because he believes that Professor Dumbledore plans to take over her job. But his teachings are inadequate, so Harry prepares the students to defend the school against evil.",
-      "img": "libros/libro5.webp"
+      "description": "In his fifth year at Hogwarts, Harry discovers that many members of the wizarding community do not know the truth about his encounter with Lord Voldemort. Cornelius Fudge, Minister of Magic, appoints Dolores Umbridge as Defense Against the Dark Arts teacher because he believes that Professor Dumbledore plans to take over her job. But his teachings are inadequate, so Harry prepares the students to defend the school against evil."
     },
     {
       "id": 6,
       "title": "Harry Potter and the Half-Blood Prince",
       "releaseDay": "July 16, 2005",
       "author": "J. K. Rowling",
-      "description": "Harry discovers a powerful book and, while trying to discover its origins, collaborates with Dumbledore in the search for a series of magical objects that will aid in the destruction of Lord Voldemort.",
-      "img": "libros/libro6.jpg"
+      "description": "Harry discovers a powerful book and, while trying to discover its origins, collaborates with Dumbledore in the search for a series of magical objects that will aid in the destruction of Lord Voldemort."
     },
     {
       "id": 7,
       "title": "Harry Potter and the Deathly Hallows",
       "releaseDay": "July 21, 2007",
       "author": "J. K. Rowling",
-      "description": "Harry, Ron and Hermione go on a dangerous mission to locate and destroy the secret of Voldemort's immortality and destruction - the Horcruces. Alone, without the guidance of their teachers or the protection of Professor Dumbledore, the three friends must lean on each other more than ever. But there are Dark Forces in between that threaten to tear them apart. Harry Potter is getting closer and closer to the task for which he has been preparing since the first day he set foot in Hogwarts: the last battle with Voldemort.",
-      "img": "libros/libro7.jpg"
+      "description": "Harry, Ron and Hermione go on a dangerous mission to locate and destroy the secret of Voldemort's immortality and destruction - the Horcruces. Alone, without the guidance of their teachers or the protection of Professor Dumbledore, the three friends must lean on each other more than ever. But there are Dark Forces in between that threaten to tear them apart. Harry Potter is getting closer and closer to the task for which he has been preparing since the first day he set foot in Hogwarts: the last battle with Voldemort."
     },
     {
       "id": 8,
       "title": "Harry Potter and the Cursed Child",
       "releaseDay": "July 30, 2016",
       "author": "J. K. Rowling",
-      "description": "Harry's second son entered Hogwarts, but in Slytherin. His relationship with Harry is getting worse and he became close friends with Draco's son, Scorpius Malfoy who is said to be Lord Voldemort's son.",
-      "img": "libros/libro8.jpg"
+      "description": "Harry's second son entered Hogwarts, but in Slytherin. His relationship with Harry is getting worse and he became close friends with Draco's son, Scorpius Malfoy who is said to be Lord Voldemort's son."
     }
   ]
 }

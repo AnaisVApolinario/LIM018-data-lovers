@@ -1,9 +1,34 @@
-import { example } from './data.js';//./es busca a partir de la carpeta data.js
+//import { example } from './data.js';//./es busca a partir de la carpeta data.js
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js'; //data es una variable de tipo objeto 
 
-console.log(example);//example,data
+//console.log(example);//example,data
 
+let inicio = document.getElementById('inicio')
+let characters = document.getElementById('characters')
+let btnpersonajes = document.getElementById('personajes')
+let content = document.getElementById('content')
+let logo = document.getElementById('logo')
+let book = document.getElementById('libros')
+let containerBook = document.querySelector('template-libros')
+window.addEventListener('load', init)
+function init() {
+    inicio.style.visibility = 'visible'
+    characters.style.visibility = 'hidden'
+    btnpersonajes.addEventListener('click', function () {
+        characters.style.visibility = 'visible'
+        content.style.visibility = 'hidden'
+    }),
+        logo.addEventListener('click', function () {
+            content.style.visibility = 'visible'
+            characters.style.visibility = 'hidden'
+        }),
+        book.addEventListener('click', function () {
+            containerBook.style.visibility = 'visible'
+            characters.style.visibility = 'hidden'
+            content.style.visibility = 'hidden'
+        })
+}
 
 const seccion=document.getElementById('container-libros');
 const tempArticle=document.getElementById('template-libros').content;//accede a los elementos osea a su contenido
@@ -35,64 +60,87 @@ arrayPociones.forEach(el =>{
 ul.appendChild(fragme);
 
 
+let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
+//
+function agregarElementos() {
+    personajes.forEach(function (data) {
+        let divG = document.createElement('div')
+        let divL = document.createElement('ul')
+        let img = document.createElement('img')
+        let name = document.createElement('p')
+        let species = document.createElement('li')
+        let gender = document.createElement('li')
+        let birth = document.createElement('li')
+        let house = document.createElement('li')
+        let book = document.createElement('li')
+        let ancestry = document.createElement('li')
+        characters.appendChild(divG)
+        characters.appendChild(divL)
 
-
-
-
-
-let inicio=document.getElementById('inicio')
-let characters=document.getElementById('characters')
-let  btnpersonajes=document.getElementById('personajes')
-let content=document.getElementById('content')
-let logo=document.getElementById('logo')
-window.addEventListener('load', init) 
-function init(){
-inicio.style.visibility='visible'
-characters.style.visibility='hidden'
-btnpersonajes.addEventListener('click',function(){
-    characters.style.visibility='visible'
-    content.style.visibility='hidden'
-}),
-logo.addEventListener('click',function(){
-    content.style.visibility='visible'
-    characters.style.visibility='hidden'
+        if (data.img) {
+            img.setAttribute('src', data.img)
+            divG.appendChild(img)
+            name.innerText = data.name
+            birth.innerText = "Fecha_Nac: " + data.birth
+            species.innerText = "Especie: " + data.species
+            gender.innerText = "Genero: " + data.gender
+            house.innerText = "Casa: " + data.house
+            book.innerText = "Libros: " + data.books_featured_in
+            ancestry.innerText = "Magico: " + data.ancestry
+            divG.appendChild(name)
+            divL.appendChild(species)
+            divL.appendChild(gender)
+            divL.appendChild(birth)
+            divL.appendChild(house)
+            divL.appendChild(book)
+    }
 })
 }
+agregarElementos();
 
-let personajes=data.characters
-
+/*
+let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
+//
 function agregarElementos() {
-    personajes.forEach(function (data, index) {
-        let linew = document.createElement("li");
+    personajes.forEach(function (data) {
+        let divG = document.createElement('div')
+        let divL = document.createElement('ul')
         let img = document.createElement('img')
-        let contenido = document.createTextNode(data.name + ' ' + data.species + " " + data.gender + " " + data.house + " " + data.birth + " " + data.books_featured_in + ' ' + data.associated_groups);
-        characters.appendChild(linew);
-        img.setAttribute('src',data.img)
-        linew.appendChild(img)
-        linew.appendChild(contenido);
+        let name=document.createElement('p')
+        let species=document.createElement('li')
+        let gender=document.createElement('li')
+        let birth=document.createElement('li')
+        let house=document.createElement('li')
+        let group=document.createElement('li')
+        let book=document.createElement('li')
+        let ancestry=document.createElement('li')
+        characters.appendChild(divG)
+        characters.appendChild(divL)
+      
+        if (data.img ) {
+            img.setAttribute('src', data.img)
+            divG.appendChild(img)
+        } 
+        else if(data.associated_groups) {
+            group.innerText = "Grupo:"+data.associated_groups
+            divL.appendChild(group)
+            
         
+        }
+        name.innerText = data.name
+        birth.innerText = "Fecha_Nac: " + data.birth
+        species.innerText = "Especie: "+data.species
+        gender.innerText = "Genero: "+data.gender
+        house.innerText = "Casa: "+ data.house
+        book.innerText = "Libros: " + data.books_featured_in
+        ancestry.innerText = "Magico: "+data.ancestry
+        divG.appendChild(name)
+        divL.appendChild(species)
+        divL.appendChild(gender)
+        divL.appendChild(birth)
+        divL.appendChild(house)
+        divL.appendChild(book)
     })
 }
-
 agregarElementos();
-/*for (let i = 0; i <= personajes.length; i++) {
-    let name = personajes[i].name
-    let species = personajes[i].species
-    let imgs=personajes[i].img
-    document.getElementById("name").innerHTML = name
-     console.log(imgs);
-    console.log(name);
-    console.log(species);
-    
-}*/
- /*
-
-    let nameP = personajes.map(function (bar) {
-        return bar.name 
-    })
-    document.getElementById("name").innerHTML = nameP   */
-
-
-//document.querySelector('#characters').innerHTML = JSON.stringify(personajes) 
-
-
+*/
