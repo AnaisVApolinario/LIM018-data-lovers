@@ -31,7 +31,8 @@ export default {
       "patronus": null,
       "house": "Ravenclaw",
       "associated_groups": [],
-      "books_featured_in": [4]
+      "books_featured_in": [4],
+      "img": "./img/personajes/stewart.jpg"
     },
     {
       "id": 3,
@@ -2505,7 +2506,8 @@ export default {
       "patronus": null,
       "house": null,
       "associated_groups": ["Hogwarts School of Witchcraft and Wizardry", "Inquisitorial Squad (formerly)", "Mrs Norris"],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img": "./img/personajes/Argus.png"
     },
     {
       "id": 151,
@@ -4477,7 +4479,8 @@ export default {
       "patronus": "None",
       "house": "Malfoy family",
       "associated_groups": [],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Draco.png"
     },
     {
       "id": 268,
@@ -5490,7 +5493,8 @@ export default {
         "Department of Magical Law Enforcement",
         "S.P.E.W."
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Harry.png"
     },
     {
       "id": 327,
@@ -6454,7 +6458,8 @@ export default {
         "Lord Voldemort (formerly)",
         "Death Eaters (defected)"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Severus.png"
     },
     {
       "id": 383,
@@ -7409,7 +7414,8 @@ export default {
         "Weasleys' Wizard Wheezes",
         "Chudley Cannons"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Ron.png"
     },
     {
       "id": 477,
@@ -8512,7 +8518,8 @@ export default {
       "patronus": null,
       "house": null,
       "associated_groups": ["Crouch family"],
-      "books_featured_in": [4]
+      "books_featured_in": [4],
+      "img":"./img/personajes/Bartemius.png"
     },
     {
       "id": 543,
@@ -9210,7 +9217,8 @@ export default {
         "Department for the Regulation and Control of Magical Creatures",
         "Department of Magical Law Enforcement"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Hermione.png"
     },
     {
       "id": 588,
@@ -9775,7 +9783,8 @@ export default {
       "patronus": "None",
       "house": "House of Black",
       "associated_groups": [],
-      "books_featured_in": [4, 5, 6, 7]
+      "books_featured_in": [4, 5, 6, 7],
+      "img":"./img/personajes/Bellatrix.png"
     },
     {
       "id": 623,
