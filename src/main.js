@@ -10,15 +10,15 @@ const fragment=document.createDocumentFragment();//guarda codigo en una memoria 
 const arrayLibros=data.books;
 
 arrayLibros.forEach(item =>{
-tempArticle.querySelector('img').setAttribute('src',item.img);
-tempArticle.querySelector('img').setAttribute('alt',item.title); 
-tempArticle.querySelector('#titulo-libro').textContent=item.title;
-tempArticle.querySelector('#parrafo').innerHTML=`<b>LANZAMIENTO:</b> ${item.releaseDay}`;
-tempArticle.querySelector('#parrafo1').innerHTML=`<b>AUTOR:</b> ${item.author} `;
-tempArticle.querySelector('#parrafo2').innerHTML=`<b>DESCRIPCION:</b> ${item.description}`;
-  
-const clone=tempArticle.cloneNode(true);
-fragment.appendChild(clone);
+  tempArticle.querySelector('img').setAttribute('src',item.img);
+  tempArticle.querySelector('img').setAttribute('alt',item.title); 
+  tempArticle.querySelector('#titulo-libro').textContent=item.title;
+  tempArticle.querySelector('#parrafo').innerHTML=`<b>LANZAMIENTO:</b> ${item.releaseDay}`;
+  tempArticle.querySelector('#parrafo1').innerHTML=`<b>AUTOR:</b> ${item.author} `;
+  tempArticle.querySelector('#parrafo2').innerHTML=`<b>DESCRIPCION:</b> ${item.description}`;
+    
+  const clone=tempArticle.cloneNode(true);
+  fragment.appendChild(clone);
 });
 seccion.appendChild(fragment);
 
@@ -71,7 +71,7 @@ btn_libro.addEventListener('click',function(){
   characters.style.display='none' ;    
   contenido.style.display='none';
   lista_pociones.style.display='none';
-})};
+})}
 po.addEventListener('click',function(){
   lista_pociones.style.display='block';
   lib.style.display='none';
