@@ -47,7 +47,7 @@ let lib=document.querySelector('.container-libros');
 let btn_libro=document.getElementById('libros');
 let lista_pociones =document.querySelector('.container-pociones');
 let po=document.getElementById('pociones');
-let mostrarPersonajes=document.getElementById('mostrarPersonajes')
+//let mostrarPersonajes=document.getElementById('mostrarPersonajes')
 
 window.addEventListener('load', init) 
 function init(){
