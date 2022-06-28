@@ -61,6 +61,7 @@ body {
   border: rgba(133, 158, 87, 0.788) solid 10px;
   padding: 3px;
   text-align: center;
+  height: 100%;
 }
 
 /*.pocion-name-descrip{

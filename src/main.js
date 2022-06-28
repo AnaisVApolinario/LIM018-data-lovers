@@ -83,6 +83,7 @@ log.addEventListener('click',(ev)=>{
   }
 });
 
+//PERSONAJES
 let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 //
 function agregarElementos() {
