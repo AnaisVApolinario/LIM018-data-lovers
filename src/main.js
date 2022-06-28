@@ -47,6 +47,7 @@ let lib=document.querySelector('.container-libros');
 let btn_libro=document.getElementById('libros');
 let lista_pociones =document.querySelector('.container-pociones');
 let po=document.getElementById('pociones');
+let mostrarPersonajes=document.getElementById('mostrarPersonajes')
 
 window.addEventListener('load', init) 
 function init(){
@@ -83,21 +84,26 @@ let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 //
 function agregarElementos() {
     personajes.forEach(function (data) {
+        let divM=document.createElement('div')
+            divM.className +="inner"
         let divG = document.createElement('div')
-        let divL = document.createElement('ul')
+            divG.className += " front"
+        let divL = document.createElement('div')
+            divL.className +=  "back"
         let img = document.createElement('img')
         let name = document.createElement('p')
-        let species = document.createElement('li')
-        let gender = document.createElement('li')
-        let birth = document.createElement('li')
-        let house = document.createElement('li')
-        let book = document.createElement('li')
-        let ancestry = document.createElement('li')
-        characters.appendChild(divG)
-        characters.appendChild(divL)
+        let species = document.createElement('p')
+        let gender = document.createElement('p')
+        let birth = document.createElement('p')
+        let house = document.createElement('p')
+        let book = document.createElement('p')
+        let ancestry = document.createElement('p')
+        characters.appendChild(divM)
+        divM.appendChild(divG)
+        divM.appendChild(divL)
 
-        if (data.img) {
-            img.setAttribute('src', data.img)
+        for (let i=0; i<data.img.length;i++){
+          img.setAttribute('src', data.img)
             divG.appendChild(img)
             name.innerText = data.name
             birth.innerText = "Fecha_Nac: " + data.birth
@@ -112,9 +118,12 @@ function agregarElementos() {
             divL.appendChild(birth)
             divL.appendChild(house)
             divL.appendChild(book)
+        }
+      })
     }
-})
-}
+    
 agregarElementos();
 
-
+characters.addEventListener('click',()=>{
+  characters.classList.toggle('active')
+})

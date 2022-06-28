@@ -1,99 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="inicio">
-      <div id="nav">
-        <img src="./img/logo.png" alt="" id="logo">
-        <div id="list">
-          <button id="personajes">PERSONAJES</button>
-          <button id="hechizos">HECHIZOS</button>
-          <button id="libros">LIBROS</button>
-          <button id="pociones">POCIONES</button>
-          <button id="colegios">COLEGIOS</button>
-          <button id="datos">DATOS CURIOSOS</button>
-  
-        </div>
-      </div>
-      <div id="content">
-        <p>Harry Potter es una serie de novelas fantásticas escrita por la autora
-          británica J. K. Rowling, en la que se describen las aventuras del joven
-          aprendiz de magia y hechicería Harry Potter y sus amigos durante los años
-          que pasan en el Colegio Hogwarts de Magia y Hechicería. El argumento se
-          centra en la lucha entre Harry Potter y el malvado mago lord Voldemort,
-          quien asesinó a los padres de Harry en su afán de conquistar el mundo mágico.
-  
-          El éxito de las novelas ha hecho de la marca una de las más exitosas del mundo.
-          En 1999, la productora de cine Warner Bros. Adquirió los derechos para
-          adaptar los siete libros a una serie de películas. La última de ellas,
-          Harry Potter y las reliquias de la Muerte: parte 2, se estrenó el 15 de julio
-          de 2011 y con ocho películas realizadas la serie se convirtió en una de las
-          franquicias más exitosas del cine en concepto de recaudaciones en taquilla.</p>
-      </div>
-    </div>
-    <div id="characters">
-      
-    </div>
-    </div>
-  
-  
-  
 
-      
-      <section class="container-libros">
-        <template id='template-libros'>
-          <article class="arti-libro">
-            <img id="img-libros">
-            <div class="container-text">
-            <h4 id="titulo-libro"></h4>
-            <p id="parrafo"></p> 
-            <p id="parrafo1"></p>
-            <p id="parrafo2"></p>
-            </div>
-          </article>
-        </template>
-      </section>
-     
-      <section class="container-pociones">
-        <template id="template-pociones">
-          <article class="arti-pociones"> 
-            <div id="div-pociones">
-              <p id="p-pociones" class="pocion-name-descrip"></p>
-              <p id="p-descripcion" class="pocion-name-descrip"></p>
-            </div>
-          </article>
-        </template>
-      </section>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="inicio">
+    <div id="nav">
+      <img src="./img/logo.png" alt="" id="logo">
+      <div id="list">
+        <button id="personajes">PERSONAJES</button>
+        <button id="hechizos">HECHIZOS</button>
+        <button id="libros">LIBROS</button>
+        <button id="pociones">POCIONES</button>
+        <button id="colegios">COLEGIOS</button>
+        <button id="datos">DATOS CURIOSOS</button>
+
+      </div>
     </div>
-    <div id="root">
+    <div id="content">
+      <p>Harry Potter es una serie de novelas fantásticas escrita por la autora
+        británica J. K. Rowling, en la que se describen las aventuras del joven
+        aprendiz de magia y hechicería Harry Potter y sus amigos durante los años
+        que pasan en el Colegio Hogwarts de Magia y Hechicería. El argumento se
+        centra en la lucha entre Harry Potter y el malvado mago lord Voldemort,
+        quien asesinó a los padres de Harry en su afán de conquistar el mundo mágico.
+
+        El éxito de las novelas ha hecho de la marca una de las más exitosas del mundo.
+        En 1999, la productora de cine Warner Bros. Adquirió los derechos para
+        adaptar los siete libros a una serie de películas. La última de ellas,
+        Harry Potter y las reliquias de la Muerte: parte 2, se estrenó el 15 de julio
+        de 2011 y con ocho películas realizadas la serie se convirtió en una de las
+        franquicias más exitosas del cine en concepto de recaudaciones en taquilla.</p>
+    </div>
+  </div>
+  <div id="characters" class="characters" >
+   
+  </div>
 
   </div>
-  <div id="books1">
-    <section id="container-libros">
-    </section>
+
+
+
+
+
+  <section class="container-libros">
     <template id='template-libros'>
-      <article>
-        <img>
-        <h3 id="titulo"></h3>
-        <p id="parrafo"></p>
-        <!--${item.title}-->
-        <p id="parrafo1"></p>
-        <p id="parrafo2"></p>
+      <article class="arti-libro">
+        <img id="img-libros">
+        <div class="container-text">
+          <h4 id="titulo-libro"></h4>
+          <p id="parrafo"></p>
+          <p id="parrafo1"></p>
+          <p id="parrafo2"></p>
+        </div>
       </article>
     </template>
-    <ul id="ul"></ul>
+  </section>
+
+  <section class="container-pociones">
     <template id="template-pociones">
-      <a href="#">
-        <li id="li">
-        </li>
-      </a>
+      <article class="arti-pociones">
+        <div id="div-pociones">
+          <p id="p-pociones" class="pocion-name-descrip"></p>
+          <p id="p-descripcion" class="pocion-name-descrip"></p>
+        </div>
+      </article>
     </template>
-  </div>
+  </section>
+
   <div id="root">
 
   </div>
