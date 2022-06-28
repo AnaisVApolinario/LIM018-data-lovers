@@ -9,41 +9,41 @@
 </head>
 
 <body>
-  <div id="inicio">
-    <div id="nav">
-      <img src="./img/logo.png" alt="" id="logo">
-      <div id="list">
-        <button id="personajes">PERSONAJES</button>
-        <button id="hechizos">HECHIZOS</button>
-        <button id="libros">LIBROS</button>
-        <button id="pociones">POCIONES</button>
-        <button id="colegios">COLEGIOS</button>
-        <button id="datos">DATOS CURIOSOS</button>
-
-      </div>
+  <header id="header" class="header">
+    <div class="logo-header">
+      <img src="./img/logo.png" alt="" class="logo">
     </div>
-    <div id="content">
-      <p>Harry Potter es una serie de novelas fantásticas escrita por la autora
-        británica J. K. Rowling, en la que se describen las aventuras del joven
-        aprendiz de magia y hechicería Harry Potter y sus amigos durante los años
-        que pasan en el Colegio Hogwarts de Magia y Hechicería. El argumento se
-        centra en la lucha entre Harry Potter y el malvado mago lord Voldemort,
-        quien asesinó a los padres de Harry en su afán de conquistar el mundo mágico.
+    <nav class="nav-menu">
+      <ul class="ul">
+        <li id="personajes" class="per"><a href="#characters">PERSONAJES</a></li>
+        <li id="hechizos" class="he"><a href="#">HECHIZOS</a></li>
+        <li id="libros" class="li"><a href="#c_libro">LIBROS</a></li>
+        <li id="pociones" class="po"><a href="#c_pocion">POCIONES</a></li>
+        <li id="colegios" class="co"><a href="#">COLEGIOS</a></li>
+        <li id="datos" class="da"><a href="#">DATOS CURIOSOS</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="content" class="inicio">
+    <p>Harry Potter es una serie de novelas fantásticas escrita por la autora
+      británica J. K. Rowling, en la que se describen las aventuras del joven
+      aprendiz de magia y hechicería Harry Potter y sus amigos durante los años
+      que pasan en el Colegio Hogwarts de Magia y Hechicería. El argumento se
+      centra en la lucha entre Harry Potter y el malvado mago lord Voldemort,
+      quien asesinó a los padres de Harry en su afán de conquistar el mundo mágico.
 
-        El éxito de las novelas ha hecho de la marca una de las más exitosas del mundo.
-        En 1999, la productora de cine Warner Bros. Adquirió los derechos para
-        adaptar los siete libros a una serie de películas. La última de ellas,
-        Harry Potter y las reliquias de la Muerte: parte 2, se estrenó el 15 de julio
-        de 2011 y con ocho películas realizadas la serie se convirtió en una de las
-        franquicias más exitosas del cine en concepto de recaudaciones en taquilla.</p>
-    </div>
-  </div>
-  <div id="characters" class="characters" >
-   
+      El éxito de las novelas ha hecho de la marca una de las más exitosas del mundo.
+      En 1999, la productora de cine Warner Bros. Adquirió los derechos para
+      adaptar los siete libros a una serie de películas. La última de ellas,
+      Harry Potter y las reliquias de la Muerte: parte 2, se estrenó el 15 de julio
+      de 2011 y con ocho películas realizadas la serie se convirtió en una de las
+      franquicias más exitosas del cine en concepto de recaudaciones en taquilla.</p>
   </div>
 
-  <section class="container-libros">
-    <template id="template-libros">
+  <div id="characters" class="characters">
+  </div>
+  <section id="c_libro" class=" c_libro">
+    <template id='template-libros'>
       <article class="arti-libro">
         <img id="img-libros">
         <div class="container-text">
@@ -56,11 +56,11 @@
     </template>
   </section>
 
-  <section class="container-pociones">
+  <section id="c_pocion" class="c_pocion">
     <template id="template-pociones">
       <article class="arti-pociones">
         <div id="div-pociones">
-          <p id="p-pociones" class="pocion-name-descrip"></p>
+          <h4 id="p-pociones" class="pocion-name-descrip"></h4>
           <p id="p-descripcion" class="pocion-name-descrip"></p>
         </div>
       </article>
