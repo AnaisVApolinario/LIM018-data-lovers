@@ -9,7 +9,7 @@ export const anotherExample = () => {
   return 'OMG';
 };
 
-const pociones_ordenadas=data.potions.sort((a,b)=>{
-  return a.name - b.name  
+export const pociones_ordenadas=data.potions.sort((a,b)=>{
+  console.log("a")
+  return (a.name > b.name)?-1:1;  
 })
-console.log(pociones_ordenadas);

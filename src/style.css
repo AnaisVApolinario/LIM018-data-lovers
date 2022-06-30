@@ -29,6 +29,7 @@ body {
 }
 
 .c_libro {
+  display:none;
   flex-direction: column;
 }
 
@@ -42,6 +43,7 @@ body {
 
 /*POCIONES*/
 .c_pocion {
+  display:none;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -83,11 +85,12 @@ body {
   display:none;
 }
 .container-order{
+  display:none;
   position:fixed;/*posicion totalmente fija a la pantalla*/
   bottom:15px;/*20px*/
   right:10px;/*20px*/
 }
-.AZ a,.fa-solid.fa-plus{ 
+.AZ button,.fa-solid.fa-plus{ 
   display:block;
   text-decoration:none;
   background-color: #00FFC6; /*color hexagecimal*/
@@ -101,16 +104,16 @@ body {
   box-shadow:0px 1px 10px rgba(0,0,0,0.4);/*darle sombra*//*rgba le da color transparente*/
   transition: all 500ms ease;/*a todo el elemento y efecto ease*/
 }
-.AZ a:hover{
+.AZ button:hover{
   background: #fff;
   color:#00FFC6;
 }
-.AZ a{
+.AZ button{
   margin-bottom:-15px;
   opacity:0;/*ocultar*/
   visibility:hidden;
 }
-#btn-plus:checked~ .AZ a{
+#btn-plus:checked~ .AZ button{
   margin-bottom: 10px;
   opacity: 1;
   visibility: visible;
@@ -186,7 +189,7 @@ body {
 }
 
 .characters  {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   width: 100%;
   padding: 40px;
