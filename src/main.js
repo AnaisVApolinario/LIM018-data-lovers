@@ -43,11 +43,13 @@ const contenedor_li=document.querySelector('.ul')
 const characters=document.getElementById('characters');
 const lib=document.getElementById('c_libro');
 const poci=document.getElementById('c_pocion');
+const filtrarUnidad=document.querySelector('.container-order');
 window.addEventListener("load",init)
 function init(){
   characters.style.display='none';
   lib.style.display='none';
   poci.style.display='none';
+  filtrarUnidad.style.display='none';
 }
 function ocultarInicio(){
     inicio.style.display='none';
@@ -59,12 +61,14 @@ contenedor_li.addEventListener('click',(e)=>{
       characters.style.display='flex';
       lib.style.display='none';
       poci.style.display='none';
+      filtrarUnidad.style.display='none';
     }
     else if(e.target.matches('a[href="#c_libro"]')){
       ocultarInicio();/*inicio.classList.add('ocultar');*/
       characters.style.display='none';
       lib.style.display='flex';
       poci.style.display='none';
+      filtrarUnidad.style.display='none';
       
     }
     else if(e.target.matches('a[href="#c_pocion"]')){
@@ -72,6 +76,7 @@ contenedor_li.addEventListener('click',(e)=>{
       characters.style.display='none';
       lib.style.display='none';
       poci.style.display='flex';
+      filtrarUnidad.style.display="block";
     }
   }
   console.log("Aun no estoy enlazado")
