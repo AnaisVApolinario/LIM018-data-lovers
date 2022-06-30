@@ -37,6 +37,7 @@ arrayPociones.forEach(el => {
 });
 contenedor.appendChild(fragme);
 //MENU DE NAVEGACION
+<<<<<<< HEAD
 const log = document.querySelector('.logo');
 const inicio = document.querySelector('.inicio');
 const contenedor_li = document.querySelector('.ul')
@@ -48,6 +49,21 @@ function init() {
   characters.style.display = 'none';
   lib.style.display = 'none';
   poci.style.display = 'none';
+=======
+const log=document.querySelector('.logo');
+const inicio=document.querySelector('.inicio');
+const contenedor_li=document.querySelector('.ul')
+const characters=document.getElementById('characters');
+const lib=document.getElementById('c_libro');
+const poci=document.getElementById('c_pocion');
+const filtrarUnidad=document.querySelector('.container-order');
+window.addEventListener("load",init)
+function init(){
+  characters.style.display='none';
+  lib.style.display='none';
+  poci.style.display='none';
+  filtrarUnidad.style.display='none';
+>>>>>>> 0225e4584ad1a8e51e9dc0d70393d8b77b985f0c
 }
 function ocultarInicio() {
   inicio.style.display = 'none';
@@ -56,22 +72,44 @@ contenedor_li.addEventListener('click', (e) => {
   if (e.target) {
     if (e.target.matches('a[href="#characters"]')) {
       ocultarInicio();
+<<<<<<< HEAD
       characters.style.display = 'flex';
       lib.style.display = 'none';
       poci.style.display = 'none';
+=======
+      characters.style.display='flex';
+      lib.style.display='none';
+      poci.style.display='none';
+      filtrarUnidad.style.display='none';
+>>>>>>> 0225e4584ad1a8e51e9dc0d70393d8b77b985f0c
     }
     else if (e.target.matches('a[href="#c_libro"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
+<<<<<<< HEAD
       characters.style.display = 'none';
       lib.style.display = 'flex';
       poci.style.display = 'none';
 
+=======
+      characters.style.display='none';
+      lib.style.display='flex';
+      poci.style.display='none';
+      filtrarUnidad.style.display='none';
+      
+>>>>>>> 0225e4584ad1a8e51e9dc0d70393d8b77b985f0c
     }
     else if (e.target.matches('a[href="#c_pocion"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
+<<<<<<< HEAD
       characters.style.display = 'none';
       lib.style.display = 'none';
       poci.style.display = 'flex';
+=======
+      characters.style.display='none';
+      lib.style.display='none';
+      poci.style.display='flex';
+      filtrarUnidad.style.display="block";
+>>>>>>> 0225e4584ad1a8e51e9dc0d70393d8b77b985f0c
     }
   }
   console.log("Aun no estoy enlazado")
