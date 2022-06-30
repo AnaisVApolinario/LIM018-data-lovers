@@ -137,56 +137,81 @@ body {
   border-radius: 15px;
 }
 
-.characters  {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
- /* width: 100%;
-  position: relative;
-  margin-left: 50px;
-  /*margin-top: -50px;*/
-  /*respeta el nav si lo saco*/
-  color: white;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  vertical-align: middle;
+.characters .filter{
+  margin-top: -50px;
+  position: absolute;
 }
 
-.characters img {
-  position: relative;
+.characters  {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
+  padding: 40px;
+}
+
+.card{
+  width: 190px;
+  height: 250px;
+  background-color: transparent;
+  perspective: 1000px;
+  margin: 10px;
+  border-radius: 30px;
+}
+.inner{
+  width: 190px;
+  height: 250px;
+  position: relative;
   height: 100%;
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-
-.front img{
-  width: 150px;
-  height: 200px;
+  box-shadow: 0 8px 8px 0 rgba(175, 187, 65, 0.2);
   border-radius: 30px;
 }
 
-
-#characters:active{
+.card:hover .inner {
   transform: rotateY(180deg);
 }
 
+.inner img{
+  width: 190px;
+  height: 250px;
+  border-radius: 30px;
+  box-shadow: 0 8px 8px 0 rgba(175, 187, 65, 0.2);
+}
+.front, .back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front{
+  width: 190px;
+  height: 250px;
+  border-radius: 30px;
+}
 
 .front p {
- /* margin-top: -40px;*/
+ margin-top: -40px;
   position: absolute;
   border-radius: 5px;
   background: rgba(217, 217, 217, 1);
   color: black;
-  width: 150px;
+  width: 180px;
+  text-align: center;
+  margin-left: 10px;
 }
 
-
+.back {
+  width: 190px;
+  height: 250px;
+  border-radius: 30px;
+  background-color: #b9aa29;
+  color: white;
+  transform: rotateY(180deg);
+}
 
 
 

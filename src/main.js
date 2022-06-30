@@ -4,7 +4,7 @@ import data from './data/harrypotter/data.js'; //data es una variable de tipo ob
 
 console.log(example);//example,data
 //LIBROS
-const seccion=document.getElementById('c_libro');
+const seccion = document.getElementById('c_libro');
 const tempArticle = document.getElementById('template-libros').content;//accede a los elementos osea a su contenido
 const fragment = document.createDocumentFragment();//guarda codigo en una memoria volatil y no lo pinta en el HTML hasta que se lo digamos
 const arrayLibros = data.books;
@@ -37,97 +37,110 @@ arrayPociones.forEach(el => {
 });
 contenedor.appendChild(fragme);
 //MENU DE NAVEGACION
-const log=document.querySelector('.logo');
-const inicio=document.querySelector('.inicio');
-const contenedor_li=document.querySelector('.ul')
-const characters=document.getElementById('characters');
-const lib=document.getElementById('c_libro');
-const poci=document.getElementById('c_pocion');
-window.addEventListener("load",init)
-function init(){
-  characters.style.display='none';
-  lib.style.display='none';
-  poci.style.display='none';
+const log = document.querySelector('.logo');
+const inicio = document.querySelector('.inicio');
+const contenedor_li = document.querySelector('.ul')
+let characters = document.getElementById('characters');
+const lib = document.getElementById('c_libro');
+const poci = document.getElementById('c_pocion');
+window.addEventListener("load", init)
+function init() {
+  characters.style.display = 'none';
+  lib.style.display = 'none';
+  poci.style.display = 'none';
 }
-function ocultarInicio(){
-    inicio.style.display='none';
+function ocultarInicio() {
+  inicio.style.display = 'none';
 }
-contenedor_li.addEventListener('click',(e)=>{
-  if(e.target){
-    if(e.target.matches('a[href="#characters"]')){
+contenedor_li.addEventListener('click', (e) => {
+  if (e.target) {
+    if (e.target.matches('a[href="#characters"]')) {
       ocultarInicio();
-      characters.style.display='flex';
-      lib.style.display='none';
-      poci.style.display='none';
+      characters.style.display = 'flex';
+      lib.style.display = 'none';
+      poci.style.display = 'none';
     }
-    else if(e.target.matches('a[href="#c_libro"]')){
+    else if (e.target.matches('a[href="#c_libro"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
-      characters.style.display='none';
-      lib.style.display='flex';
-      poci.style.display='none';
-      
+      characters.style.display = 'none';
+      lib.style.display = 'flex';
+      poci.style.display = 'none';
+
     }
-    else if(e.target.matches('a[href="#c_pocion"]')){
+    else if (e.target.matches('a[href="#c_pocion"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
-      characters.style.display='none';
-      lib.style.display='none';
-      poci.style.display='flex';
+      characters.style.display = 'none';
+      lib.style.display = 'none';
+      poci.style.display = 'flex';
     }
   }
   console.log("Aun no estoy enlazado")
 });
-log.addEventListener('click',(ev)=>{
-  if(ev.target){
-    inicio.style.display='block'; 
+log.addEventListener('click', (ev) => {
+  if (ev.target) {
+    inicio.style.display = 'block';
     init();
   }
 });
 
 //PERSONAJES
+let filter = document.createElement('div')
+filter.className = "filter"
+characters.appendChild(filter)
+let botonSelec = document.createElement('select')
+filter.appendChild(botonSelec)
+let option = document.createElement('option')
+option.text = "especie"
+
+botonSelec.appendChild(option)
+
 let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 //
 function agregarElementos() {
-    personajes.forEach(function (data) {
-        let divM=document.createElement('div')
-            divM.className +="inner"
-        let divG = document.createElement('div')
-            divG.className += " front"
-        let divL = document.createElement('div')
-            divL.className +=  "back"
-        let img = document.createElement('img')
-        let name = document.createElement('p')
-        let species = document.createElement('p')
-        let gender = document.createElement('p')
-        let birth = document.createElement('p')
-        let house = document.createElement('p')
-        let book = document.createElement('p')
-        let ancestry = document.createElement('p')
-        characters.appendChild(divM)
-        divM.appendChild(divG)
-        divM.appendChild(divL)
+  personajes.forEach(function (data) {
+    let card = document.createElement('div')
+    card.className += "card"
+    let inner = document.createElement('div')
+    inner.className += "inner"
+    let front = document.createElement('div')
+    front.className += " front"
+    let back = document.createElement('div')
+    back.className += "back"
+    let img = document.createElement('img')
+    let name = document.createElement('p')
+    let species = document.createElement('p')
+    let gender = document.createElement('p')
+    let birth = document.createElement('p')
+    let house = document.createElement('p')
+    let book = document.createElement('p')
+    let ancestry = document.createElement('p')
+    /*characters.appendChild(card)
+    card.appendChild(inner)
+    inner.appendChild(front)
+    inner.appendChild(back)*/
 
-        for (let i=0; i<data.img.length;i++){
-          img.setAttribute('src', data.img)
-            divG.appendChild(img)
-            name.innerText = data.name
-            birth.innerText = "Fecha_Nac: " + data.birth
-            species.innerText = "Especie: " + data.species
-            gender.innerText = "Genero: " + data.gender
-            house.innerText = "Casa: " + data.house
-            book.innerText = "Libros: " + data.books_featured_in
-            ancestry.innerText = "Magico: " + data.ancestry
-            divG.appendChild(name)
-            divL.appendChild(species)
-            divL.appendChild(gender)
-            divL.appendChild(birth)
-            divL.appendChild(house)
-            divL.appendChild(book)
-        }
-      })
+    for (let i = 0; i < data.img.length; i++) {
+      characters.appendChild(card)
+      card.appendChild(inner)
+      inner.appendChild(front)
+      inner.appendChild(back)
+      img.setAttribute('src', data.img)
+      front.appendChild(img)
+      name.innerText = data.name
+      birth.innerText = "Fecha_Nac: " + data.birth
+      species.innerText = "Especie: " + data.species
+      gender.innerText = "Genero: " + data.gender
+      house.innerText = "Casa: " + data.house
+      book.innerText = "Libros: " + data.books_featured_in
+      ancestry.innerText = "Magico: " + data.ancestry
+      front.appendChild(name)
+      back.appendChild(species)
+      back.appendChild(gender)
+      back.appendChild(birth)
+      back.appendChild(house)
+      back.appendChild(book)
     }
-    
-agregarElementos();
+  })
+}
 
-characters.addEventListener('click',()=>{
-  characters.classList.toggle('active')
-})
+agregarElementos();

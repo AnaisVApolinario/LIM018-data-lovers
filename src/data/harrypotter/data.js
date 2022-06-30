@@ -825,7 +825,8 @@ export default {
         "Marauders",
         "Order of the Phoenix"
       ],
-      "books_featured_in": [1, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Sirius.jpg"
     },
     {
       "id": 51,
@@ -1388,7 +1389,8 @@ export default {
       "patronus": null,
       "house": null,
       "associated_groups": ["Chang family"],
-      "books_featured_in": [5]
+      "books_featured_in": [5],
+      "img":"./img/personajes/ChoChang.jpg"
     },
     {
       "id": 85,
@@ -3401,7 +3403,8 @@ export default {
         "Albus Dumbledore",
         "Harry Potter"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Hagrid.jpg"
     },
     {
       "id": 206,
@@ -4152,7 +4155,8 @@ export default {
         "St Mungo's Hospital for Magical Maladies and Injuries",
         "Order of Merlin"
       ],
-      "books_featured_in": [2, 3, 4, 5, 6]
+      "books_featured_in": [2, 3, 4, 5, 6],
+      "img":"./img/personajes/Lockhart.jpg"
     },
     {
       "id": 251,
@@ -4323,7 +4327,8 @@ export default {
         "Order of the Phoenix",
         "Advance Guard"
       ],
-      "books_featured_in": [3, 4, 5, 6, 7]
+      "books_featured_in": [3, 4, 5, 6, 7],
+      "img":"./img/personajes/Remus.jpg"
     },
     {
       "id": 259,
@@ -4480,7 +4485,7 @@ export default {
       "house": "Malfoy family",
       "associated_groups": [],
       "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
-      "img":"./img/personajes/Draco.png"
+      "img":"./img/personajes/Draco.jpg"
     },
     {
       "id": 268,
@@ -4496,7 +4501,8 @@ export default {
       "patronus": "None",
       "house": "Malfoy family",
       "associated_groups": [],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Lucius.jpg"
     },
     {
       "id": 269,
@@ -4792,7 +4798,8 @@ export default {
         "British Ministry of Magic",
         "Auror Department"
       ],
-      "books_featured_in": [4, 5, 6, 7]
+      "books_featured_in": [4, 5, 6, 7],
+      "img":"./img/personajes/Alastor.jpg"
     },
     {
       "id": 286,
@@ -5494,7 +5501,7 @@ export default {
         "S.P.E.W."
       ],
       "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
-      "img":"./img/personajes/Harry.png"
+      "img":"./img/personajes/Harry.jpg"
     },
     {
       "id": 327,
@@ -6459,7 +6466,7 @@ export default {
         "Death Eaters (defected)"
       ],
       "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
-      "img":"./img/personajes/Severus.png"
+      "img":"./img/personajes/Severus.jpg"
     },
     {
       "id": 383,
@@ -7415,7 +7422,7 @@ export default {
         "Chudley Cannons"
       ],
       "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
-      "img":"./img/personajes/Ron.png"
+      "img":"./img/personajes/Ron.jpg"
     },
     {
       "id": 477,
@@ -7829,7 +7836,8 @@ export default {
       "patronus": null,
       "house": null,
       "associated_groups": [],
-      "books_featured_in": [4]
+      "books_featured_in": [4],
+      "img":"./img/personajes/Alastor.jpg"
     },
     {
       "id": 501,
@@ -8654,7 +8662,8 @@ export default {
       "patronus": null,
       "house": null,
       "associated_groups": ["Diggory family"],
-      "books_featured_in": [4]
+      "books_featured_in": [4],
+      "img":"./img/personajes/Cedric.jpg"
     },
     {
       "id": 551,
@@ -9218,7 +9227,7 @@ export default {
         "Department of Magical Law Enforcement"
       ],
       "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
-      "img":"./img/personajes/Hermione.png"
+      "img":"./img/personajes/Hermione.jpg"
     },
     {
       "id": 588,
@@ -10161,7 +10170,8 @@ export default {
         "Order of the Phoenix",
         "Dumbledore's Army"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Minerva.jpg"
     },
     {
       "id": 645,
@@ -11437,7 +11447,8 @@ export default {
         "Divination Workshop (possibly)",
         "Trelawney family"
       ],
-      "books_featured_in": [3, 4, 5, 6, 7]
+      "books_featured_in": [3, 4, 5, 6, 7],
+      "img":"./img/personajes/Sybil.jpg"
     },
     {
       "id": 722,
@@ -11783,7 +11794,8 @@ export default {
         "Holyhead Harpies",
         "Daily Prophet"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Ginny.jpg"
     },
     {
       "id": 744,
@@ -12025,7 +12037,7 @@ export default {
         "Dumbledore family"
       ],
       "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
-      "img":"./img/personajes/Albus.png"
+      "img":"./img/personajes/DUMBE.jpg"
     }
   ],
   funFacts: [
