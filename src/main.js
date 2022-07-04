@@ -89,15 +89,6 @@ log.addEventListener('click', (ev) => {
 });
 
 //PERSONAJES
-let filter = document.createElement('div')
-filter.className = "filter"
-characters.appendChild(filter)
-let botonSelec = document.createElement('select')
-filter.appendChild(botonSelec)
-let option = document.createElement('option')
-option.text = "especie"
-
-botonSelec.appendChild(option)
 
 let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 //
@@ -149,3 +140,4 @@ function agregarElementos() {
 }
 
 agregarElementos();
+
