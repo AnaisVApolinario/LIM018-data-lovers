@@ -8,8 +8,41 @@ export const anotherExample = () => {
   return 'OMG';
 };
 export const pociones_ordenadas = ()=> {
-  console.log(data.potions.sort((a,b)=>a.name>b.name?-1:1));
+  return data.potions.sort((a,b)=>a.name>b.name?-1:1);
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

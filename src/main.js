@@ -27,22 +27,24 @@ seccion.appendChild(fragment);
 const contenedor = document.getElementById('c_pocion');
 const tempPo = document.getElementById('template-pociones').content;
 const fragme = document.createDocumentFragment();
-const arrayPociones = data.potions;
+function generarPociones(arrayPociones){
+  arrayPociones.forEach(el => {
+    tempPo.querySelector('#p-pociones').textContent = el.name;
+    tempPo.querySelector('#p-descripcion').textContent = el.description;
+    const clon = tempPo.cloneNode(true);
+    fragme.appendChild(clon);
+  });
+  contenedor.appendChild(fragme);
+}
+generarPociones(data.potions);
 
-arrayPociones.forEach(el => {
-  tempPo.querySelector('#p-pociones').textContent = el.name;
-  tempPo.querySelector('#p-descripcion').textContent = el.description;
-  const clon = tempPo.cloneNode(true);
-  fragme.appendChild(clon);
-});
-contenedor.appendChild(fragme);
 //MENU DE NAVEGACION
 const log=document.querySelector('.logo');
 const inicio=document.querySelector('.inicio');
 const contenedor_li=document.querySelector('.ul')
 const characters=document.getElementById('characters');
 const lib=document.getElementById('c_libro');
-const poci=document.getElementById('c_pocion');
+let poci=document.getElementById('c_pocion');
 const filtrarUnidad=document.querySelector('.container-order');
 /*window.addEventListener("load",init)*/
 function init(){
@@ -96,7 +98,10 @@ za.addEventListener('click',()=>{
 const grupoAZ=document.querySelector('.AZ');
 grupoAZ.addEventListener('click',(e)=>{
   if(e.target.id==="za"){
-    pociones_ordenadas();
+  const artiPociones=document.querySelectorAll(".arti-pociones");
+  console.dir(artiPociones)
+    generarPociones(pociones_ordenadas());
+    //poci.textContent=pociones_ordenadas();
   }
   if(e.target.id==="az"){
     console.log("soyAZ")
