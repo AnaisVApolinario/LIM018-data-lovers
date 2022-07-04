@@ -1,8 +1,8 @@
-import { example } from './data.js';//./es busca a partir de la carpeta data.js
+import { pociones_ordenadas } from './data.js';//./es busca a partir de la carpeta data.js
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js'; //data es una variable de tipo objeto 
 
-console.log(example);//example,data
+//example,data
 //LIBROS
 const seccion = document.getElementById('c_libro');
 const tempArticle = document.getElementById('template-libros').content;//accede a los elementos osea a su contenido
@@ -44,7 +44,7 @@ const characters=document.getElementById('characters');
 const lib=document.getElementById('c_libro');
 const poci=document.getElementById('c_pocion');
 const filtrarUnidad=document.querySelector('.container-order');
-window.addEventListener("load",init)
+/*window.addEventListener("load",init)*/
 function init(){
   characters.style.display='none';
   lib.style.display='none';
@@ -79,7 +79,6 @@ contenedor_li.addEventListener('click', (e) => {
       filtrarUnidad.style.display="block";
     }
   }
-  console.log("Aun no estoy enlazado")
 });
 log.addEventListener('click', (ev) => {
   if (ev.target) {
@@ -87,13 +86,28 @@ log.addEventListener('click', (ev) => {
     init();
   }
 });
+//Botones de la AZ
+/*const za=document.getElementById('za');
+//const az=document.getElementById('az');
+za.addEventListener('click',()=>{
+  pociones_ordenadas();
+})*/
 
+const grupoAZ=document.querySelector('.AZ');
+grupoAZ.addEventListener('click',(e)=>{
+  if(e.target.id==="za"){
+    pociones_ordenadas();
+  }
+  if(e.target.id==="az"){
+    console.log("soyAZ")
+  }
+})
 //PERSONAJES
 
 let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 //
 function agregarElementos() {
-  personajes.forEach(function (data) {
+  personajes.forEach(function (personaje) {
     let card = document.createElement('div')
     card.className += "card"
     let inner = document.createElement('div')
@@ -114,21 +128,20 @@ function agregarElementos() {
     card.appendChild(inner)
     inner.appendChild(front)
     inner.appendChild(back)*/
-
-    for (let i = 0; i < data.img.length; i++) {
+    if( personaje.img){ 
       characters.appendChild(card)
       card.appendChild(inner)
       inner.appendChild(front)
       inner.appendChild(back)
-      img.setAttribute('src', data.img)
+      img.setAttribute('src', personaje.img)
       front.appendChild(img)
-      name.innerText = data.name
-      birth.innerText = "Fecha_Nac: " + data.birth
-      species.innerText = "Especie: " + data.species
-      gender.innerText = "Genero: " + data.gender
-      house.innerText = "Casa: " + data.house
-      book.innerText = "Libros: " + data.books_featured_in
-      ancestry.innerText = "Magico: " + data.ancestry
+      name.innerText = personaje.name
+      birth.innerText = "Fecha_Nac: " + personaje.birth
+      species.innerText = "Especie: " + personaje.species
+      gender.innerText = "Genero: " + personaje.gender
+      house.innerText = "Casa: " + personaje.house
+      book.innerText = "Libros: " + personaje.books_featured_in
+      ancestry.innerText = "Magico: " + personaje.ancestry
       front.appendChild(name)
       back.appendChild(species)
       back.appendChild(gender)
