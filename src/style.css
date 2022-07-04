@@ -93,41 +93,45 @@ body {
 .AZ button,.fa-solid.fa-plus{ 
   display:block;
   text-decoration:none;
-  background-color: #00FFC6; /*color hexagecimal*/
-  color:#fff;
-  width:45px;/*50*/
-  height:45px;
-  font-size:23px;
-  line-height:45px;/*centra con ayuda de el de abajo*/
+  width: 60px;
+  height: 60px;
+  font-size: 26px;
+  line-height: 60px; /*centra con ayuda del de abajo*/
   text-align: center;
-  border-radius:50%;
-  box-shadow:0px 1px 10px rgba(0,0,0,0.4);/*darle sombra*//*rgba le da color transparente*/
+  border-radius: 50%;
+  border-color: #4eeb00;
+  border-width: initial;
+  box-shadow:0px 1px 10px rgba(7, 241, 26, 0.4);/*darle sombra*//*rgba le da color transparente*/
   transition: all 500ms ease;/*a todo el elemento y efecto ease*/
 }
-.AZ button:hover{
-  background: #fff;
-  color:#00FFC6;
-}
 .AZ button{
+  background: #fff; /*color hexagecimal*/
+  color:#348b79;
   margin-bottom:-15px;
   opacity:0;/*ocultar*/
   visibility:hidden;
+}
+.fa-solid.fa-plus{
+  cursor:pointer;
+  background:#348b79;
+  color:#fff;
+}
+.AZ button:hover{
+  background: #c0e7b3;
+  color:#06493c;
 }
 #btn-plus:checked~ .AZ button{
   margin-bottom: 10px;
   opacity: 1;
   visibility: visible;
 }
-.fa-solid.fa-plus{
-  cursor:pointer;
-  background:#00FFC6;
-  font-size:23px;
-}
 #btn-plus:checked~ .btn-plus .fa-solid.fa-plus{
   transform: rotate(135deg);
   font-size:25px;
-  background:#9DDAC6;
+  background:#348b79;
+  color:#fff;
 }
+
 /*FIN DEL BTN-AZ*/
 /*MODIFICANDO*/
 .logo-header {

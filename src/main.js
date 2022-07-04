@@ -79,7 +79,6 @@ contenedor_li.addEventListener('click', (e) => {
       filtrarUnidad.style.display="block";
     }
   }
-  console.log("Aun no estoy enlazado")
 });
 log.addEventListener('click', (ev) => {
   if (ev.target) {
@@ -88,9 +87,20 @@ log.addEventListener('click', (ev) => {
   }
 });
 //Botones de la AZ
-const za=document.getElementById('za');
+/*const za=document.getElementById('za');
+//const az=document.getElementById('az');
 za.addEventListener('click',()=>{
-  pociones_ordenadas;
+  pociones_ordenadas();
+})*/
+
+const grupoAZ=document.querySelector('.AZ');
+grupoAZ.addEventListener('click',(e)=>{
+  if(e.target.id==="za"){
+    pociones_ordenadas();
+  }
+  if(e.target.id==="az"){
+    console.log("soyAZ")
+  }
 })
 //PERSONAJES
 let filter = document.createElement('div')
