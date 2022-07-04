@@ -5900,7 +5900,8 @@ export default {
         "British Ministry of Magic (only under his control)",
         "Borgin and Burkes"
       ],
-      "books_featured_in": [1, 2, 3, 4, 5, 6, 7]
+      "books_featured_in": [1, 2, 3, 4, 5, 6, 7],
+      "img":"./img/personajes/Lord.png"
     },
     {
       "id": 351,
@@ -7836,8 +7837,7 @@ export default {
       "patronus": null,
       "house": null,
       "associated_groups": [],
-      "books_featured_in": [4],
-      "img":"./img/personajes/Alastor.jpg"
+      "books_featured_in": [4]
     },
     {
       "id": 501,
