@@ -1,4 +1,4 @@
-import { pociones_ordenadas } from './data.js';//./es busca a partir de la carpeta data.js
+import { pociones_ordenadas} from './data.js';//./es busca a partir de la carpeta data.js
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js'; //data es una variable de tipo objeto 
 
@@ -89,26 +89,26 @@ log.addEventListener('click', (ev) => {
   }
 });
 //Botones de la AZ
-/*const za=document.getElementById('za');
-//const az=document.getElementById('az');
-za.addEventListener('click',()=>{
-  pociones_ordenadas();
-})*/
-
 const grupoAZ=document.querySelector('.AZ');
 grupoAZ.addEventListener('click',(e)=>{
-  if(e.target.id==="za"){
   const artiPociones=document.querySelectorAll(".arti-pociones");
-  console.dir(artiPociones)
-    generarPociones(pociones_ordenadas());
-    //poci.textContent=pociones_ordenadas();
+  if(e.target.id==="za"){
+   artiPociones.forEach(el=>{
+    el.remove();
+    //console.dir(artiPociones.parentNode)
+  })
+    generarPociones(pociones_ordenadas(1,-1));
   }
   if(e.target.id==="az"){
-    console.log("soyAZ")
+    artiPociones.forEach(el=>{
+      el.remove();
+    })
+    generarPociones(pociones_ordenadas(-1,1))
   }
 })
-//PERSONAJES
+//FILTRO DE BUSQUEDA
 
+//PERSONAJES
 let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 //
 function agregarElementos() {
