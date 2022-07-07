@@ -47,6 +47,7 @@ const lib=document.getElementById('c_libro');
 let poci=document.getElementById('c_pocion');
 const filtrarUnidad=document.querySelector('.container-order');
 const buscador=document.querySelector('.buscar')
+const colegio=document.getElementById('c_colegio');
 /*window.addEventListener("load",init)*/
 function init(){
   characters.style.display='none';
@@ -54,6 +55,7 @@ function init(){
   poci.style.display='none';
   filtrarUnidad.style.display='none';
   buscador.style.display='none';
+  colegio.style.display='none';
 }
 function ocultarInicio() {
   inicio.style.display = 'none';
@@ -67,6 +69,8 @@ contenedor_li.addEventListener('click', (e) => {
       poci.style.display='none';
       filtrarUnidad.style.display='none';
       buscador.style.display='none';
+      colegio.style.display='none';
+
     }
     else if (e.target.matches('a[href="#c_libro"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
@@ -75,6 +79,8 @@ contenedor_li.addEventListener('click', (e) => {
       poci.style.display='none';
       filtrarUnidad.style.display='none';
       buscador.style.display='none';
+      colegio.style.display='none';
+
     }
     else if (e.target.matches('a[href="#c_pocion"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
@@ -83,6 +89,17 @@ contenedor_li.addEventListener('click', (e) => {
       poci.style.display='flex';
       filtrarUnidad.style.display='block';
       buscador.style.display='flex';
+      colegio.style.display='none';
+
+    }
+    else if (e.target.matches('a[href="#c_colegio"]')) {
+      ocultarInicio();/*inicio.classList.add('ocultar');*/
+      characters.style.display='none';
+      lib.style.display='none';
+      poci.style.display='none';
+      filtrarUnidad.style.display='none';
+      buscador.style.display='none';
+      colegio.style.display='block';
     }
   }
 });
@@ -123,6 +140,7 @@ inputBuscar.addEventListener('keyup',(e)=>{
     })
   }
 })
+
 //PERSONAJES
 let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 //
