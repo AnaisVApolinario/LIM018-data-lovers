@@ -46,12 +46,14 @@ const characters=document.getElementById('characters');
 const lib=document.getElementById('c_libro');
 let poci=document.getElementById('c_pocion');
 const filtrarUnidad=document.querySelector('.container-order');
+const buscador=document.querySelector('.buscar')
 /*window.addEventListener("load",init)*/
 function init(){
   characters.style.display='none';
   lib.style.display='none';
   poci.style.display='none';
   filtrarUnidad.style.display='none';
+  buscador.style.display='none';
 }
 function ocultarInicio() {
   inicio.style.display = 'none';
@@ -64,6 +66,7 @@ contenedor_li.addEventListener('click', (e) => {
       lib.style.display='none';
       poci.style.display='none';
       filtrarUnidad.style.display='none';
+      buscador.style.display='none';
     }
     else if (e.target.matches('a[href="#c_libro"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
@@ -71,14 +74,15 @@ contenedor_li.addEventListener('click', (e) => {
       lib.style.display='flex';
       poci.style.display='none';
       filtrarUnidad.style.display='none';
-      
+      buscador.style.display='none';
     }
     else if (e.target.matches('a[href="#c_pocion"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
       characters.style.display='none';
       lib.style.display='none';
       poci.style.display='flex';
-      filtrarUnidad.style.display="block";
+      filtrarUnidad.style.display='block';
+      buscador.style.display='flex';
     }
   }
 });
@@ -95,7 +99,7 @@ grupoAZ.addEventListener('click',(e)=>{
   if(e.target.id==="za"){
    artiPociones.forEach(el=>{
     el.remove();
-    //console.dir(artiPociones.parentNode)
+
   })
     generarPociones(pociones_ordenadas(1,-1));
   }
@@ -107,7 +111,18 @@ grupoAZ.addEventListener('click',(e)=>{
   }
 })
 //FILTRO DE BUSQUEDA
-
+const inputBuscar=document.getElementById('busca');
+inputBuscar.addEventListener('keyup',(e)=>{
+  if(e.target.value){
+    if(e.key ==='Escape')e.target.value="";
+    const artiP=document.querySelectorAll(".arti-pociones");
+    artiP.forEach(el=>{
+      el.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+      ?el.classList.remove('filtro')
+      :el.classList.add('filtro')
+    })
+  }
+})
 //PERSONAJES
 let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 //

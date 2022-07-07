@@ -7,6 +7,34 @@ body {
   background-attachment: fixed;
   /*fijo*/
 }
+/*FILTRO DE BUSQUEDA*/
+.filtro{
+  display:none;
+}
+.buscar{
+  display:none;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.buscar input{
+  /*background-color:greenyellow ;
+  width:20%;
+  height:30px;*/
+  width: 30%;
+  padding:10px;
+  outline:none;
+  border: 5px solid  #448d56;
+  border-radius: 50px;
+  font-weight: 600;
+  background-color:#D6EFED;
+}
+
+.btn-buscar {
+  font-size: 29px;
+  padding: 9px 5px 0px 0px;
+  color:#007965;
+}
 
 #img-libros {
   width: 18%;

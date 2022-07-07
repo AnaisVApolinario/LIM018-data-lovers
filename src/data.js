@@ -1,7 +1,9 @@
 import data from './data/harrypotter/data.js';
 
 export const pociones_ordenadas = (num1,num2)=> {
-  return data.potions.sort((a,b)=>a.name<b.name?num1:num2);
+  const newPotions=[...data.potions];
+  const arrOrder=newPotions.sort((a,b)=>a.name<b.name?num1:num2);
+  return arrOrder;
 } 
 
 
@@ -9,35 +11,12 @@ export const pociones_ordenadas = (num1,num2)=> {
 
 
 
+/*
+export const pociones_ordenadas = (num1,num2)=> {
+  return data.potions.sort((a,b)=>a.name<b.name?num1:num2);
+} 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*export const sortPociones = (data,order)=> {
+export const sortPociones = (data,order)=> {
   let newPotions=[...data];
   let arrOrder=newPotions.sort((a,b)=>a.name<b.name?-order:order);
   return arrOrder
