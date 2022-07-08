@@ -22,6 +22,23 @@ arrayLibros.forEach(item => {
 });
 seccion.appendChild(fragment);
 
+//HECHIZOS
+const c_hechizo = document.getElementById('c_hechizos');
+const tempHechizos= document.getElementById('template-hechizos').content;//accede a los elementos osea a su contenido
+const frag= document.createDocumentFragment();//guarda codigo en una memoria volatil y no lo pinta en el HTML hasta que se lo digamos
+const arrayHechizos= data.spells;
+
+arrayHechizos.forEach(item => {
+  //tempHechizos.querySelector('img').setAttribute('src', item.img);
+  tempHechizos.getElementById('nombreH').textContent=item.name;
+  tempHechizos.getElementById('other_name').innerHTML =`<b>Otro Nombre:</b> ${item.other_name} `;
+  tempHechizos.getElementById('spell_type').innerHTML =`<b>Tipo:</b> ${item.spell_type} `;
+  tempHechizos.getElementById('description').innerHTML = `<b>DESCRIPCION:</b> ${item.description}`;
+  
+  const clone = tempHechizos.cloneNode(true);
+  frag.appendChild(clone);
+});
+c_hechizo.appendChild(frag);
 
 //POCIONES
 const contenedor = document.getElementById('c_pocion');
@@ -48,6 +65,8 @@ let poci=document.getElementById('c_pocion');
 const filtrarUnidad=document.querySelector('.container-order');
 const buscador=document.querySelector('.buscar')
 const colegio=document.getElementById('c_colegio');
+const hechiz=document.getElementById('c_hechizos');
+
 /*window.addEventListener("load",init)*/
 function init(){
   characters.style.display='none';
@@ -56,6 +75,7 @@ function init(){
   filtrarUnidad.style.display='none';
   buscador.style.display='none';
   colegio.style.display='none';
+  hechiz.style.display='none';
 }
 function ocultarInicio() {
   inicio.style.display = 'none';
@@ -70,7 +90,7 @@ contenedor_li.addEventListener('click', (e) => {
       filtrarUnidad.style.display='none';
       buscador.style.display='none';
       colegio.style.display='none';
-
+      hechiz.style.display='none'; 
     }
     else if (e.target.matches('a[href="#c_libro"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
@@ -80,7 +100,7 @@ contenedor_li.addEventListener('click', (e) => {
       filtrarUnidad.style.display='none';
       buscador.style.display='none';
       colegio.style.display='none';
-
+      hechiz.style.display='none';
     }
     else if (e.target.matches('a[href="#c_pocion"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
@@ -90,7 +110,7 @@ contenedor_li.addEventListener('click', (e) => {
       filtrarUnidad.style.display='block';
       buscador.style.display='flex';
       colegio.style.display='none';
-
+      hechiz.style.display='none';
     }
     else if (e.target.matches('a[href="#c_colegio"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
@@ -100,6 +120,17 @@ contenedor_li.addEventListener('click', (e) => {
       filtrarUnidad.style.display='none';
       buscador.style.display='none';
       colegio.style.display='block';
+      hechiz.style.display='none';
+    }
+    else if (e.target.matches('a[href="#c_hechizos"]')) {
+      ocultarInicio();/*inicio.classList.add('ocultar');*/
+      characters.style.display='none';
+      lib.style.display='none';
+      poci.style.display='none';
+      filtrarUnidad.style.display='none';
+      buscador.style.display='none';
+      colegio.style.display='none';
+      hechiz.style.display='flex';
     }
   }
 });
@@ -191,4 +222,58 @@ function agregarElementos() {
 }
 
 agregarElementos();
+/*let filtros = data.characters;
+let especies=[];
+function constOption(){
+  filtros.forEach(i=>{
+    especies.push(i.species)
+  })
+}
+constOption()
+console.log(especies)*/
+/*function constOption (){
+  let filtros = data.characters
+  let especies=[]
+  for (let i=0;i<filtros.length;i++){
+    especies.push(filtros[i].species)
+  }
+  let filtroEspecies=especies.filter((valor,indice)=>{
+    if(especies.startsWidth('Human')){
+      return especies.indexOf(valor)===indice
+    }
+  })
+  console.log(filtroEspecies);
 
+  
+
+  /*let select=document.getElementById("especies")
+  let opt=createElement('option')
+  select.appendChild(opt)*/
+
+  //opt.appendChild(data.species)
+/*}/*
+/*constOption();*/
+
+function constOption (){
+  let filtros = data.characters
+  let especies=[]
+  
+  for (let i=0;i<filtros.length;i++){
+    //especies=filtros[i].species
+    especies.push(filtros[i].species)
+  }
+  let filtroEspecies=especies.filter((valor,indice)=>{
+    return especies.indexOf(valor)===indice
+  })
+  console.log(filtroEspecies);
+
+  /*for(let i=0;i<especies.length;i++){
+    filtroEspecies.push(especies[i])
+  }*/
+  /*let select=document.getElementById("especies")
+  let opt=createElement('option')
+  select.appendChild(opt)*/
+
+  //opt.appendChild(data.species)
+}
+constOption();

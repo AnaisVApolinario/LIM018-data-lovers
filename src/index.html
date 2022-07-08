@@ -16,7 +16,7 @@
     <nav class="nav-menu">
       <ul class="ul">
         <li id="personajes" class="per"><a href="#characters">PERSONAJES</a></li>
-        <li id="hechizos" class="he"><a href="#">HECHIZOS</a></li>
+        <li id="hechizos" class="he"><a href="#c_hechizos">HECHIZOS</a></li>
         <li id="libros" class="li"><a href="#c_libro">LIBROS</a></li>
         <li id="pociones" class="po"><a href="#c_pocion">POCIONES</a></li>
         <li id="colegios" class="co"><a href="#c_colegio">COLEGIO</a></li>
@@ -42,9 +42,14 @@
 
   <div id="characters" class="characters">
     <div class="filter">
+      <p>Filtar:</p>
+      <p>Especie</p>
+      <select id= "especies" class="especie">Seleccione
+        <option value="_"></option>
+      </select>
     </div>
-
   </div>
+
   <section id="c_libro" class=" c_libro">
     <template id="template-libros">
       <article class="arti-libro">
@@ -117,6 +122,24 @@
         </li>
       </ul>
   </section>
+
+  <section id="c_hechizos" class="c_hechizos"><!--container-->
+    <select id="miSelect"></select>
+    <template id="template-hechizos">
+      <article class="arti-hechizos"><!--theCard-->
+        <div id="div-hechizos" class="theFront face"><!--theFront-->
+          <h3 id="nombreH"></h3>
+          <img src="escuelas/img_Hechizo.png" alt="Harry POtter tumblr">
+        </div>
+        <div id="theBack" class="theBack face">
+          <p id="other_name"></p>
+          <p id="spell_type"></p>
+          <p id="description"></p>
+        </div>
+      </article>
+    </template>
+  </section>
+
   <div id="root">
 
   </div>
