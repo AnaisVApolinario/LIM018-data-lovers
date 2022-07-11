@@ -127,7 +127,7 @@ ul.slider li:target{
   display: flex;
   padding: 10px;
   margin: 10px;
-  background-color: rgba(250, 252, 253, 0.767);
+  background-color: rgb(161 210 219 / 77%);
   /*flex: 200px;*/
 }
 
@@ -145,31 +145,14 @@ ul.slider li:target{
 
 #div-pociones {
   box-sizing: border-box;
-  background-color: antiquewhite;
-  border: rgba(133, 158, 87, 0.788) solid 10px;
+  background-color: #94a18c;
+  border: rgb(41 116 13) solid 10px;
   padding: 3px;
   text-align: center;
   height: 100%;
 }
-
 /*.pocion-name-descrip{
 }*/
-
-.ventanaM {
-  background: black;
-  width: 30%;
-  color: white;
-  font-family: sans-serif;
-  font-size: 18px;
-  text-align: center;
-  padding: 33px;
-  min-height: 250px;
-  ;
-  border-radius: 22px;
-  position: absolute;
-  left: 40%;
-  top: 35%;
-}
 /*BOTON de la AZ*/
 #btn-plus{
   display:none;
@@ -268,7 +251,7 @@ ul.slider li:target{
 #content {
   margin: auto;
   text-align: center;
-  background-color: rgba(24, 23, 23, 0.54);
+  background-color: rgb(24 23 23 / 81%);
   color: white;
   width: 1000px;
   height: 200px;
@@ -406,7 +389,7 @@ ul.slider li:target{
 }*/
 .arti-hechizos .theBack{
   transform: perspective(600px) rotateY(180deg);
-  background: rgb(26 83 116);
+  background: rgb(63 58 78);
   padding: 8px;
   color:#f3f3f3;
   display: flex;
@@ -428,4 +411,20 @@ ul.slider li:target{
 }
 .arti-hechizos:hover .theBack{
   transform:perspective(600px) rotateY(360deg);
+}
+/*miSelect en Hechizos*/
+.miSelect{
+  background: #6e02e5;
+  right: 2%;
+  top: 20%;
+  height: 35px;
+  color: #fff;
+  position: absolute;
+  font-size: inherit;
+  font-weight: bold;
+}
+.miSelect option{
+  background: rgb(131 103 199);
+  /* font-weight: 550; */
+  font-size: inherit;
 }

@@ -1,4 +1,4 @@
-import { pociones_ordenadas} from './data.js';//./es busca a partir de la carpeta data.js
+import { pociones_ordenadas, filtroHechi} from './data.js';//./es busca a partir de la carpeta data.js
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js'; //data es una variable de tipo objeto 
 
@@ -26,19 +26,25 @@ seccion.appendChild(fragment);
 const c_hechizo = document.getElementById('c_hechizos');
 const tempHechizos= document.getElementById('template-hechizos').content;//accede a los elementos osea a su contenido
 const frag= document.createDocumentFragment();//guarda codigo en una memoria volatil y no lo pinta en el HTML hasta que se lo digamos
-const arrayHechizos= data.spells;
 
-arrayHechizos.forEach(item => {
-  //tempHechizos.querySelector('img').setAttribute('src', item.img);
-  tempHechizos.getElementById('nombreH').textContent=item.name;
-  tempHechizos.getElementById('other_name').innerHTML =`<b>Otro Nombre:</b> ${item.other_name} `;
-  tempHechizos.getElementById('spell_type').innerHTML =`<b>Tipo:</b> ${item.spell_type} `;
-  tempHechizos.getElementById('description').innerHTML = `<b>DESCRIPCION:</b> ${item.description}`;
+const miSelect=document.createElement('select');
+c_hechizo.appendChild(miSelect);
+
+function generarHechizos(arrayHechizos){ 
+  arrayHechizos.forEach(item => {
+    tempHechizos.getElementById('nombreH').textContent=item.name;
+    if(item.other_name===null){
+      tempHechizos.getElementById('other_name').innerHTML =`<b>Otro Nombre:</b>${" No tiene"} `; 
+    }else{ tempHechizos.getElementById('other_name').innerHTML =`<b>Otro Nombre:</b> ${item.other_name} `;}
+    tempHechizos.getElementById('spell_type').innerHTML =`<b>Tipo:</b> ${item.spell_type} `;
+    tempHechizos.getElementById('description').innerHTML = `<b>DESCRIPCION:</b> ${item.description}`;
   
-  const clone = tempHechizos.cloneNode(true);
-  frag.appendChild(clone);
-});
-c_hechizo.appendChild(frag);
+    const clone = tempHechizos.cloneNode(true);
+    frag.appendChild(clone);
+  });
+  c_hechizo.appendChild(frag);
+}
+generarHechizos(data.spells);
 
 //POCIONES
 const contenedor = document.getElementById('c_pocion');
@@ -142,19 +148,19 @@ log.addEventListener('click', (ev) => {
 });
 //Botones de la AZ
 const grupoAZ=document.querySelector('.AZ');
+function remover(arti){
+  arti.forEach(el=>{
+    el.remove();
+  })
+}
 grupoAZ.addEventListener('click',(e)=>{
   const artiPociones=document.querySelectorAll(".arti-pociones");
   if(e.target.id==="za"){
-   artiPociones.forEach(el=>{
-    el.remove();
-
-  })
+    remover(artiPociones)
     generarPociones(pociones_ordenadas(1,-1));
   }
   if(e.target.id==="az"){
-    artiPociones.forEach(el=>{
-      el.remove();
-    })
+    remover(artiPociones)
     generarPociones(pociones_ordenadas(-1,1))
   }
 })
@@ -222,38 +228,7 @@ function agregarElementos() {
 }
 
 agregarElementos();
-/*let filtros = data.characters;
-let especies=[];
-function constOption(){
-  filtros.forEach(i=>{
-    especies.push(i.species)
-  })
-}
-constOption()
-console.log(especies)*/
-/*function constOption (){
-  let filtros = data.characters
-  let especies=[]
-  for (let i=0;i<filtros.length;i++){
-    especies.push(filtros[i].species)
-  }
-  let filtroEspecies=especies.filter((valor,indice)=>{
-    if(especies.startsWidth('Human')){
-      return especies.indexOf(valor)===indice
-    }
-  })
-  console.log(filtroEspecies);
-
-  
-
-  /*let select=document.getElementById("especies")
-  let opt=createElement('option')
-  select.appendChild(opt)*/
-
-  //opt.appendChild(data.species)
-/*}/*
-/*constOption();*/
-
+//FILTRAR PERSONAJES
 function constOption (){
   let filtros = data.characters
   let especies=[]
@@ -265,7 +240,7 @@ function constOption (){
   let filtroEspecies=especies.filter((valor,indice)=>{
     return especies.indexOf(valor)===indice
   })
-  console.log(filtroEspecies);
+  filtroEspecies;
 
   /*for(let i=0;i<especies.length;i++){
     filtroEspecies.push(especies[i])
@@ -277,3 +252,36 @@ function constOption (){
   //opt.appendChild(data.species)
 }
 constOption();
+//SELECT DE HECHIZOS
+miSelect.classList.add("miSelect")
+function funSelect(){
+  const arrHechizos=data.spells;
+  let type=arrHechizos.map(i=>{
+    return i.spell_type;
+  });
+  //No permite que se repita los valores
+  const arraySpell=type.join(',').replace(/ /g, "").split(',');//join(',').replace(/\s+/g, '').split(',')//replace(/ /g, "")
+  const unicos=[];
+  arraySpell.forEach( (i) => {
+    if (!unicos.includes(i)) {
+      unicos.push(i);
+    }
+  });
+
+  //crea mis opciones con valores no repetidos
+  unicos.forEach(e=>{ 
+    let op=document.createElement('option');
+    op.value=e;
+    op.textContent=e;
+    miSelect.appendChild(op);
+  });
+  //Filtro mis hechizos
+  miSelect.addEventListener('change',(e)=>{
+    const artiHech=document.querySelectorAll(".arti-hechizos");
+    //if(e.target){
+      remover(artiHech);
+      generarHechizos(filtroHechi(e.target.value))
+    //}
+  })
+}
+funSelect()
