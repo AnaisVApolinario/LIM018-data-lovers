@@ -16,11 +16,11 @@
     <nav class="nav-menu">
       <ul class="ul">
         <li id="personajes" class="per"><a href="#characters">PERSONAJES</a></li>
-        <li id="hechizos" class="he"><a href="#">HECHIZOS</a></li>
+        <li id="hechizos" class="he"><a href="#c_hechizos">HECHIZOS</a></li>
         <li id="libros" class="li"><a href="#c_libro">LIBROS</a></li>
         <li id="pociones" class="po"><a href="#c_pocion">POCIONES</a></li>
-        <li id="colegios" class="co"><a href="#">COLEGIOS</a></li>
-        <li id="datos" class="da"><a href="#">DATOS CURIOSOS</a></li>
+        <li id="colegios" class="co"><a href="#c_colegio">ESCUELAS</a></li>
+        <li id="datos" class="da"><a href="#">ESTADISTICAS</a></li>
       </ul>
     </nav>
   </header>
@@ -41,10 +41,19 @@
   </div>
 
   <div id="characters" class="characters">
-    <div class="filter">
+    <div class="filter" id="filter">
+      <p>Filtrar:</p>
+      <select id="seleccionGeneral">
+        <option value="house" class="houses">House</option>
+        <option value="specie">Specie</option>
+        <option value="books">Book</option>
+      </select>
+      <select id= "house" ></select>
+      <select id= "specie" ></select>
+      <select id= "books" ></select>
     </div>
-
   </div>
+
   <section id="c_libro" class=" c_libro">
     <template id="template-libros">
       <article class="arti-libro">
@@ -58,6 +67,12 @@
       </article>
     </template>
   </section>
+
+  <!--FILTRO DE BUSQUEDA-->
+  <div class="buscar">
+    <div class="btn-buscar fa-solid fa-magnifying-glass"></div>
+    <input id="busca" type="text" placeholder="Buscar...">
+  </div>
 
   <section id="c_pocion" class="c_pocion">
     <template id="template-pociones">
@@ -80,6 +95,55 @@
       <label for="btn-plus" class="fa-solid fa-plus"></label>
     </div>
   </div>
+
+  <section id="c_colegio" class="c_colegio">
+      <ul class="slider">
+        <li id="slide1">
+          <img src ="escuelas/ravenclaw.gif">
+        </li>
+        <li id="slide2">
+          <img src ="escuelas/Hufflepuf.gif"> 
+        </li>
+        <li id="slide3">
+          <img src ="escuelas/gryffindor.gif"> 
+        </li>
+        <li id="slide4">
+          <img src ="escuelas/Slytherin.gif">
+        </li>
+      </ul>
+      <ul class="menuNum">
+        <li>
+          <a href="#slide1">1</a>
+        </li>
+        <li>
+          <a href="#slide2">2</a>
+        </li>
+        <li>
+          <a href="#slide3">3</a>
+        </li>
+        <li>
+          <a href="#slide4">4</a>
+        </li>
+      </ul>
+  </section>
+
+  <section id="c_hechizos" class="c_hechizos"><!--container-->
+    <!--<select id="miSelect" class="miSelect"></select>-->
+    <template id="template-hechizos">
+      <article class="arti-hechizos"><!--theCard-->
+        <div id="div-hechizos" class="theFront face"><!--theFront-->
+          <h3 id="nombreH"></h3>
+          <img src="escuelas/img_Hechizo.png" alt="Harry POtter tumblr">
+        </div>
+        <div id="theBack" class="theBack face">
+          <p id="other_name"></p>
+          <p id="spell_type"></p>
+          <p id="description"></p>
+        </div>
+      </article>
+    </template>
+  </section>
+
   <div id="root">
 
   </div>

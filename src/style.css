@@ -1,11 +1,104 @@
+
 body {
-  background-image: url("/img/fondo.jpg");
+  background-image:url("/img/fondo.jpg");
   background-size: cover;
   /*100vw 100vh;*/
   /*background-position:center center;
   background-repeat: no-repeat;*/
   background-attachment: fixed;
   /*fijo*/
+  padding:0px;
+  margin:0px;
+}
+/*SLIDER*/
+.c_colegio{
+  display:none;
+  margin:auto;
+  /*background: #19283a;*/
+  background-image:url('https://i.pinimg.com/originals/f3/b4/23/f3b4238175fc8c88229595b50f514d09.gif');
+  background-size: cover;
+  width: 500px;/*600px*/
+  padding:30px;
+}
+.menuNum{
+  text-align: center;
+  margin:20px;
+}
+.menuNum li{
+  display:inline-block;
+  text-align: center;
+  margin:0px;
+  padding: 0px;
+  list-style:none;
+
+}
+.menuNum li a{
+  display:inline-block;
+  color:white;
+  text-decoration: none;
+  background-color: grey;
+  padding:10px;
+  width:20px;
+  height:20px;
+  font-size:20px;
+  border-radius:100%;
+}
+.slider{
+  position:relative;
+  width: 500px;/*600px*/
+  height:500px;
+}
+ul.slider li{
+  position:absolute;
+  list-style:none;
+  left:0;
+  top:0;
+  opacity:0;
+  width:inherit;/*hereda el tamaño del padre*/
+  height: inherit;
+  background-color: none;
+  transition:opacity .5s; 
+}
+ul.slider li img{
+  width: 100%;
+  height: 500px;
+  object-fit:contain;/*cover -se ajusta la img y no se deforma*/
+  /*background-color:#19283a;*/
+}
+ul.slider li:first-child{
+  opacity:1;
+}
+ul.slider li:target{
+  opacity:1;
+}
+
+/*FILTRO DE BUSQUEDA*/
+.filtro{
+  display:none;
+}
+.buscar{
+  display:none;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.buscar input{
+  /*background-color:greenyellow ;
+  width:20%;
+  height:30px;*/
+  width: 30%;
+  padding:10px;
+  outline:none;
+  border: 5px solid  #448d56;
+  border-radius: 50px;
+  font-weight: 600;
+  background-color:#D6EFED;
+}
+
+.btn-buscar {
+  font-size: 29px;
+  padding: 9px 5px 0px 0px;
+  color:#007965;
 }
 
 #img-libros {
@@ -37,7 +130,7 @@ body {
   display: flex;
   padding: 10px;
   margin: 10px;
-  background-color: rgba(250, 252, 253, 0.767);
+  background-color: rgb(161 210 219 / 77%);
   /*flex: 200px;*/
 }
 
@@ -55,31 +148,14 @@ body {
 
 #div-pociones {
   box-sizing: border-box;
-  background-color: antiquewhite;
-  border: rgba(133, 158, 87, 0.788) solid 10px;
+  background-color: #94a18c;
+  border: rgb(41 116 13) solid 10px;
   padding: 3px;
   text-align: center;
   height: 100%;
 }
-
 /*.pocion-name-descrip{
 }*/
-
-.ventanaM {
-  background: black;
-  width: 30%;
-  color: white;
-  font-family: sans-serif;
-  font-size: 18px;
-  text-align: center;
-  padding: 33px;
-  min-height: 250px;
-  ;
-  border-radius: 22px;
-  position: absolute;
-  left: 40%;
-  top: 35%;
-}
 /*BOTON de la AZ*/
 #btn-plus{
   display:none;
@@ -134,6 +210,7 @@ body {
 
 /*FIN DEL BTN-AZ*/
 /*MODIFICANDO*/
+
 .logo-header {
   width: 50px;
 }
@@ -141,6 +218,7 @@ body {
 .logo {
   width: 375px;
   height: 150px;
+  margin-top: 2vh;
 }
 
 .header {
@@ -162,6 +240,7 @@ body {
   list-style: none;
   background-color: rgba(12, 13, 13, 0.48);
   padding: 0px;
+  margin-top: 4vh;
 }
 
 .nav-menu li {
@@ -172,13 +251,11 @@ body {
   background-color: rgba(217, 217, 217, 0.61);
   cursor: pointer;
 }
-
-
 /*COMP*/
 #content {
   margin: auto;
   text-align: center;
-  background-color: rgba(24, 23, 23, 0.54);
+  background-color: rgb(24 23 23 / 81%);
   color: white;
   width: 1000px;
   height: 200px;
@@ -187,9 +264,49 @@ body {
   border-radius: 15px;
 }
 
-.characters .filter{
-  margin-top: -50px;
-  position: absolute;
+.filter{
+position: absolute;
+margin-top: -80px;
+display: flex;
+width: 100%;
+align-items: center;
+font-weight: bold;
+font-size: 20px;
+}
+
+.filter p{
+  color:#00e100;
+  padding: 10px;
+}
+
+#seleccionGeneral{
+  height: 30px;
+  border: 2px solid #066e06;
+  background-color: #066e0694;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#house{
+  height: 30px;
+  border: 2px solid #00e100;
+  background-color: #00ff0073;
+  border-radius: 5px;
+}
+
+#specie{
+  height: 30px;
+  border: 2px solid #00e100;
+  background-color: #00ff0073;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#books{
+  height: 30px;
+  border: 2px solid #00e100;
+  background-color: #00ff0073;
+  border-radius: 5px;
 }
 
 .characters  {
@@ -215,7 +332,7 @@ body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 8px 8px 0 rgba(175, 187, 65, 0.2);
+  box-shadow: 0px 8px 8px 0px rgba(175, 187, 65, 0.2);
   border-radius: 30px;
 }
 
@@ -226,8 +343,8 @@ body {
 .inner img{
   width: 190px;
   height: 250px;
-  border-radius: 30px;
-  box-shadow: 0 8px 8px 0 #00e100;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0px 0px 10px 4px #00e100;
 }
 .front, .back{
   position: absolute;
@@ -246,14 +363,16 @@ body {
 .front p {
  margin-top: -40px;
   position: absolute;
-  border-radius: 5px;
+  border-radius:0px 0px 10px 10px;
   background: #73ff53;
   color: black;
   width: 190px;
-  height: 40px;
+  height: 30px;
   padding-top: 10px;
   text-align: center;
   margin-left: 0px;
+  font-weight: bold;
+font-size: 15px;
 }
 
 .back {
@@ -265,5 +384,11 @@ body {
   transform: rotateY(180deg);
 }
 
+.ocultar{
+  display: none;
+}
 
+.mostrar{
+  display: flex;
+}
 
