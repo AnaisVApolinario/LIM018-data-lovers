@@ -384,7 +384,7 @@ font-size: 15px;
   transform: rotateY(180deg);
 }
 
-<<<<<<< HEAD
+
 .ocultar{
   display: none;
 }
@@ -393,7 +393,6 @@ font-size: 15px;
   display: flex;
 }
 
-=======
 /*HECHIZOS*/
 .c_hechizos{ /*container*/
   display:none;
@@ -484,4 +483,3 @@ font-size: 15px;
   /* font-weight: 550; */
   font-size: inherit;
 }
->>>>>>> 5d534270db76b8cb94bdd08f60f7e87fca222d84
