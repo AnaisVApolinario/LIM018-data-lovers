@@ -180,13 +180,6 @@ inputBuscar.addEventListener('keyup',(e)=>{
 
 //let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 
-//PERSONAJES
-
-let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
-
-//let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
-
-//
 function agregarElementos(personajes) {
 
   personajes.forEach(function (personaje) {
@@ -240,15 +233,6 @@ let selectSpecies = document.getElementById("specie")
 let selectBooks =document.getElementById("books")
 //let filtro = document.getElementById("filter")
 function constOption() {
-
-agregarElementos(data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0));
-
-let selectHouse = document.getElementById("house")
-let selectSpecies = document.getElementById("specie")
-let selectBooks =document.getElementById("books")
-//let filtro = document.getElementById("filter")
-function constOption() {
-
   let filtros = data.characters
   let casas = []
   let especies = []
@@ -298,44 +282,6 @@ function constOption() {
   }
 }
 constOption();
-
-agregarElementos();
-//FILTRAR PERSONAJES
-function constOption (){
-
-  let filtros = data.characters
-  let casas = []
-  let especies = []
-  let libros = []
-
-  for (let i = 0; i < filtros.length; i++) {
-    //especies=filtros[i].species
-    casas.push(filtros[i].house)
-    especies.push(filtros[i].species)
-    libros.push(filtros[i].books_featured_in)
-  }
-  let casasUnico = casas.filter((valor, indice) => {
-    return casas.indexOf(valor) === indice
-  })
-
-  for (let i = 0; i < casasUnico.length; i++) {
-    let option = document.createElement("option")
-    option.value = casasUnico[i]
-    option.text = casasUnico[i]
-    selectHouse.appendChild(option)
-  }
-
-  let especiesUnico = especies.filter((valor, indice) => {
-    return especies.indexOf(valor) === indice
-
-  })
-
-  for (let i = 0; i < especiesUnico.length; i++) {
-    let option = document.createElement("option")
-    option.value = especiesUnico[i]
-    option.text = especiesUnico[i]
-    selectSpecies.appendChild(option)
-agregarElementos();
 
 //SELECT DE HECHIZOS
 miSelect.classList.add("miSelect")
@@ -372,22 +318,7 @@ function funSelect(){
 funSelect()
 //NAVEGADOR DE MENU
 
-  }
-
-  let librosUnico = libros.filter((valor, indice) => {
-    return libros.indexOf(valor) === indice
-
-  })
-
-  for (let i = 0; i < librosUnico.length; i++) {
-    let option = document.createElement("option")
-    option.value = librosUnico[i]
-    option.text = librosUnico[i]
-    selectBooks.appendChild(option)
-
-  }
-}
-constOption();
+  
 
 /*
 window.addEventListener('load',mostrarOpciones,false)
@@ -406,4 +337,5 @@ function mostrarOpciones(){
       Species.classList.add("ocultar")
    }
   }, false);
-}*/
+}
+*/
