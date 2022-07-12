@@ -10,7 +10,7 @@ body {
   padding:0px;
   margin:0px;
 }
-/*SLIDER*/
+/*SLIDER DE ESCUELAS*/
 .c_colegio{
   display:none;
   margin:auto;
@@ -83,9 +83,6 @@ ul.slider li:target{
   flex-wrap: wrap;
 }
 .buscar input{
-  /*background-color:greenyellow ;
-  width:20%;
-  height:30px;*/
   width: 30%;
   padding:10px;
   outline:none;
@@ -100,7 +97,7 @@ ul.slider li:target{
   padding: 9px 5px 0px 0px;
   color:#007965;
 }
-
+/*SECCION LIBROS*/
 #img-libros {
   width: 18%;
   /*80%*/
@@ -134,7 +131,7 @@ ul.slider li:target{
   /*flex: 200px;*/
 }
 
-/*POCIONES*/
+/*SECCION POCIONES*/
 .c_pocion {
   display:none;
   flex-wrap: wrap;
@@ -154,9 +151,8 @@ ul.slider li:target{
   text-align: center;
   height: 100%;
 }
-/*.pocion-name-descrip{
-}*/
-/*BOTON de la AZ*/
+
+/*BOTON DE  ORDEN AZ-ZA*/
 #btn-plus{
   display:none;
 }
@@ -208,9 +204,7 @@ ul.slider li:target{
   color:#fff;
 }
 
-/*FIN DEL BTN-AZ*/
-/*MODIFICANDO*/
-
+/*MENU DE NAVEGACION*/
 .logo-header {
   width: 50px;
 }
@@ -251,7 +245,7 @@ ul.slider li:target{
   background-color: rgba(217, 217, 217, 0.61);
   cursor: pointer;
 }
-/*COMP*/
+/*SECCION PERSONAJES*/
 #content {
   margin: auto;
   text-align: center;
@@ -342,7 +336,7 @@ ul.slider li:target{
   transform: rotateY(180deg);
 }
 
-/*HECHIZOS*/
+/*SECCION HECHIZOS*/
 .c_hechizos{ /*container*/
   display:none;
   flex-wrap: wrap;
@@ -387,10 +381,6 @@ ul.slider li:target{
   text-align:center;
   text-transform: uppercase;
 }
-/*#nombreH{
-  background-color: #06493c;
-  color:#fff;
-}*/
 .arti-hechizos .theBack{
   transform: perspective(600px) rotateY(180deg);
   background: rgb(63 58 78);
@@ -398,7 +388,6 @@ ul.slider li:target{
   color:#f3f3f3;
   display: flex;
   flex-direction: column;
-  /*justify-content: space-between;*/
   text-align: center;
   box-shadow: 0 5px 10px #000;
 }
@@ -431,4 +420,20 @@ ul.slider li:target{
   background: rgb(131 103 199);
   /* font-weight: 550; */
   font-size: inherit;
+}
+/*GRAFICOS ESTADISTICOS*/
+.c_estadistica{
+  display: none;
+}
+.contenedor{
+  background-color: #b5c1ad;
+  width:40%;
+  margin:0 auto;
+}
+.soyh2{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+canvas{
+  max-width: 100%;
 }

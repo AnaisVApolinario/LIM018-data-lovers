@@ -6,6 +6,16 @@ export const pociones_ordenadas = (num1,num2)=> {
   return arrOrder;
 } 
 
+
+
+
+
+
+
+
+
+
+
 export const filtroHechi=(nHechizo)=>{
   const newHechizos=[...data.spells]
   const hechizoFiltrado=newHechizos.filter((el)=>{
@@ -13,12 +23,16 @@ export const filtroHechi=(nHechizo)=>{
 });
 return hechizoFiltrado;
 }
-
-/*export const filtroHechi=data.spells.filter((el)=>{
-  console.log(el.spell_type==='Charm');
-})*/
-/*export const filtroHechi=data.spells.filter((el)=>{
-  return el==='Charm';
-})*/
-
-
+export const computeStats=(MoF)=>{
+  const newData=[...data.characters];
+  // contar cuantas veces nos encontramos un elemento que cumpla la caracteristica 
+  let contador=0;
+  // recorremos todos los elementos buscando los que tengan la caracteristica 
+  newData.forEach((element)=>{
+    if(element.gender===MoF)
+    {
+      contador += 1;
+    }
+  });
+  return contador; 
+}
