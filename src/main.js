@@ -1,4 +1,4 @@
-import { pociones_ordenadas } from './data.js';//./es busca a partir de la carpeta data.js
+import { pociones_ordenadas, filtroHechi} from './data.js';//./es busca a partir de la carpeta data.js
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js'; //data es una variable de tipo objeto 
 
@@ -22,21 +22,47 @@ arrayLibros.forEach(item => {
 });
 seccion.appendChild(fragment);
 
+//HECHIZOS
+const c_hechizo = document.getElementById('c_hechizos');
+const tempHechizos= document.getElementById('template-hechizos').content;//accede a los elementos osea a su contenido
+const frag= document.createDocumentFragment();//guarda codigo en una memoria volatil y no lo pinta en el HTML hasta que se lo digamos
+
+const miSelect=document.createElement('select');
+c_hechizo.appendChild(miSelect);
+
+function generarHechizos(arrayHechizos){ 
+  arrayHechizos.forEach(item => {
+    tempHechizos.getElementById('nombreH').textContent=item.name;
+    if(item.other_name===null){
+      tempHechizos.getElementById('other_name').innerHTML =`<b>Otro Nombre:</b>${" No tiene"} `; 
+    }else{ tempHechizos.getElementById('other_name').innerHTML =`<b>Otro Nombre:</b> ${item.other_name} `;}
+    tempHechizos.getElementById('spell_type').innerHTML =`<b>Tipo:</b> ${item.spell_type} `;
+    tempHechizos.getElementById('description').innerHTML = `<b>DESCRIPCION:</b> ${item.description}`;
+  
+    const clone = tempHechizos.cloneNode(true);
+    frag.appendChild(clone);
+  });
+  c_hechizo.appendChild(frag);
+}
+generarHechizos(data.spells);
 
 //POCIONES
 const contenedor = document.getElementById('c_pocion');
 const tempPo = document.getElementById('template-pociones').content;
 const fragme = document.createDocumentFragment();
-const arrayPociones = data.potions;
+function generarPociones(arrayPociones){
+  arrayPociones.forEach(el => {
+    tempPo.querySelector('#p-pociones').textContent = el.name;
+    tempPo.querySelector('#p-descripcion').textContent = el.description;
+    const clon = tempPo.cloneNode(true);
+    fragme.appendChild(clon);
+  });
+  contenedor.appendChild(fragme);
+}
+generarPociones(data.potions);
 
-arrayPociones.forEach(el => {
-  tempPo.querySelector('#p-pociones').textContent = el.name;
-  tempPo.querySelector('#p-descripcion').textContent = el.description;
-  const clon = tempPo.cloneNode(true);
-  fragme.appendChild(clon);
-});
-contenedor.appendChild(fragme);
 //MENU DE NAVEGACION
+<<<<<<< HEAD
 const log = document.querySelector('.logo');
 const inicio = document.querySelector('.inicio');
 const contenedor_li = document.querySelector('.ul')
@@ -50,6 +76,28 @@ function init() {
   lib.style.display = 'none';
   poci.style.display = 'none';
   filtrarUnidad.style.display = 'none';
+=======
+const log=document.querySelector('.logo');
+const inicio=document.querySelector('.inicio');
+const contenedor_li=document.querySelector('.ul')
+const characters=document.getElementById('characters');
+const lib=document.getElementById('c_libro');
+let poci=document.getElementById('c_pocion');
+const filtrarUnidad=document.querySelector('.container-order');
+const buscador=document.querySelector('.buscar')
+const colegio=document.getElementById('c_colegio');
+const hechiz=document.getElementById('c_hechizos');
+
+/*window.addEventListener("load",init)*/
+function init(){
+  characters.style.display='none';
+  lib.style.display='none';
+  poci.style.display='none';
+  filtrarUnidad.style.display='none';
+  buscador.style.display='none';
+  colegio.style.display='none';
+  hechiz.style.display='none';
+>>>>>>> 5d534270db76b8cb94bdd08f60f7e87fca222d84
 }
 function ocultarInicio() {
   inicio.style.display = 'none';
@@ -58,6 +106,7 @@ contenedor_li.addEventListener('click', (e) => {
   if (e.target) {
     if (e.target.matches('a[href="#characters"]')) {
       ocultarInicio();
+<<<<<<< HEAD
       characters.style.display = 'flex';
       lib.style.display = 'none';
       poci.style.display = 'none';
@@ -77,6 +126,55 @@ contenedor_li.addEventListener('click', (e) => {
       lib.style.display = 'none';
       poci.style.display = 'flex';
       filtrarUnidad.style.display = "block";
+=======
+      characters.style.display='flex';
+      lib.style.display='none';
+      poci.style.display='none';
+      filtrarUnidad.style.display='none';
+      buscador.style.display='none';
+      colegio.style.display='none';
+      hechiz.style.display='none'; 
+    }
+    else if (e.target.matches('a[href="#c_libro"]')) {
+      ocultarInicio();/*inicio.classList.add('ocultar');*/
+      characters.style.display='none';
+      lib.style.display='flex';
+      poci.style.display='none';
+      filtrarUnidad.style.display='none';
+      buscador.style.display='none';
+      colegio.style.display='none';
+      hechiz.style.display='none';
+    }
+    else if (e.target.matches('a[href="#c_pocion"]')) {
+      ocultarInicio();/*inicio.classList.add('ocultar');*/
+      characters.style.display='none';
+      lib.style.display='none';
+      poci.style.display='flex';
+      filtrarUnidad.style.display='block';
+      buscador.style.display='flex';
+      colegio.style.display='none';
+      hechiz.style.display='none';
+    }
+    else if (e.target.matches('a[href="#c_colegio"]')) {
+      ocultarInicio();/*inicio.classList.add('ocultar');*/
+      characters.style.display='none';
+      lib.style.display='none';
+      poci.style.display='none';
+      filtrarUnidad.style.display='none';
+      buscador.style.display='none';
+      colegio.style.display='block';
+      hechiz.style.display='none';
+    }
+    else if (e.target.matches('a[href="#c_hechizos"]')) {
+      ocultarInicio();/*inicio.classList.add('ocultar');*/
+      characters.style.display='none';
+      lib.style.display='none';
+      poci.style.display='none';
+      filtrarUnidad.style.display='none';
+      buscador.style.display='none';
+      colegio.style.display='none';
+      hechiz.style.display='flex';
+>>>>>>> 5d534270db76b8cb94bdd08f60f7e87fca222d84
     }
   }
 });
@@ -87,6 +185,7 @@ log.addEventListener('click', (ev) => {
   }
 });
 //Botones de la AZ
+<<<<<<< HEAD
 /*const za=document.getElementById('za');
 //const az=document.getElementById('az');
 za.addEventListener('click',()=>{
@@ -100,11 +199,45 @@ grupoAZ.addEventListener('click', (e) => {
   }
   if (e.target.id === "az") {
     console.log("soyAZ")
+=======
+const grupoAZ=document.querySelector('.AZ');
+function remover(arti){
+  arti.forEach(el=>{
+    el.remove();
+  })
+}
+grupoAZ.addEventListener('click',(e)=>{
+  const artiPociones=document.querySelectorAll(".arti-pociones");
+  if(e.target.id==="za"){
+    remover(artiPociones)
+    generarPociones(pociones_ordenadas(1,-1));
+  }
+  if(e.target.id==="az"){
+    remover(artiPociones)
+    generarPociones(pociones_ordenadas(-1,1))
   }
 })
-//PERSONAJES
+//FILTRO DE BUSQUEDA
+const inputBuscar=document.getElementById('busca');
+inputBuscar.addEventListener('keyup',(e)=>{
+  if(e.target.value){
+    if(e.key ==='Escape')e.target.value="";
+    const artiP=document.querySelectorAll(".arti-pociones");
+    artiP.forEach(el=>{
+      el.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+      ?el.classList.remove('filtro')
+      :el.classList.add('filtro')
+    })
+>>>>>>> 5d534270db76b8cb94bdd08f60f7e87fca222d84
+  }
+})
 
+<<<<<<< HEAD
 //let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
+=======
+//PERSONAJES
+let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
+>>>>>>> 5d534270db76b8cb94bdd08f60f7e87fca222d84
 //
 function agregarElementos(personajes) {
 
@@ -153,6 +286,7 @@ function agregarElementos(personajes) {
   })
 }
 
+<<<<<<< HEAD
 agregarElementos(data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0));
 
 let selectHouse = document.getElementById("house")
@@ -211,6 +345,67 @@ function constOption() {
 }
 constOption();
 
+=======
+agregarElementos();
+//FILTRAR PERSONAJES
+function constOption (){
+  let filtros = data.characters
+  let especies=[]
+  
+  for (let i=0;i<filtros.length;i++){
+    //especies=filtros[i].species
+    especies.push(filtros[i].species)
+  }
+  let filtroEspecies=especies.filter((valor,indice)=>{
+    return especies.indexOf(valor)===indice
+  })
+  filtroEspecies;
+
+  /*for(let i=0;i<especies.length;i++){
+    filtroEspecies.push(especies[i])
+  }*/
+  /*let select=document.getElementById("especies")
+  let opt=createElement('option')
+  select.appendChild(opt)*/
+
+  //opt.appendChild(data.species)
+}
+constOption();
+//SELECT DE HECHIZOS
+miSelect.classList.add("miSelect")
+function funSelect(){
+  const arrHechizos=data.spells;
+  let type=arrHechizos.map(i=>{
+    return i.spell_type;
+  });
+  //No permite que se repita los valores
+  const arraySpell=type.join(',').replace(/ /g, "").split(',');//join(',').replace(/\s+/g, '').split(',')//replace(/ /g, "")
+  const unicos=[];
+  arraySpell.forEach( (i) => {
+    if (!unicos.includes(i)) {
+      unicos.push(i);
+    }
+  });
+
+  //crea mis opciones con valores no repetidos
+  unicos.forEach(e=>{ 
+    let op=document.createElement('option');
+    op.value=e;
+    op.textContent=e;
+    miSelect.appendChild(op);
+  });
+  //Filtro mis hechizos
+  miSelect.addEventListener('change',(e)=>{
+    const artiHech=document.querySelectorAll(".arti-hechizos");
+    //if(e.target){
+      remover(artiHech);
+      generarHechizos(filtroHechi(e.target.value))
+    //}
+  })
+}
+funSelect()
+//NAVEGADOR DE MENU
+>>>>>>> 5d534270db76b8cb94bdd08f60f7e87fca222d84
 
 /*
 window.addEventListener('load',mostrarOpciones,false)
