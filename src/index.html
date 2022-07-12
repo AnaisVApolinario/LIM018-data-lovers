@@ -41,11 +41,18 @@
   </div>
 
   <div id="characters" class="characters">
-    <div class="filter">
-      <p>Filtar:</p>
-      <p>Especie</p>
-      <select id= "especies" class="especie">Seleccione
-        <option value="_"></option>
+
+    <div class="filter" id="filter">
+      <p>Filtrar:</p>
+      <select id="seleccionGeneral">
+        <option value="house" class="houses">House</option>
+        <option value="specie">Specie</option>
+        <option value="books">Book</option>
+      </select>
+      <select id= "house" ></select>
+      <select id= "specie" ></select>
+      <select id= "books" ></select>
+
       </select>
     </div>
   </div>
