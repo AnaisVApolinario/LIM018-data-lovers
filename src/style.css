@@ -1,3 +1,4 @@
+
 body {
   background-image:url("/img/fondo.jpg");
   background-size: cover;
@@ -6,6 +7,8 @@ body {
   background-repeat: no-repeat;*/
   background-attachment: fixed;
   /*fijo*/
+  padding:0px;
+  margin:0px;
 }
 /*SLIDER*/
 .c_colegio{
@@ -207,6 +210,7 @@ ul.slider li:target{
 
 /*FIN DEL BTN-AZ*/
 /*MODIFICANDO*/
+
 .logo-header {
   width: 50px;
 }
@@ -214,6 +218,7 @@ ul.slider li:target{
 .logo {
   width: 375px;
   height: 150px;
+  margin-top: 2vh;
 }
 
 .header {
@@ -235,6 +240,7 @@ ul.slider li:target{
   list-style: none;
   background-color: rgba(12, 13, 13, 0.48);
   padding: 0px;
+  margin-top: 4vh;
 }
 
 .nav-menu li {
@@ -245,8 +251,6 @@ ul.slider li:target{
   background-color: rgba(217, 217, 217, 0.61);
   cursor: pointer;
 }
-
-
 /*COMP*/
 #content {
   margin: auto;
