@@ -37,19 +37,19 @@ arrayPociones.forEach(el => {
 });
 contenedor.appendChild(fragme);
 //MENU DE NAVEGACION
-const log=document.querySelector('.logo');
-const inicio=document.querySelector('.inicio');
-const contenedor_li=document.querySelector('.ul')
-const characters=document.getElementById('characters');
-const lib=document.getElementById('c_libro');
-const poci=document.getElementById('c_pocion');
-const filtrarUnidad=document.querySelector('.container-order');
+const log = document.querySelector('.logo');
+const inicio = document.querySelector('.inicio');
+const contenedor_li = document.querySelector('.ul')
+const characters = document.getElementById('characters');
+const lib = document.getElementById('c_libro');
+const poci = document.getElementById('c_pocion');
+const filtrarUnidad = document.querySelector('.container-order');
 /*window.addEventListener("load",init)*/
-function init(){
-  characters.style.display='none';
-  lib.style.display='none';
-  poci.style.display='none';
-  filtrarUnidad.style.display='none';
+function init() {
+  characters.style.display = 'none';
+  lib.style.display = 'none';
+  poci.style.display = 'none';
+  filtrarUnidad.style.display = 'none';
 }
 function ocultarInicio() {
   inicio.style.display = 'none';
@@ -58,25 +58,25 @@ contenedor_li.addEventListener('click', (e) => {
   if (e.target) {
     if (e.target.matches('a[href="#characters"]')) {
       ocultarInicio();
-      characters.style.display='flex';
-      lib.style.display='none';
-      poci.style.display='none';
-      filtrarUnidad.style.display='none';
+      characters.style.display = 'flex';
+      lib.style.display = 'none';
+      poci.style.display = 'none';
+      filtrarUnidad.style.display = 'none';
     }
     else if (e.target.matches('a[href="#c_libro"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
-      characters.style.display='none';
-      lib.style.display='flex';
-      poci.style.display='none';
-      filtrarUnidad.style.display='none';
-      
+      characters.style.display = 'none';
+      lib.style.display = 'flex';
+      poci.style.display = 'none';
+      filtrarUnidad.style.display = 'none';
+
     }
     else if (e.target.matches('a[href="#c_pocion"]')) {
       ocultarInicio();/*inicio.classList.add('ocultar');*/
-      characters.style.display='none';
-      lib.style.display='none';
-      poci.style.display='flex';
-      filtrarUnidad.style.display="block";
+      characters.style.display = 'none';
+      lib.style.display = 'none';
+      poci.style.display = 'flex';
+      filtrarUnidad.style.display = "block";
     }
   }
 });
@@ -93,20 +93,21 @@ za.addEventListener('click',()=>{
   pociones_ordenadas();
 })*/
 
-const grupoAZ=document.querySelector('.AZ');
-grupoAZ.addEventListener('click',(e)=>{
-  if(e.target.id==="za"){
+const grupoAZ = document.querySelector('.AZ');
+grupoAZ.addEventListener('click', (e) => {
+  if (e.target.id === "za") {
     pociones_ordenadas();
   }
-  if(e.target.id==="az"){
+  if (e.target.id === "az") {
     console.log("soyAZ")
   }
 })
 //PERSONAJES
 
-let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
+//let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
 //
-function agregarElementos() {
+function agregarElementos(personajes) {
+
   personajes.forEach(function (personaje) {
     let card = document.createElement('div')
     card.className += "card"
@@ -128,7 +129,7 @@ function agregarElementos() {
     card.appendChild(inner)
     inner.appendChild(front)
     inner.appendChild(back)*/
-    if( personaje.img){ 
+    if (personaje.img) {
       characters.appendChild(card)
       card.appendChild(inner)
       inner.appendChild(front)
@@ -152,5 +153,81 @@ function agregarElementos() {
   })
 }
 
-agregarElementos();
+agregarElementos(data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0));
 
+let selectHouse = document.getElementById("house")
+let selectSpecies = document.getElementById("specie")
+let selectBooks =document.getElementById("books")
+//let filtro = document.getElementById("filter")
+function constOption() {
+
+  let filtros = data.characters
+  let casas = []
+  let especies = []
+  let libros = []
+
+  for (let i = 0; i < filtros.length; i++) {
+    //especies=filtros[i].species
+    casas.push(filtros[i].house)
+    especies.push(filtros[i].species)
+    libros.push(filtros[i].books_featured_in)
+  }
+  let casasUnico = casas.filter((valor, indice) => {
+    return casas.indexOf(valor) === indice
+  })
+
+  for (let i = 0; i < casasUnico.length; i++) {
+    let option = document.createElement("option")
+    option.value = casasUnico[i]
+    option.text = casasUnico[i]
+    selectHouse.appendChild(option)
+  }
+
+  let especiesUnico = especies.filter((valor, indice) => {
+    return especies.indexOf(valor) === indice
+
+  })
+
+  for (let i = 0; i < especiesUnico.length; i++) {
+    let option = document.createElement("option")
+    option.value = especiesUnico[i]
+    option.text = especiesUnico[i]
+    selectSpecies.appendChild(option)
+
+  }
+
+  let librosUnico = libros.filter((valor, indice) => {
+    return libros.indexOf(valor) === indice
+
+  })
+
+  for (let i = 0; i < librosUnico.length; i++) {
+    let option = document.createElement("option")
+    option.value = librosUnico[i]
+    option.text = librosUnico[i]
+    selectBooks.appendChild(option)
+
+  }
+}
+constOption();
+
+
+/*
+window.addEventListener('load',mostrarOpciones,false)
+function mostrarOpciones(){
+  let House=document.querySelector('#house')
+  House.classList.add("ocultar")
+  let Books=document.querySelector('#books')
+  Books.classList.add("ocultar")
+  let Species=document.querySelector('#specie')
+  Species.classList.add("ocultar")
+  let houses=document.querySelector('.houses')
+  houses.addEventListener('click',function (event){
+    if(House.classList.add("ocultar")){
+      House.classList.add("mostrar");
+      Books.classList.add("ocultar")
+      Species.classList.add("ocultar")
+   }
+  }, false);
+}
+*/

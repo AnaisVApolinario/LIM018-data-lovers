@@ -187,9 +187,49 @@ body {
   border-radius: 15px;
 }
 
-.characters .filter{
-  margin-top: -50px;
-  position: absolute;
+.filter{
+position: absolute;
+margin-top: -80px;
+display: flex;
+width: 100%;
+align-items: center;
+font-weight: bold;
+font-size: 20px;
+}
+
+.filter p{
+  color:#00e100;
+  padding: 10px;
+}
+
+#seleccionGeneral{
+  height: 30px;
+  border: 2px solid #066e06;
+  background-color: #066e0694;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#house{
+  height: 30px;
+  border: 2px solid #00e100;
+  background-color: #00ff0073;
+  border-radius: 5px;
+}
+
+#specie{
+  height: 30px;
+  border: 2px solid #00e100;
+  background-color: #00ff0073;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#books{
+  height: 30px;
+  border: 2px solid #00e100;
+  background-color: #00ff0073;
+  border-radius: 5px;
 }
 
 .characters  {
@@ -215,7 +255,7 @@ body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 8px 8px 0 rgba(175, 187, 65, 0.2);
+  box-shadow: 0px 8px 8px 0px rgba(175, 187, 65, 0.2);
   border-radius: 30px;
 }
 
@@ -226,8 +266,8 @@ body {
 .inner img{
   width: 190px;
   height: 250px;
-  border-radius: 30px;
-  box-shadow: 0 8px 8px 0 #00e100;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0px 0px 10px 4px #00e100;
 }
 .front, .back{
   position: absolute;
@@ -246,14 +286,16 @@ body {
 .front p {
  margin-top: -40px;
   position: absolute;
-  border-radius: 5px;
+  border-radius:0px 0px 10px 10px;
   background: #73ff53;
   color: black;
   width: 190px;
-  height: 40px;
+  height: 30px;
   padding-top: 10px;
   text-align: center;
   margin-left: 0px;
+  font-weight: bold;
+font-size: 15px;
 }
 
 .back {
@@ -265,5 +307,11 @@ body {
   transform: rotateY(180deg);
 }
 
+.ocultar{
+  display: none;
+}
 
+.mostrar{
+  display: flex;
+}
 
