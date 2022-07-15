@@ -151,11 +151,11 @@ grupoAZ.addEventListener('click',(e)=>{
   const artiPociones=document.querySelectorAll(".arti-pociones");
   if(e.target.id==="za"){
     remover(artiPociones)
-    generarPociones(pociones_ordenadas(1,-1));
+    generarPociones(pociones_ordenadas(data.potions,1,-1));
   }
   if(e.target.id==="az"){
     remover(artiPociones)
-    generarPociones(pociones_ordenadas(-1,1))
+    generarPociones(pociones_ordenadas(data.potions,-1,1))
   }
 })
 //FILTRO DE BUSQUEDA
@@ -302,10 +302,8 @@ function funSelect(){
   //Filtro mis hechizos
   miSelect.addEventListener('change',(e)=>{
     const artiHech=document.querySelectorAll(".arti-hechizos");
-    //if(e.target){
       remover(artiHech);
-      generarHechizos(filtroHechi(e.target.value))
-    //}
+      generarHechizos(filtroHechi(data.spells,e.target.value))
   })
 }
 funSelect()//llamo a la funcion 
@@ -313,11 +311,13 @@ funSelect()//llamo a la funcion
 //GRAFICOS ESTADISTICOS
 const ctx=document.getElementById('myChart');
 const genero =['Femenino','Maculino'];
-const cantidadFemeninoMasculino=[computeStats('Male'),computeStats('Female')];
+const cantidadFemeninoMasculino=[computeStats(data.characters,'Female'),computeStats(data.characters,'Male')];
 //Instanciamos un objeto de la clase chart
 //Recibe dos parametros el contenedor donde se mostrara el grafico
 //y en segundo punto recibe la configuracion de los graficos
-const myChart=new Chart(ctx,{
+//const myChart=newChart
+// eslint-disable-next-line no-undef
+new Chart(ctx,{
   type:'pie',/*tipo de garfica*/ 
   data:{
     labels:genero,//nombres de la data
@@ -352,24 +352,3 @@ const myChart=new Chart(ctx,{
 })
 
 
-  
-
-/*
-window.addEventListener('load',mostrarOpciones,false)
-function mostrarOpciones(){
-  let House=document.querySelector('#house')
-  House.classList.add("ocultar")
-  let Books=document.querySelector('#books')
-  Books.classList.add("ocultar")
-  let Species=document.querySelector('#specie')
-  Species.classList.add("ocultar")
-  let houses=document.querySelector('.houses')
-  houses.addEventListener('click',function (event){
-    if(House.classList.add("ocultar")){
-      House.classList.add("mostrar");
-      Books.classList.add("ocultar")
-      Species.classList.add("ocultar")
-   }
-  }, false);
-}
-*/
