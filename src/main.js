@@ -62,9 +62,9 @@ function generarPociones(arrayPociones){
 generarPociones(data.potions);
 
 //MENU DE NAVEGACION
-const log=document.querySelector('.logo');
+const log=document.querySelector('.logo-header');
 const inicio=document.querySelector('.inicio');
-const contenedor_li=document.querySelector('.ul')
+const contenedorNav=document.querySelector('.nav-menu')
 const characters=document.getElementById('characters');
 const lib=document.getElementById('c_libro');
 let poci=document.getElementById('c_pocion');
@@ -100,7 +100,7 @@ function pocionOpciones(flexi,blocki){
   buscador.style.display=flexi;
   filtrarUnidad.style.display=blocki;
 }
-contenedor_li.addEventListener('click', (e) => {
+contenedorNav.addEventListener('click', (e) => {
   if (e.target) {
     if (e.target.matches('a[href="#characters"]')) {
       ocultarInicio();
@@ -136,7 +136,7 @@ contenedor_li.addEventListener('click', (e) => {
 });
 log.addEventListener('click', (ev) => {
   if (ev.target) {
-    inicio.style.display = 'block';
+    inicio.style.display = 'flex';
     init();
   }
 });
@@ -325,8 +325,8 @@ new Chart(ctx,{
       label:'Cantidad',
       data:cantidadFemeninoMasculino,
       backgroundColor:[
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)'
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
         /*
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',

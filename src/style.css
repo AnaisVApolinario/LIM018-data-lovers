@@ -104,7 +104,9 @@ ul.slider li:target{
 }
 /*SECCION LIBROS*/
 #img-libros {
+  display:flex;
   width: 18%;
+  background-size: cover;
   /*80%*/
 }
 
@@ -210,64 +212,62 @@ ul.slider li:target{
 }
 
 /*MENU DE NAVEGACION*/
-.logo-header {
-  width: 50px;
-}
-
-.logo {
-  width: 375px;
-  height: 150px;
-  margin-top: 2vh;
-}
-
-.header {
-  display: flex;
+.header{
+  display:flex;
+  min-height:70px;
   justify-content: space-between;
-  padding: .5rem 2rem;
+  align-items: center;
+  padding: 10px;
 }
-
-.ul li a {
-  font-family: san-serif;
+.logo-header{
+  display:flex;
+  max-width: 100%;
+  padding-top: 1rem;
+}
+.logo-header img{
+  min-height: 100px;
+  margin-right: 10px;
+}
+.nav-menu{
+  background-color: rgba(12, 13, 13, 0.48);
+  padding: 0.8rem;
+}
+.nav-menu a{
+  font-weight: 600;
+  padding-right: 10px;
   text-decoration: none;
   color: white;
   font-size: 1.3rem;
 }
-@media screen and(min-width:768px) {
-  .nav-menu ul{
-    flex-direction: column;
-  }
-  
-}
-.nav-menu ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  background-color: rgba(12, 13, 13, 0.48);
-  padding: 0px;
-  margin-top: 4vh;
-}
-
-.nav-menu li {
-  padding: 0.8rem;
-}
-
-.nav-menu li:hover {
+.nav-menu a:hover{
   background-color: rgba(217, 217, 217, 0.61);
   cursor: pointer;
 }
-/*SECCION PERSONAJES*/
-#content {
-  margin: auto;
-  text-align: center;
-  background-color: rgb(24 23 23 / 81%);
-  color: white;
-  width: 1000px;
-  height: 200px;
-  padding: 5px;
-  font-size: larger;
-  border-radius: 15px;
+@media (max-width:700px){
+  header{
+    flex-direction: column;
+  }
+  nav{
+    padding: 10px 0;
+  }
 }
 
+/*SECCION PERSONAJES*/
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(24 23 23 / 81%);
+  margin:50px;
+  border-radius: 20px;
+}
+#content p{
+  display: flex;
+  align-content: center;
+  color:white;
+  padding: 25px;
+  min-width: 250px;
+  font-size: 18px;
+}
 .filter{
 position: absolute;
 margin-top: -80px;
@@ -403,6 +403,7 @@ font-size: 15px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  margin-top:25px;
   min-height: 100vh;
   /*background: blueviolet;*/
 }
@@ -469,9 +470,12 @@ font-size: 15px;
 /*miSelect en Hechizos*/
 .miSelect{
   background: #6e02e5;
-  right: 2%;
+  /* right: 2%;
   top: 20%;
-  height: 35px;
+  height: 35px; */
+  right: 2em;
+  top: 8em;
+  min-height: 35px;
   color: #fff;
   position: absolute;
   font-size: inherit;
@@ -488,7 +492,7 @@ font-size: 15px;
 }
 .contenedor{
   background-color: #b5c1ad;
-  width:40%;
+  min-width:40%;
   margin:0 auto;
 }
 .soyh2{
