@@ -1,25 +1,33 @@
-import { pociones_ordenadas,filtroHechi,computeStats} from '../src/data.js';
+import { pociones_ordenadas,filtroHechi,computeStats, filtrarPersonajes} from '../src/data.js';
 
 const nameEjm =[
   {
     "spell_type":"Charm",
     "name":"Mortentia",
-    "gender":"Female"
+    "gender":"Female",
+    "house": "Gryffindor",
+    "species": "Goblin"
   },
   {
     "spell_type":"Propag",
     "name":"Zefelis",
-    "gender":"Female"
+    "gender":"Female",
+    "house": "Ravenclaw",
+    "species": "Centaur"
   },
   {
     "spell_type":"Pury",
     "name":"Ageing",
-    "gender":"Female"
+    "gender":"Female",
+    "house": "Slytherin",
+    "species": "Human",
   },
   {
     "spell_type":"Charm",
     "name":"Lola",
-    "gender":"Male"
+    "gender":"Male",
+    "house": "Gryffindor",
+    "species": "Human"
   }
 ]
 
@@ -34,6 +42,18 @@ describe('pruebas para ordenar de AZ-ZA', () => {
     expect(pociones_ordenadas(nameEjm,1,-1)).toEqual([nameEjm[1],nameEjm[0],nameEjm[3],nameEjm[2]]);
   });
 });
+
+describe('prueba filtrar Personajes por house y especies ',()=>{
+  it('is a function',()=>{
+    expect(typeof filtrarPersonajes).toBe('function');
+  });
+  it('deberia filtrar por house',()=>{
+    expect(filtrarPersonajes(nameEjm,'house','Gryffindor')).toEqual([nameEjm[0],nameEjm[3]])
+  })
+  it('deberia filtrar por species',()=>{
+    expect(filtrarPersonajes(nameEjm,'species','Human')).toEqual([nameEjm[2],nameEjm[3]])
+  })
+})
 
 describe('pruebas filtrar Hechizos por tipo', () => {
   it('is a function', () => {
@@ -57,6 +77,9 @@ describe('pruebas para las Estadisticas', () => {
   });
   it('deberia retornar la cantidad de Female',()=>{
     expect(computeStats(nameEjm,"Female")).toBe(3);
+  });
+  it('deberia deberia darme un valor que no sea 0',()=>{
+    expect(computeStats(nameEjm,"Female")).not.toBe(0);
   });
 });
 

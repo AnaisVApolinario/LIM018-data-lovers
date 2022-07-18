@@ -1,4 +1,4 @@
-import { pociones_ordenadas, filtroHechi, computeStats} from './data.js';//./es busca a partir de la carpeta data.js
+import { pociones_ordenadas, filtroHechi, computeStats,filtrarPersonajes} from './data.js';//./es busca a partir de la carpeta data.js
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js'; //data es una variable de tipo objeto 
 
@@ -175,7 +175,8 @@ inputBuscar.addEventListener('keyup',(e)=>{
 //PERSONAJES
 
 function agregarElementos(personajes) {
-
+  let contenedorPersonajes= document.createElement('div');
+  contenedorPersonajes.className+="contenedorPersonajes";
   personajes.forEach(function (personaje) {
     let card = document.createElement('div')
     card.className += "card"
@@ -195,7 +196,8 @@ function agregarElementos(personajes) {
     let ancestry = document.createElement('p')
 
     if (personaje.img) {
-      characters.appendChild(card)
+      characters.appendChild(contenedorPersonajes);
+      contenedorPersonajes.appendChild(card)
       card.appendChild(inner)
       inner.appendChild(front)
       inner.appendChild(back)
@@ -251,7 +253,17 @@ selectGeneral.addEventListener('change', e=>{
   }
   constOption(e.target.value)
 })
+selectSecundario.addEventListener('change',e =>{
+  const selectP=document.getElementById('selectGeneral');
+  const grupoCard=document.querySelectorAll(".card");
+  grupoCard.forEach(el=>{
+    el.remove()
+  })
+  agregarElementos(filtrarPersonajes(data.characters,selectP.value,e.target.value))
 
+});
+
+//Filtro de Hechizos por tipo 
 miSelect.classList.add("miSelect")
 function funSelect(){
   const arrHechizos=data.spells;

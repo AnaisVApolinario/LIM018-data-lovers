@@ -1,4 +1,66 @@
+/*@media (max-width:700px){
+  header{
+    flex-direction: column;
+  }
+  nav{
+    padding: 10px 0;
+  }
+}*/
+/*@media screen and (max-width:900px){
+  header{
+    flex-direction: column;
+  }
+  nav{
+    padding: 10px 0;
+  }
+  .arti-libro{
+    flex-direction: column-reverse;
+  }
+  #img-libros{
+    width:50%;
+    margin-left:20%;
+  }
+  .miSelect{
+    top:33%;
+  }
+}*/
+html {
+  font-size: 18px;
+}
 
+/*Tabletas*/ 
+
+@media screen and (max-width:650px) {/*768px*/
+  html{
+    font-size: 12px;
+  }
+  header{
+    flex-direction: column;
+  }
+  .arti-libro{
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  #img-libros{
+    margin-left:4rem;
+    height: 300px;
+  }
+  .ul.slider li img{
+    width:21.875rem;/*350px*/
+    padding: 0px;
+  }
+  .miSelect{
+    margin-top: 5.5rem;
+  }
+}
+
+/*Celulares */
+
+/*@media (max-width: 450px) {
+  html {
+    font-size: 12px;
+  }
+}*/
 body {
   background-image:url("/img/fondo.jpg");
   background-size: cover;
@@ -13,19 +75,15 @@ body {
 /*SLIDER DE ESCUELAS*/
 .c_colegio{
   display:none;
-  margin:auto;
-  /*background: #19283a;*/
-  background-image:url('https://i.pinimg.com/originals/f3/b4/23/f3b4238175fc8c88229595b50f514d09.gif');
-  background-size: cover;
-  width: 500px;/*600px*/
-  padding:30px;
+  width: 90%;
+  margin: 0 auto;
 }
 .menuNum{
   position: absolute;
   text-align: center;
-  margin: 20px;
-  bottom: 0;
-  margin-left: 10%;
+  /*margin: 1.25rem;/*20px*/
+  /*bottom: 0;*/
+  margin:auto;/*margin-left:10%*/
   /*display: flex;
   align-items: flex-end;*/
 }
@@ -41,17 +99,18 @@ body {
   color:white;
   text-decoration: none;
   background-color: grey;
-  padding:10px;
-  width:20px;
-  height:20px;
-  font-size:20px;
-  border-radius:100%;
+  padding:0.6rem;/*10px*/
+  width:1.25rem;/*20px*/
+  height:1.25rem;/*20px*/
+  font-size:1.25rem;/*20px*/
+  border-radius:100%;/*100%*/
 }
 .slider{
+  margin:auto;
   position:relative;
-  width: 500px;/*600px*/
-  min-width: 320px;
-  height:500px;
+  width: max-content;/*500px*/
+  /*min-width:20rem;/*320px*/
+  /*height:31.15rem;*//*500px*/
 }
 ul.slider li{
   position:absolute;
@@ -65,8 +124,8 @@ ul.slider li{
   transition:opacity .5s; 
 }
 ul.slider li img{
-  width: 100%;
-  height: 500px;
+  max-width: 100%;
+  height: 31.25rem;/*500px*/
   object-fit:contain;/*cover -se ajusta la img y no se deforma*/
   /*background-color:#19283a;*/
 }
@@ -89,37 +148,37 @@ ul.slider li:target{
 }
 .buscar input{
   width: 30%;
-  padding:10px;
+  padding:0.6rem;/*10px*/
   outline:none;
   border: 5px solid  #448d56;
-  border-radius: 50px;
+  border-radius: 3.12rem;/*50px*/
   font-weight: 600;
   background-color:#D6EFED;
 }
 
 .btn-buscar {
-  font-size: 29px;
-  padding: 9px 5px 0px 0px;
+  font-size: 29px;/*29px*/
+  padding: 0.56rem 0.31rem 0rem 0rem;/*9px 5px 0px 0px*/
   color:#007965;
 }
 /*SECCION LIBROS*/
 #img-libros {
   display:flex;
-  width: 18%;
-  background-size: cover;
+  width: 250px;/*18%*/
+  background-size: contain;
   /*80%*/
 }
 
 #titulo-libro {
-  font-size: 30px;
+  font-size: 1.87rem;/*30px*/
   font-family: cursive;
   color: darkred;
 }
 
 .container-text {
-  font-size: 20px;
+  font-size: 1.25rem;/*20px*/
   text-align: initial;
-  padding: 0px 30px;
+  padding: 0rem 1.87rem;/*0px 30px*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,8 +191,8 @@ ul.slider li:target{
 
 .arti-libro {
   display: flex;
-  padding: 10px;
-  margin: 10px;
+  padding: 0.6rem;/*10px*/
+  margin: 0.6rem;
   background-color: rgb(161 210 219 / 77%);
   /*flex: 200px;*/
 }
@@ -146,15 +205,15 @@ ul.slider li:target{
 }
 
 .arti-pociones {
-  margin: 10px;
-  flex: 200px;
+  margin: 0.6rem;/*10px*/
+  flex: 12.5rem;/*200px*/
 }
 
 #div-pociones {
   box-sizing: border-box;
   background-color: #94a18c;
   border: rgb(41 116 13) solid 10px;
-  padding: 3px;
+  padding: 0.18rem;/*3px*/
   text-align: center;
   height: 100%;
 }
@@ -166,27 +225,27 @@ ul.slider li:target{
 .container-order{
   display:none;
   position:fixed;/*posicion totalmente fija a la pantalla*/
-  bottom:15px;/*20px*/
-  right:10px;/*20px*/
+  bottom:0.9rem;/*15px*/
+  right:0.6rem;/*10px*/
 }
 .AZ button,.fa-solid.fa-plus{ 
   display:block;
   text-decoration:none;
-  width: 60px;
-  height: 60px;
-  font-size: 26px;
-  line-height: 60px; /*centra con ayuda del de abajo*/
+  width: 3.75rem;/*60px*/
+  height: 3.75rem;/*60px*/
+  font-size:1.6rem;/*26px*/
+  line-height:3.75rem; /*60px*//*centra con ayuda del de abajo*/
   text-align: center;
   border-radius: 50%;
   border-color: #4eeb00;
   border-width: initial;
-  box-shadow:0px 1px 10px rgba(7, 241, 26, 0.4);/*darle sombra*//*rgba le da color transparente*/
+  box-shadow:0rem 0.06rem 0.6rem rgba(7, 241, 26, 0.4);/*darle sombra*//*rgba le da color transparente*//*0px 1px 10px*/
   transition: all 500ms ease;/*a todo el elemento y efecto ease*/
 }
 .AZ button{
   background: #fff; /*color hexagecimal*/
   color:#348b79;
-  margin-bottom:-15px;
+  margin-bottom:-0.93rem;/*-15px*/
   opacity:0;/*ocultar*/
   visibility:hidden;
 }
@@ -200,13 +259,13 @@ ul.slider li:target{
   color:#06493c;
 }
 #btn-plus:checked~ .AZ button{
-  margin-bottom: 10px;
+  margin-bottom:0.6rem;/*10px*/
   opacity: 1;
   visibility: visible;
 }
 #btn-plus:checked~ .btn-plus .fa-solid.fa-plus{
   transform: rotate(135deg);
-  font-size:25px;
+  font-size:1.5em;/*25px*/
   background:#348b79;
   color:#fff;
 }
@@ -214,19 +273,19 @@ ul.slider li:target{
 /*MENU DE NAVEGACION*/
 .header{
   display:flex;
-  min-height:70px;
+  min-height:4.37rem;/*70px*/
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0.6rem;/*10px*/
 }
 .logo-header{
   display:flex;
-  max-width: 100%;
+  max-width:100%;/*1rem*/
   padding-top: 1rem;
 }
 .logo-header img{
-  min-height: 100px;
-  margin-right: 10px;
+  height: 6rem;/*100px*/
+  margin-right:0.6rem;/*10px*/
 }
 .nav-menu{
   background-color: rgba(12, 13, 13, 0.48);
@@ -234,110 +293,103 @@ ul.slider li:target{
 }
 .nav-menu a{
   font-weight: 600;
-  padding-right: 10px;
+  padding-right:0.6rem;/*10px*/
   text-decoration: none;
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 .nav-menu a:hover{
   background-color: rgba(217, 217, 217, 0.61);
   cursor: pointer;
 }
-@media (max-width:700px){
-  header{
-    flex-direction: column;
-  }
-  nav{
-    padding: 10px 0;
-  }
-}
-
 /*SECCION PERSONAJES*/
 #content {
   display: flex;
   flex-wrap: wrap;
   background-color: rgb(24 23 23 / 81%);
-  margin:50px;
-  border-radius: 20px;
+  margin:3.12rem;/*50px*/
+  border-radius: 1.25rem;/*20px*/
 }
 #content p{
   display: flex;
   align-content: center;
   color:white;
-  padding: 25px;
-  min-width: 250px;
-  font-size: 18px;
+  font-size: 1rem;/*18px*/
+  padding: 1.12rem;/*25px*/
+  min-width: 15.6rem;/*250px*/
 }
 .filter{
 position: absolute;
-margin-top: -80px;
+margin-top: -5rem;/*-80px*/
 display: flex;
-width: 100%;
+width: 1rem;/*100%*/
 align-items: center;
 font-weight: bold;
-font-size: 20px;
+font-size: 1.25rem;/*20px*/
 }
 
 .filter p{
   color:#00e100;
-  padding: 10px;
+  padding: 0.6rem;/*10px*/
 }
 
 #selectGeneral{
-  height: 30px;
-  border: 2px solid #066e06;
+  height:1.87rem;/*30px*/
+  border: 0.12rem solid #066e06;/*2px*/
   background-color: #066e0694;
-  border-radius: 5px;
-  margin: 5px;
+  border-radius: 0.31rem;/*5px*/
+  margin: 0.31rem;/*5px*/
 }
 
 #selectSecundario{
-  height: 30px;
-  border: 2px solid #00e100;
+  height:1.87rem;/*30px*/
+  border:0.12rem solid #00e100;/*2px*/
   background-color: #00ff0073;
-  border-radius: 5px;
+  border-radius:0.31rem;/*5px*/
 }
 
 #specie{
-  height: 30px;
-  border: 2px solid #00e100;
+  height:1.87rem;/*30px*/
+  border:0.12rem solid #00e100;/*2px*/
   background-color: #00ff0073;
-  border-radius: 5px;
-  margin: 5px;
+  border-radius:0.31rem;/*5px*/
+  margin: 0.31rem;/*5px*/
 }
 
 #books{
-  height: 30px;
-  border: 2px solid #00e100;
+  height: 1.87rem;/*30px*/
+  border:0.12rem solid #00e100;/*2px*/
   background-color: #00ff0073;
-  border-radius: 5px;
+  border-radius:0.31rem;/*5px*/
 }
-
+.contenedorPersonajes{
+  display:flex;
+  flex-wrap: wrap;
+}
 .characters  {
   display: none;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 40px;
+  width: 100%;/*100%*/
+  padding: 2.5rem;/*40px*/
 }
 
 .card{
-  width: 190px;
-  height: 250px;
+  width: 11.87rem;/*190px*/
+  height:15.62rem;/*250px*/
   background-color: transparent;
-  perspective: 1000px;
-  margin: 10px;
-  border-radius: 30px;
+  perspective: 62.5rem;/*1000px*/
+  margin:0.6rem;/*10px*/
+  border-radius: 1.87rem;/*30px*/
 }
 .inner{
-  width: 190px;
-  height: 250px;
+  width: 11.87rem;/*190px*/
+  height:15.62rem;/*250px*/
   position: relative;
   height: 100%;
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0px 8px 8px 0px rgba(175, 187, 65, 0.2);
-  border-radius: 30px;
+  border-radius: 1.87rem;/*30px*/
 }
 
 .card:hover .inner {
@@ -345,10 +397,10 @@ font-size: 20px;
 }
 
 .inner img{
-  width: 190px;
-  height: 250px;
-  border-radius: 30px 30px 0px 0px;
-  box-shadow: 0px 0px 10px 4px #00e100;
+  width:10rem;;/*190px*/   
+  height: 15rem;/*250px*/
+  border-radius: 1.87rem 1.87rem 0 0;/*30px 30px 0px 0px*/
+  box-shadow: 0 0 0.6rem 0.87rem #00e100;/*0px 0px 10px 4px*/
 }
 .front, .back{
   position: absolute;
@@ -359,9 +411,9 @@ font-size: 20px;
 }
 
 .front{
-  width: 190px;
-  height: 250px;
-  border-radius: 30px;
+  width: 11.87rem;/*190px*/
+  height:15.62rem;/*250px*/
+  border-radius: 1.87rem;/*30px*/
 }
 
 .front p {
@@ -370,9 +422,9 @@ font-size: 20px;
   border-radius:0px 0px 10px 10px;
   background: #73ff53;
   color: black;
-  width: 190px;
-  height: 30px;
-  padding-top: 10px;
+  width: 11.87rem;/*190px*/
+  height: 1.87rem;/*30px*/
+  padding-top:0.6rem;/*10px*/
   text-align: center;
   margin-left: 0px;
   font-weight: bold;
@@ -380,9 +432,9 @@ font-size: 15px;
 }
 
 .back {
-  width: 190px;
-  height: 250px;
-  border-radius: 30px;
+  width: 11.87rem;/*190px*/
+  height:15.62rem;/*250px*/
+  border-radius: 1.87rem;/*30px*/
   background-color: #33a21d;
   color: white;
   transform: rotateY(180deg);
@@ -403,28 +455,28 @@ font-size: 15px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top:25px;
-  min-height: 100vh;
+  margin-top:1.56rem;/*25px*/
+  min-height: 100vh;/*100vh*/
   /*background: blueviolet;*/
 }
 .arti-hechizos{  /*Card*/
   position:relative;
-  width:250px;
-  height:300px;
-  margin: 20px;
+  width:15.62rem;/*250px*/
+  height:18.75rem;/*300px*/
+  margin:1.25rem;/*20px*/
 }
 .arti-hechizos .face{
   position:absolute;
   width:100%;
   height:100%;
   backface-visibility:hidden;
-  border-radius:10px;
+  border-radius:0.6rem;/*10px*/
   overflow:hidden;
   transition:.5s ;
 }
 .arti-hechizos .theFront{ /*theFront*/
-  transform: perspective(600px) rotateY(0deg);
-  box-shadow: 0 5px 10px #000;
+  transform: perspective(37.5rem) rotateY(0deg);/*600px*/
+  box-shadow: 0 0.31rem 0.6rem #000;/*5px 10px*/
 }
 .arti-hechizos .theFront img{ 
   /*position: absolute;*/
@@ -436,25 +488,25 @@ font-size: 15px;
   position: absolute;
   bottom: 0px;
   width: 100%;
-  height: 45px;
-  line-height: 45px;
+  height:2.8125rem;/*45px*/
+  line-height: 2.8125rem;/*45px*/
   color:#fff;
   background: rgb(131 103 199);
   text-align:center;
   text-transform: uppercase;
 }
 .arti-hechizos .theBack{
-  transform: perspective(600px) rotateY(180deg);
+  transform: perspective(37.5rem) rotateY(180deg);/*600px*/
   background: rgb(63 58 78);
-  padding: 8px;
+  padding: 0.5px;/*8px*/
   color:#f3f3f3;
   display: flex;
   flex-direction: column;
   text-align: center;
-  box-shadow: 0 5px 10px #000;
+  box-shadow: 0 0.31rem 0.6rem #000;/* 0 5px 10px*/
 }
 .arti-hechizos .theBack p{
-  letter-spacing: 1px;
+  letter-spacing: 0.06rem;/*1px*/
   /*
   white-space:nowrap;
   overflow:hidden;
@@ -462,10 +514,10 @@ font-size: 15px;
   /*font-size: small;*/
 }
 .arti-hechizos:hover .theFront{
-  transform:perspective(600px) rotateY(180deg);
+  transform:perspective(37.5rem) rotateY(180deg);/*600px*/
 }
 .arti-hechizos:hover .theBack{
-  transform:perspective(600px) rotateY(360deg);
+  transform:perspective(37.5rem) rotateY(360deg);
 }
 /*miSelect en Hechizos*/
 .miSelect{
@@ -473,9 +525,9 @@ font-size: 15px;
   /* right: 2%;
   top: 20%;
   height: 35px; */
-  right: 2em;
-  top: 8em;
-  min-height: 35px;
+  right: 2rem;
+  top: 8rem;
+  min-height: 2.18rem;
   color: #fff;
   position: absolute;
   font-size: inherit;
@@ -492,7 +544,7 @@ font-size: 15px;
 }
 .contenedor{
   background-color: #b5c1ad;
-  min-width:40%;
+  width: 90%;/*max-width:40px*/
   margin:0 auto;
 }
 .soyh2{
@@ -500,5 +552,5 @@ font-size: 15px;
   text-align: center;
 }
 canvas{
-  max-width: 100%;
+  max-width: 100%;/*100%*/
 }
