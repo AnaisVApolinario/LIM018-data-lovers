@@ -14,12 +14,12 @@
       <img src="./img/logo.png" alt="">
     </picture>
     <nav class="nav-menu">
-        <a href="#characters">PERSONAJES</a>
-        <a href="#c_hechizos">HECHIZOS</a>
-        <a href="#c_libro">LIBROS</a>
-        <a href="#c_pocion">POCIONES</a>
-        <a href="#c_colegio">ESCUELAS</a>
-        <a href="#c_estadistica">ESTADISTICAS</a>
+      <a href="#characters">PERSONAJES</a>
+      <a href="#c_hechizos">HECHIZOS</a>
+      <a href="#c_libro">LIBROS</a>
+      <a href="#c_pocion">POCIONES</a>
+      <a href="#c_colegio">ESCUELAS</a>
+      <a href="#c_estadistica">ESTADISTICAS</a>
     </nav>
   </header>
   <div id="content" class="inicio">
@@ -43,12 +43,32 @@
       <p>Filtrar:</p>
       <select id="selectGeneral">
         <option value="house">House</option>
-        <option value="species">Specie</option> 
+        <option value="species">Specie</option>
       </select>
-      <select id= "selectSecundario" ></select>
+      <select id="selectSecundario"></select>
       <div id="charactersFilters"></div>
     </div>
   </div>
+
+  <section id="c_hechizos" class="c_hechizos">
+    <!--container-->
+    <!--<select id="miSelect" class="miSelect"></select>-->
+    <template id="template-hechizos">
+      <article class="arti-hechizos">
+        <!--theCard-->
+        <div id="div-hechizos" class="theFront face">
+          <!--theFront-->
+          <h3 id="nombreH"></h3>
+          <img src="escuelas/img_Hechizo.png" alt="Harry POtter tumblr">
+        </div>
+        <div id="theBack" class="theBack face">
+          <p id="other_name"></p>
+          <p id="spell_type"></p>
+          <p id="description"></p>
+        </div>
+      </article>
+    </template>
+  </section>
 
   <section id="c_libro" class=" c_libro">
     <template id="template-libros">
@@ -95,16 +115,16 @@
   <section id="c_colegio" class="c_colegio">
     <ul class="slider">
       <li id="slide1">
-        <img src ="escuelas/ravenclaw.gif">
+        <img src="escuelas/ravenclaw.gif">
       </li>
       <li id="slide2">
-        <img src ="escuelas/Hufflepuf.gif"> 
+        <img src="escuelas/Hufflepuf.gif">
       </li>
       <li id="slide3">
-        <img src ="escuelas/gryffindor.gif"> 
+        <img src="escuelas/gryffindor.gif">
       </li>
       <li id="slide4">
-        <img src ="escuelas/Slytherin.gif">
+        <img src="escuelas/Slytherin.gif">
       </li>
     </ul>
     <ul class="menuNum">
@@ -123,24 +143,8 @@
     </ul>
   </section>
 
-  <section id="c_hechizos" class="c_hechizos"><!--container-->
-    <!--<select id="miSelect" class="miSelect"></select>-->
-    <template id="template-hechizos">
-      <article class="arti-hechizos"><!--theCard-->
-        <div id="div-hechizos" class="theFront face"><!--theFront-->
-          <h3 id="nombreH"></h3>
-          <img src="escuelas/img_Hechizo.png" alt="Harry POtter tumblr">
-        </div>
-        <div id="theBack" class="theBack face">
-          <p id="other_name"></p>
-          <p id="spell_type"></p>
-          <p id="description"></p>
-        </div>
-      </article>
-    </template>
-  </section>
-
-  <section id="c_estadistica" class="c_estadistica"><!--Content-->
+  <section id="c_estadistica" class="c_estadistica">
+    <!--Content-->
     <div class="contenedor">
       <h2 class="soyh2">PERSONAJES</h2>
       <canvas id="myChart" height="300" width="300"></canvas>
@@ -150,7 +154,9 @@
   <div id="root">
 
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+    integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://kit.fontawesome.com/4239b56502.js" crossorigin="anonymous"></script>
   <script src="main.js" type="module"></script>
 </body>
