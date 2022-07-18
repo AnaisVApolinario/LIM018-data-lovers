@@ -1,4 +1,4 @@
-import { pociones_ordenadas, filtroHechi} from './data.js';//./es busca a partir de la carpeta data.js
+import { pociones_ordenadas, filtroHechi,filtrarPersonajes} from './data.js';//./es busca a partir de la carpeta data.js
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js'; //data es una variable de tipo objeto 
 
@@ -65,7 +65,7 @@ generarPociones(data.potions);
 const log=document.querySelector('.logo');
 const inicio=document.querySelector('.inicio');
 const contenedor_li=document.querySelector('.ul')
-const characters=document.getElementById('characters');
+let characters=document.getElementById('characters');
 const lib=document.getElementById('c_libro');
 let poci=document.getElementById('c_pocion');
 const filtrarUnidad=document.querySelector('.container-order');
@@ -178,7 +178,7 @@ inputBuscar.addEventListener('keyup',(e)=>{
   }
 })
 
-//let personajes = data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0)
+//PERSONAJES
 
 function agregarElementos(personajes) {
 
@@ -199,10 +199,7 @@ function agregarElementos(personajes) {
     let house = document.createElement('p')
     let book = document.createElement('p')
     let ancestry = document.createElement('p')
-    /*characters.appendChild(card)
-    card.appendChild(inner)
-    inner.appendChild(front)
-    inner.appendChild(back)*/
+
     if (personaje.img) {
       characters.appendChild(card)
       card.appendChild(inner)
@@ -228,62 +225,39 @@ function agregarElementos(personajes) {
 }
 agregarElementos(data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0));
 
-let selectHouse = document.getElementById("house")
-let selectSpecies = document.getElementById("specie")
-let selectBooks =document.getElementById("books")
-//let filtro = document.getElementById("filter")
-function constOption() {
+let selectSecundario = document.getElementById("selectSecundario")
+let selectGeneral =document.getElementById("selectGeneral")
+
+function constOption(propiedad) {
   let filtros = data.characters
-  let casas = []
-  let especies = []
-  let libros = []
+  let arrayDinamicos=[]
 
   for (let i = 0; i < filtros.length; i++) {
     //especies=filtros[i].species
-    casas.push(filtros[i].house)
-    especies.push(filtros[i].species)
-    libros.push(filtros[i].books_featured_in)
-  }
-  let casasUnico = casas.filter((valor, indice) => {
-    return casas.indexOf(valor) === indice
-  })
-
-  for (let i = 0; i < casasUnico.length; i++) {
-    let option = document.createElement("option")
-    option.value = casasUnico[i]
-    option.text = casasUnico[i]
-    selectHouse.appendChild(option)
+    arrayDinamicos.push(filtros[i][propiedad])
+   
   }
 
-  let especiesUnico = especies.filter((valor, indice) => {
-    return especies.indexOf(valor) === indice
-
-  })
-
-  for (let i = 0; i < especiesUnico.length; i++) {
-    let option = document.createElement("option")
-    option.value = especiesUnico[i]
-    option.text = especiesUnico[i]
-    selectSpecies.appendChild(option)
-
-  }
-
-  let librosUnico = libros.filter((valor, indice) => {
-    return libros.indexOf(valor) === indice
-
-  })
-
-  for (let i = 0; i < librosUnico.length; i++) {
-    let option = document.createElement("option")
-    option.value = librosUnico[i]
-    option.text = librosUnico[i]
-    selectBooks.appendChild(option)
-
-  }
+    let arrayUnico = arrayDinamicos.filter((valor, indice) => {
+      return arrayDinamicos.indexOf(valor) === indice
+    })
+  
+    
+    for (let i = 0; i < arrayUnico.length; i++) {
+      let option = document.createElement("option")
+      option.value = arrayUnico[i]
+      option.text = arrayUnico[i]
+      selectSecundario.appendChild(option)
+    }
 }
-constOption();
 
-//SELECT DE HECHIZOS
+selectGeneral.addEventListener('change', e=>{
+  for (let i = selectSecundario.options.length; i >= 0; i--){
+    selectSecundario.remove(i)
+  }
+  constOption(e.target.value)
+})
+
 miSelect.classList.add("miSelect")
 function funSelect(){
   const arrHechizos=data.spells;
@@ -318,24 +292,3 @@ function funSelect(){
 funSelect()
 //NAVEGADOR DE MENU
 
-  
-
-/*
-window.addEventListener('load',mostrarOpciones,false)
-function mostrarOpciones(){
-  let House=document.querySelector('#house')
-  House.classList.add("ocultar")
-  let Books=document.querySelector('#books')
-  Books.classList.add("ocultar")
-  let Species=document.querySelector('#specie')
-  Species.classList.add("ocultar")
-  let houses=document.querySelector('.houses')
-  houses.addEventListener('click',function (event){
-    if(House.classList.add("ocultar")){
-      House.classList.add("mostrar");
-      Books.classList.add("ocultar")
-      Species.classList.add("ocultar")
-   }
-  }, false);
-}
-*/

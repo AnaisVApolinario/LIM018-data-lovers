@@ -279,7 +279,7 @@ font-size: 20px;
   padding: 10px;
 }
 
-#seleccionGeneral{
+#selectGeneral{
   height: 30px;
   border: 2px solid #066e06;
   background-color: #066e0694;
@@ -287,7 +287,7 @@ font-size: 20px;
   margin: 5px;
 }
 
-#house{
+#selectSecundario{
   height: 30px;
   border: 2px solid #00e100;
   background-color: #00ff0073;

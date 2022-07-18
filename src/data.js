@@ -5,8 +5,12 @@ export const pociones_ordenadas = (num1,num2)=> {
   const arrOrder=newPotions.sort((a,b)=>a.name<b.name?num1:num2);
   return arrOrder;
 } 
- export const filtrarPersonajes =()=>{
-  
+ export const filtrarPersonajes =(opcion, valorOption)=>{
+  const newPersonajes=[...data.characters]
+  const personajesFiltrado=newPersonajes.filter((el)=>{
+    return  el.opcion===valorOption;
+  })
+  return personajesFiltrado;
  }
 
 export const filtroHechi=(nHechizo)=>{
