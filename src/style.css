@@ -10,7 +10,7 @@ body {
   padding:0px;
   margin:0px;
 }
-/*SLIDER*/
+/*SLIDER DE ESCUELAS*/
 .c_colegio{
   display:none;
   margin:auto;
@@ -21,8 +21,13 @@ body {
   padding:30px;
 }
 .menuNum{
+  position: absolute;
   text-align: center;
-  margin:20px;
+  margin: 20px;
+  bottom: 0;
+  margin-left: 10%;
+  /*display: flex;
+  align-items: flex-end;*/
 }
 .menuNum li{
   display:inline-block;
@@ -30,7 +35,6 @@ body {
   margin:0px;
   padding: 0px;
   list-style:none;
-
 }
 .menuNum li a{
   display:inline-block;
@@ -46,6 +50,7 @@ body {
 .slider{
   position:relative;
   width: 500px;/*600px*/
+  min-width: 320px;
   height:500px;
 }
 ul.slider li{
@@ -83,9 +88,6 @@ ul.slider li:target{
   flex-wrap: wrap;
 }
 .buscar input{
-  /*background-color:greenyellow ;
-  width:20%;
-  height:30px;*/
   width: 30%;
   padding:10px;
   outline:none;
@@ -100,7 +102,7 @@ ul.slider li:target{
   padding: 9px 5px 0px 0px;
   color:#007965;
 }
-
+/*SECCION LIBROS*/
 #img-libros {
   width: 18%;
   /*80%*/
@@ -134,7 +136,7 @@ ul.slider li:target{
   /*flex: 200px;*/
 }
 
-/*POCIONES*/
+/*SECCION POCIONES*/
 .c_pocion {
   display:none;
   flex-wrap: wrap;
@@ -154,9 +156,8 @@ ul.slider li:target{
   text-align: center;
   height: 100%;
 }
-/*.pocion-name-descrip{
-}*/
-/*BOTON de la AZ*/
+
+/*BOTON DE  ORDEN AZ-ZA*/
 #btn-plus{
   display:none;
 }
@@ -208,9 +209,7 @@ ul.slider li:target{
   color:#fff;
 }
 
-/*FIN DEL BTN-AZ*/
-/*MODIFICANDO*/
-
+/*MENU DE NAVEGACION*/
 .logo-header {
   width: 50px;
 }
@@ -233,7 +232,12 @@ ul.slider li:target{
   color: white;
   font-size: 1.3rem;
 }
-
+@media screen and(min-width:768px) {
+  .nav-menu ul{
+    flex-direction: column;
+  }
+  
+}
 .nav-menu ul {
   display: flex;
   align-items: center;
@@ -251,7 +255,7 @@ ul.slider li:target{
   background-color: rgba(217, 217, 217, 0.61);
   cursor: pointer;
 }
-/*COMP*/
+/*SECCION PERSONAJES*/
 #content {
   margin: auto;
   text-align: center;
@@ -438,10 +442,6 @@ font-size: 15px;
   text-align:center;
   text-transform: uppercase;
 }
-/*#nombreH{
-  background-color: #06493c;
-  color:#fff;
-}*/
 .arti-hechizos .theBack{
   transform: perspective(600px) rotateY(180deg);
   background: rgb(63 58 78);
@@ -449,7 +449,6 @@ font-size: 15px;
   color:#f3f3f3;
   display: flex;
   flex-direction: column;
-  /*justify-content: space-between;*/
   text-align: center;
   box-shadow: 0 5px 10px #000;
 }
@@ -482,4 +481,20 @@ font-size: 15px;
   background: rgb(131 103 199);
   /* font-weight: 550; */
   font-size: inherit;
+}
+/*GRAFICOS ESTADISTICOS*/
+.c_estadistica{
+  display: none;
+}
+.contenedor{
+  background-color: #b5c1ad;
+  width:40%;
+  margin:0 auto;
+}
+.soyh2{
+  margin-bottom: 2rem;
+  text-align: center;
+}
+canvas{
+  max-width: 100%;
 }

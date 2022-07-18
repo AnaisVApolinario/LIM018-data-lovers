@@ -15,12 +15,12 @@
     </div>
     <nav class="nav-menu">
       <ul class="ul">
-        <li id="personajes" class="per"><a href="#characters">PERSONAJES</a></li>
-        <li id="hechizos" class="he"><a href="#c_hechizos">HECHIZOS</a></li>
-        <li id="libros" class="li"><a href="#c_libro">LIBROS</a></li>
-        <li id="pociones" class="po"><a href="#c_pocion">POCIONES</a></li>
-        <li id="colegios" class="co"><a href="#c_colegio">ESCUELAS</a></li>
-        <li id="datos" class="da"><a href="#">ESTADISTICAS</a></li>
+        <li><a href="#characters">PERSONAJES</a></li>
+        <li><a href="#c_hechizos">HECHIZOS</a></li>
+        <li><a href="#c_libro">LIBROS</a></li>
+        <li><a href="#c_pocion">POCIONES</a></li>
+        <li><a href="#c_colegio">ESCUELAS</a></li>
+        <li><a href="#c_estadistica">ESTADISTICAS</a></li>
       </ul>
     </nav>
   </header>
@@ -98,34 +98,34 @@
   </div>
 
   <section id="c_colegio" class="c_colegio">
-      <ul class="slider">
-        <li id="slide1">
-          <img src ="escuelas/ravenclaw.gif">
-        </li>
-        <li id="slide2">
-          <img src ="escuelas/Hufflepuf.gif"> 
-        </li>
-        <li id="slide3">
-          <img src ="escuelas/gryffindor.gif"> 
-        </li>
-        <li id="slide4">
-          <img src ="escuelas/Slytherin.gif">
-        </li>
-      </ul>
-      <ul class="menuNum">
-        <li>
-          <a href="#slide1">1</a>
-        </li>
-        <li>
-          <a href="#slide2">2</a>
-        </li>
-        <li>
-          <a href="#slide3">3</a>
-        </li>
-        <li>
-          <a href="#slide4">4</a>
-        </li>
-      </ul>
+    <ul class="slider">
+      <li id="slide1">
+        <img src ="escuelas/ravenclaw.gif">
+      </li>
+      <li id="slide2">
+        <img src ="escuelas/Hufflepuf.gif"> 
+      </li>
+      <li id="slide3">
+        <img src ="escuelas/gryffindor.gif"> 
+      </li>
+      <li id="slide4">
+        <img src ="escuelas/Slytherin.gif">
+      </li>
+    </ul>
+    <ul class="menuNum">
+      <li>
+        <a href="#slide1">1</a>
+      </li>
+      <li>
+        <a href="#slide2">2</a>
+      </li>
+      <li>
+        <a href="#slide3">3</a>
+      </li>
+      <li>
+        <a href="#slide4">4</a>
+      </li>
+    </ul>
   </section>
 
   <section id="c_hechizos" class="c_hechizos"><!--container-->
@@ -145,9 +145,17 @@
     </template>
   </section>
 
+  <section id="c_estadistica" class="c_estadistica"><!--Content-->
+    <div class="contenedor">
+      <h2 class="soyh2">PERSONAJES</h2>
+      <canvas id="myChart" height="300" width="300"></canvas>
+    </div>
+  </section>
+
   <div id="root">
 
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://kit.fontawesome.com/4239b56502.js" crossorigin="anonymous"></script>
   <script src="main.js" type="module"></script>
 </body>
