@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header id="header" class="header">
+    <picture class="logo-header">
+      <img src="./img/logo.png" alt="">
+    </picture>
+    <nav class="nav-menu">
+      <a href="#characters">PERSONAJES</a>
+      <a href="#c_hechizos">HECHIZOS</a>
+      <a href="#c_libro">LIBROS</a>
+      <a href="#c_pocion">POCIONES</a>
+      <a href="#c_colegio">ESCUELAS</a>
+      <a href="#c_estadistica">ESTADISTICAS</a>
+    </nav>
+  </header>
+  <div id="content" class="inicio">
+    <p>Harry Potter es una serie de novelas fantásticas escrita por la autora
+      británica J. K. Rowling, en la que se describen las aventuras del joven
+      aprendiz de magia y hechicería Harry Potter y sus amigos durante los años
+      que pasan en el Colegio Hogwarts de Magia y Hechicería. El argumento se
+      centra en la lucha entre Harry Potter y el malvado mago lord Voldemort,
+      quien asesinó a los padres de Harry en su afán de conquistar el mundo mágico.
+
+      El éxito de las novelas ha hecho de la marca una de las más exitosas del mundo.
+      En 1999, la productora de cine Warner Bros. Adquirió los derechos para
+      adaptar los siete libros a una serie de películas. La última de ellas,
+      Harry Potter y las reliquias de la Muerte: parte 2, se estrenó el 15 de julio
+      de 2011 y con ocho películas realizadas la serie se convirtió en una de las
+      franquicias más exitosas del cine en concepto de recaudaciones en taquilla.</p>
+  </div>
+
+  <div id="characters" class="characters">
+    <div class="filter" id="filter">
+      <p>Filtrar:</p>
+      <select id="selectGeneral">
+        <option value="house">House</option>
+        <option value="species">Specie</option>
+      </select>
+      <select id="selectSecundario"></select>
+      <div id="charactersFilters"></div>
+    </div>
+  </div>
+
+  <section id="c_hechizos" class="c_hechizos">
+    <!--container-->
+    <!--<select id="miSelect" class="miSelect"></select>-->
+    <template id="template-hechizos">
+      <article class="arti-hechizos">
+        <!--theCard-->
+        <div id="div-hechizos" class="theFront face">
+          <!--theFront-->
+          <h3 id="nombreH"></h3>
+          <img src="escuelas/img_Hechizo.png" alt="Harry POtter tumblr">
+        </div>
+        <div id="theBack" class="theBack face">
+          <p id="other_name"></p>
+          <p id="spell_type"></p>
+          <p id="description"></p>
+        </div>
+      </article>
+    </template>
+  </section>
+
+  <section id="c_libro" class=" c_libro">
+    <template id="template-libros">
+      <article class="arti-libro">
+        <img id="img-libros">
+        <div class="container-text">
+          <h4 id="titulo-libro"></h4>
+          <p id="parrafo"></p>
+          <p id="parrafo1"></p>
+          <p id="parrafo2"></p>
+        </div>
+      </article>
+    </template>
+  </section>
+
+  <!--FILTRO DE BUSQUEDA-->
+  <div class="buscar">
+    <div class="btn-buscar fa-solid fa-magnifying-glass"></div>
+    <input id="busca" type="text" placeholder="Buscar...">
+  </div>
+
+  <section id="c_pocion" class="c_pocion">
+    <template id="template-pociones">
+      <article class="arti-pociones">
+        <div id="div-pociones">
+          <h4 id="p-pociones" class="pocion-name-descrip"></h4>
+          <p id="p-descripcion" class="pocion-name-descrip"></p>
+        </div>
+      </article>
+    </template>
+  </section>
+
+  <div class="container-order">
+    <input type="checkbox" id="btn-plus">
+    <div class="AZ">
+      <button id="za" class="fa-solid fa-arrow-down-z-a"></button>
+      <button id="az" class="fa-solid fa-arrow-down-a-z"></button>
+    </div>
+    <div class="btn-plus">
+      <label for="btn-plus" class="fa-solid fa-plus"></label>
+    </div>
+  </div>
+
+  <section id="c_colegio" class="c_colegio">
+    <ul class="slider">
+      <li id="slide1">
+        <img src="escuelas/ravenclaw.gif">
+      </li>
+      <li id="slide2">
+        <img src="escuelas/Hufflepuf.gif">
+      </li>
+      <li id="slide3">
+        <img src="escuelas/gryffindor.gif">
+      </li>
+      <li id="slide4">
+        <img src="escuelas/Slytherin.gif">
+      </li>
+    </ul>
+    <ul class="menuNum">
+      <li>
+        <a href="#slide1">1</a>
+      </li>
+      <li>
+        <a href="#slide2">2</a>
+      </li>
+      <li>
+        <a href="#slide3">3</a>
+      </li>
+      <li>
+        <a href="#slide4">4</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="c_estadistica" class="c_estadistica">
+    <!--Content-->
+    <div class="contenedor">
+      <h2 class="soyh2">PERSONAJES</h2>
+      <canvas id="myChart" height="300" width="300"></canvas>
+    </div>
+  </section>
+
+  <div id="root">
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+    integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://kit.fontawesome.com/4239b56502.js" crossorigin="anonymous"></script>
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>
