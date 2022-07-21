@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { pociones_ordenadas, filtroHechi,filtrarPersonajes} from './data.js';//./es busca a partir de la carpeta data.js
-=======
 import { pociones_ordenadas, filtroHechi, computeStats} from './data.js';//./es busca a partir de la carpeta data.js
->>>>>>> 135a2c39da82318fd7e077c81cd5d07e6f9f767d
 // import data from './data/lol/lol.js';
 import data from './data/harrypotter/data.js'; //data es una variable de tipo objeto 
 
