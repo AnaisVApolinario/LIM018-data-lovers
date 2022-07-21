@@ -4,10 +4,10 @@ export const pociones_ordenadas = (dataPocion,num1,num2)=> {
   const arrOrder=newPotions.sort((a,b)=>a.name<b.name?num1:num2);
   return arrOrder;
 } 
- export const filtrarPersonajes =(opcion, valorOption)=>{
-  const newPersonajes=[...data.characters]
+ export const filtrarPersonajes =(characters,opcion,valorOption)=>{ 
+  const newPersonajes=[...characters]
   const personajesFiltrado=newPersonajes.filter((el)=>{
-    return  el.opcion===valorOption;
+    return  el[opcion] === valorOption;
   })
   return personajesFiltrado;
  }
