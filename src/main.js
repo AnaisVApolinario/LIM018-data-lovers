@@ -199,7 +199,7 @@ function funSelect() {
   let type = arrHechizos.map(i => {
     return i.spell_type;
   });
-  //No permite que se repita los valores
+  //No permite que se repita los valores 
   const arraySpell = type.join(',').replace(/ /g, "").split(',');//join(',').replace(/\s+/g, '').split(',')//replace(/ /g, "")
   const unicos = [];
   arraySpell.forEach((i) => {

@@ -35,7 +35,7 @@ html {
 }
 
 body {
-  background-image: url("/img/fondo.jpg");
+  background-image: url("/img/fondo.png");
   background-size: cover;
   background-attachment: fixed;
   /*fijo*/
