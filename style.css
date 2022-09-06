@@ -1,0 +1,602 @@
+html {
+  font-size: 18px;
+}
+
+@media screen and (max-width:650px) {
+
+  /*768px*/
+  html {
+    font-size: 12px;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  .arti-libro {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  #img-libros {
+    margin-left: 4rem;
+    height: 300px;
+  }
+
+  .ul.slider li img {
+    width: 21.875rem;
+    /*350px*/
+    padding: 0px;
+  }
+
+  .miSelect {
+    margin-top: 5.5rem;
+  }
+}
+
+body {
+  background-image: url("/img/fondo.png");
+  background-size: cover;
+  background-attachment: fixed;
+  /*fijo*/
+  padding: 0px;
+  margin: 0px;
+}
+
+/*MENU DE NAVEGACION*/
+.header {
+  display: flex;
+  min-height: 4.37rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem;
+}
+
+.logo-header {
+  display: flex;
+  max-width: 100%;
+  padding-top: 1rem;
+}
+
+.logo-header img {
+  height: 6rem;
+  margin-right: 0.6rem;
+}
+
+.nav-menu {
+  background-color: rgba(12, 13, 13, 0.48);
+  padding: 0.8rem;
+}
+
+.nav-menu a {
+  font-weight: 600;
+  padding-right: 0.6rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.nav-menu a:hover {
+  background-color: rgba(217, 217, 217, 0.61);
+  cursor: pointer;
+}
+
+/*SECCION PERSONAJES*/
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(24 23 23 / 81%);
+  margin: 3.12rem;
+  border-radius: 1.25rem;
+}
+
+#content p {
+  display: flex;
+  align-content: center;
+  color: white;
+  font-size: 1rem;
+  padding: 1.12rem;
+  min-width: 15.6rem;
+}
+
+.filter {
+  position: absolute;
+  margin-top: -5rem;
+  display: flex;
+  width: 1rem;
+  /*100%*/
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.filter p {
+  color: #00e100;
+  padding: 0.6rem;
+}
+
+#selectGeneral {
+  height: 1.87rem;
+  border: 0.12rem solid #066e06;
+  background-color: #066e0694;
+  border-radius: 0.31rem;
+}
+
+#selectSecundario,
+#specie {
+  height: 1.87rem;
+  /*30px*/
+  border: 0.12rem solid #00e100;
+  background-color: #00ff0073;
+  border-radius: 0.31rem;
+  /*5px*/
+}
+
+#specie,
+#selectGeneral {
+  margin: 0.31rem;
+}
+
+.contenedorPersonajes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.characters {
+  display: none;
+  width: 100%;
+  /*100%*/
+  padding: 2.5rem;
+  /*40px*/
+}
+
+.card {
+  width: 11.87rem;
+  height: 15.62rem;
+  background-color: transparent;
+  perspective: 62.5rem;
+  margin: 0.6rem;
+  border-radius: 1.87rem;
+}
+
+.inner {
+  width: 11.87rem;
+  height: 15.62rem;
+  position: relative;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0px 8px 8px 0px rgba(175, 187, 65, 0.2);
+  border-radius: 1.87rem;
+}
+
+.card:hover .inner {
+  transform: rotateY(180deg);
+}
+
+.inner img {
+  width: 10rem;
+  ;
+  /*190px*/
+  height: 15rem;
+  /*250px*/
+  border-radius: 1.87rem 1.87rem 0 0;
+  box-shadow: 0 0 0.6rem 0.87rem #00e100;
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front {
+  width: 11.87rem;
+  /*190px*/
+  height: 15.62rem;
+  /*250px*/
+  border-radius: 1.87rem;
+  /*30px*/
+}
+
+.front p {
+  margin-top: -40px;
+  position: absolute;
+  border-radius: 0px 0px 10px 10px;
+  background: #73ff53;
+  color: black;
+  width: 11.87rem;
+  /*190px*/
+  height: 1.87rem;
+  /*30px*/
+  padding-top: 0.6rem;
+  /*10px*/
+  text-align: center;
+  margin-left: 0px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.back {
+  width: 11.87rem;
+  /*190px*/
+  height: 15.62rem;
+  /*250px*/
+  border-radius: 1.87rem;
+  /*30px*/
+  background-color: #33a21d;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+.ocultar {
+  display: none;
+}
+
+.mostrar {
+  display: flex;
+}
+
+
+/*HECHIZOS*/
+.c_hechizos {
+  /*container*/
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.56rem;
+  /*25px*/
+  min-height: 100vh;
+  /*100vh*/
+}
+
+.arti-hechizos {
+  /*Card*/
+  position: relative;
+  width: 15.62rem;
+  /*250px*/
+  height: 18.75rem;
+  /*300px*/
+  margin: 1.25rem;
+  /*20px*/
+}
+
+.arti-hechizos .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.6rem;
+  /*10px*/
+  overflow: hidden;
+  transition: .5s;
+}
+
+.arti-hechizos .theFront {
+  /*theFront*/
+  transform: perspective(37.5rem) rotateY(0deg);
+  /*600px*/
+  box-shadow: 0 0.31rem 0.6rem #000;
+  /*5px 10px*/
+}
+
+.arti-hechizos .theFront img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arti-hechizos .theFront h3 {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 2.8125rem;
+  /*45px*/
+  line-height: 2.8125rem;
+  /*45px*/
+  color: #fff;
+  background: rgb(131 103 199);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.arti-hechizos .theBack {
+  transform: perspective(37.5rem) rotateY(180deg);
+  /*600px*/
+  background: rgb(63 58 78);
+  padding: 0.5px;
+  /*8px*/
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 0.31rem 0.6rem #000;
+  /* 0 5px 10px*/
+}
+
+.arti-hechizos .theBack p {
+  letter-spacing: 0.06rem;
+}
+
+.arti-hechizos:hover .theFront {
+  transform: perspective(37.5rem) rotateY(180deg);
+  /*600px*/
+}
+
+.arti-hechizos:hover .theBack {
+  transform: perspective(37.5rem) rotateY(360deg);
+}
+
+/*miSelect en Hechizos*/
+.miSelect {
+  background: #6e02e5;
+  right: 2rem;
+  top: 8rem;
+  min-height: 2.18rem;
+  color: #fff;
+  position: absolute;
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.miSelect option {
+  background: rgb(131 103 199);
+  /* font-weight: 550; */
+  font-size: inherit;
+}
+
+/*SECCION LIBROS*/
+#img-libros {
+  display: flex;
+  width: 250px;
+  /*18%*/
+  background-size: contain;
+  /*80%*/
+}
+
+#titulo-libro {
+  font-size: 1.87rem;
+  /*30px*/
+  font-family: cursive;
+  color: darkred;
+}
+
+.container-text {
+  font-size: 1.25rem;
+  /*20px*/
+  text-align: initial;
+  padding: 0rem 1.87rem;
+  /*0px 30px*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.c_libro {
+  display: none;
+  flex-direction: column;
+}
+
+.arti-libro {
+  display: flex;
+  padding: 0.6rem;
+  /*10px*/
+  margin: 0.6rem;
+  background-color: rgb(161 210 219 / 77%);
+  /*flex: 200px;*/
+}
+
+/*SECCION POCIONES*/
+.c_pocion {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.arti-pociones {
+  margin: 0.6rem;
+  /*10px*/
+  flex: 12.5rem;
+  /*200px*/
+}
+
+#div-pociones {
+  box-sizing: border-box;
+  background-color: #94a18c;
+  border: rgb(41 116 13) solid 10px;
+  padding: 0.18rem;
+  /*3px*/
+  text-align: center;
+  height: 100%;
+}
+
+/*FILTRO DE BUSQUEDA*/
+.filtro {
+  display: none;
+}
+
+.buscar {
+  display: none;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.buscar input {
+  width: 30%;
+  padding: 0.6rem;
+  /*10px*/
+  outline: none;
+  border: 5px solid #448d56;
+  border-radius: 3.12rem;
+  /*50px*/
+  font-weight: 600;
+  background-color: #D6EFED;
+}
+
+.btn-buscar {
+  font-size: 29px;
+  /*29px*/
+  padding: 0.56rem 0.31rem 0rem 0rem;
+  /*9px 5px 0px 0px*/
+  color: #007965;
+}
+
+/*BOTON DE  ORDEN AZ-ZA*/
+#btn-plus {
+  display: none;
+}
+
+.container-order {
+  display: none;
+  position: fixed;
+  /*posicion totalmente fija a la pantalla*/
+  bottom: 0.9rem;
+  /*15px*/
+  right: 0.6rem;
+  /*10px*/
+}
+
+.AZ button,
+.fa-solid.fa-plus {
+  display: block;
+  text-decoration: none;
+  width: 3.75rem;
+
+  height: 3.75rem;
+
+  font-size: 1.6rem;
+
+  line-height: 3.75rem;
+  /*centra con ayuda del de abajo*/
+  text-align: center;
+  border-radius: 50%;
+  border-color: #4eeb00;
+  border-width: initial;
+  box-shadow: 0rem 0.06rem 0.6rem rgba(7, 241, 26, 0.4);
+  transition: all 500ms ease;
+
+}
+
+.AZ button {
+  background: #fff;
+  color: #348b79;
+  margin-bottom: -0.93rem;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fa-solid.fa-plus {
+  cursor: pointer;
+  background: #348b79;
+  color: #fff;
+}
+
+.AZ button:hover {
+  background: #c0e7b3;
+  color: #06493c;
+}
+
+#btn-plus:checked~.AZ button {
+  margin-bottom: 0.6rem;
+  /*10px*/
+  opacity: 1;
+  visibility: visible;
+}
+
+#btn-plus:checked~.btn-plus .fa-solid.fa-plus {
+  transform: rotate(135deg);
+  font-size: 1.5em;
+  background: #348b79;
+  color: #fff;
+}
+
+/*SLIDER DE ESCUELAS*/
+.c_colegio {
+  display: none;
+  margin:auto;
+  width:800px;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.menuNum{
+  position: absolute;
+  text-align: center;
+  margin-top:auto;
+}
+.menuNum li{
+  display: inline-block;
+  text-align: center;
+}
+.menuNum li a{
+  display: inline-block;
+  color:white;
+  text-decoration: none;
+  background: grey;
+  padding: 0.675rem;
+  width:1.5rem;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 100%;
+}
+ul.slider, ul.menuNum li{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+ul.slider{
+  position:relative;
+  width:18.75rem;
+
+}
+ul.slider li{
+  position:absolute;
+  left: 0;
+  top:0;
+  opacity:0;
+  width:inherit ;/*hereda el tamaño del padre*/
+  height: inherit;
+  transition:opacity .5s;
+}
+ul.slider li img{
+  width:100%;
+  height: 18.75rem;
+  object-fit:cover;
+}
+ul.slider li:first-child{
+  opacity:1;
+}
+/*cambie a la siguiente imagen*/
+ul.slider li:target{
+  opacity:1;
+}
+
+
+
+
+/*GRAFICOS ESTADISTICOS*/
+.c_estadistica {
+  display: none;
+}
+
+.contenedor {
+  background-color: #b5c1ad;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.soyh2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+canvas.myChart {
+  max-width: 100%;
+}
