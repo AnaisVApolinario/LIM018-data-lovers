@@ -43,6 +43,7 @@ function pocionOpciones(flexi, blocki) {
 }
 contenedorNav.addEventListener('click', (e) => {
   if (e.target) {
+    if (e.target.matches('a')) e.preventDefault();
     if (e.target.matches('a[href="#characters"]')) {
       ocultarInicio();
       ocultarTodo(characters, lib, poci, colegio, hechiz, estadisticas, 'flex', 'none');
@@ -132,6 +133,7 @@ function agregarElementos(personajes) {
 agregarElementos(data.characters.sort((a, b) => a.img ? -1 : b.img ? 1 : 0));
 
 let selectSecundario = document.getElementById("selectSecundario")
+constOption('house');
 let selectGeneral = document.getElementById("selectGeneral")
 
 function constOption(propiedad) {
@@ -184,13 +186,29 @@ function generarHechizos(arrayHechizos) {
     } else { tempHechizos.getElementById('other_name').innerHTML = `<b>Otro Nombre:</b> ${item.other_name} `; }
     tempHechizos.getElementById('spell_type').innerHTML = `<b>Tipo:</b> ${item.spell_type} `;
     tempHechizos.getElementById('description').innerHTML = `<b>DESCRIPCION:</b> ${item.description}`;
-
+    tempHechizos.querySelector('.leer-mas').hidden = (item.description || '').length < 90;
     const clone = tempHechizos.cloneNode(true);
     frag.appendChild(clone);
   });
   c_hechizo.appendChild(frag);
 }
 generarHechizos(data.spells);
+
+// "Leer más / Leer menos" (un solo listener para todas las tarjetas)
+c_hechizo.addEventListener('click', (e) => {
+  if (!e.target.matches('.leer-mas')) return;
+  const back = e.target.closest('.theBack');
+  const abierto = back.classList.toggle('expandida');
+  e.target.textContent = abierto ? 'Leer menos' : 'Leer más';
+});
+// al sacar el mouse de la tarjeta, vuelve a quedar resumida
+c_hechizo.addEventListener('mouseout', (e) => {
+  const card = e.target.closest('.arti-hechizos');
+  if (!card || card.contains(e.relatedTarget)) return;
+  const back = card.querySelector('.theBack');
+  back.classList.remove('expandida');
+  back.querySelector('.leer-mas').textContent = 'Leer más';
+});
 
 //Filtro de Hechizos por tipo 
 miSelect.classList.add("miSelect")
@@ -260,17 +278,12 @@ generarPociones(data.potions);
 //FILTRO DE BUSQUEDA
 const inputBuscar = document.getElementById('busca');
 inputBuscar.addEventListener('keyup', (e) => {
-  if (e.target.value) {
-    if (e.key === 'Escape') e.target.value = "";
-    const artiP = document.querySelectorAll(".arti-pociones");
-    artiP.forEach(el => {
-      el.textContent.toLowerCase().includes(e.target.value.toLowerCase())
-        ? el.classList.remove('filtro')
-        : el.classList.add('filtro')
-    })
-  }
-})
-
+     if (e.key === 'Escape') e.target.value = '';
+     const texto = e.target.value.toLowerCase();
+     document.querySelectorAll('.arti-pociones').forEach(el => {
+       el.classList.toggle('filtro', !el.textContent.toLowerCase().includes(texto));
+     });
+   });
 //Botones de la AZ
 const grupoAZ = document.querySelector('.AZ');
 function remover(arti) {
@@ -316,4 +329,3 @@ new Chart(ctx, {
     }]
   }
 })
-
